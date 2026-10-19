@@ -4,6 +4,16 @@
 
 Repository นี้ใช้ส่งมอบแพ็กเกจติดตั้งแบบ ZIP ข้อมูลภายในยังเป็นของเจ้าของเดิม และไม่มีการให้สัญญาอนุญาตแบบ Open Source
 
+## คู่มือติดตั้งแบบเข้าใจง่าย
+
+เลือก AI ที่คุณใช้:
+
+| [ChatGPT](INSTALL_CHATGPT_TH.md) | [Claude](INSTALL_CLAUDE_TH.md) | [Gemini](INSTALL_GEMINI_TH.md) | [Codex](INSTALL_CODEX_TH.md) |
+|---|---|---|---|
+| สร้าง Project และเพิ่มไฟล์ | อัปโหลด Skill ZIP | ใช้ Skills หรือ Gems | คัดลอกสกิลเข้าพื้นที่งาน |
+
+[เริ่มจากหน้าเลือก AI และดาวน์โหลด](INSTALL_GUIDE_TH.md)
+
 ## ดาวน์โหลด
 
 [เปิด Release v1.1.0](https://github.com/nitiphoomkk-dev/nitii-logic-suite/releases/tag/v1.1.0)
