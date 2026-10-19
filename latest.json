@@ -1,0 +1,12 @@
+{
+  "archivePath": "snapshots/24dcafe39bc3dd5b831279480c0cfe6c9804203cbe7b804c9bf64110581273bc/knowledge.zip",
+  "archiveSha256": "3209061a3de153d6fcd17485611c47529ef288110a6be2536869abe9528bc08f",
+  "bootstrap": true,
+  "checkedAtUtc": null,
+  "documentCount": 281,
+  "manifestPath": "snapshots/24dcafe39bc3dd5b831279480c0cfe6c9804203cbe7b804c9bf64110581273bc/manifest.json",
+  "manifestSha256": "aaf43cd678921c59efd0ff6691a40f1764207fe71109363de8ef383162c1dce8",
+  "schemaVersion": "nitii-feed.v1",
+  "snapshotId": "24dcafe39bc3dd5b831279480c0cfe6c9804203cbe7b804c9bf64110581273bc",
+  "syncedAtUtc": "2026-10-19T02:46:48.549579+00:00"
+}

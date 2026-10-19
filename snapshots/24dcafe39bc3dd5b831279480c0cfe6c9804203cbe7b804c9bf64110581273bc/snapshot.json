@@ -1,0 +1,28 @@
+{
+  "bodyBytes": 7822175,
+  "bootstrap": true,
+  "capturedAtUtc": "2026-10-19T02:46:48.549579+00:00",
+  "collections": {
+    "develop": 59,
+    "solution": 222
+  },
+  "contentPolicy": "Exact exported Wiki Markdown. Approval/proposal/conflict status must be classified per passage.",
+  "documentCount": 281,
+  "emptyBodiesExplicitlyReturned": 24,
+  "freshnessNote": "Published v1.1.0 baseline; NOT a fresh authenticated Wiki check.",
+  "limitations": [
+    "No archived/deleted pages or Welcome collection.",
+    "No external linked Docs, Figma or Canva content fetched for this export.",
+    "No image-only semantics verified; image references are not an OCR transcript.",
+    "Snapshot capture is not a live synchronization service or a business approval."
+  ],
+  "mediaPolicy": "Embedded data URIs preserved in source Markdown. Other image/attachment binaries are not bundled; original references retained and require recipient access.",
+  "readWindowUtc": {
+    "first": "2026-10-19T02:29:34.649000+00:00",
+    "last": "2026-10-19T02:41:28+00:00"
+  },
+  "schemaVersion": "nitii-wiki-snapshot.v1",
+  "scope": "Active accessible NaYoo Wiki documents in Solution and Develop collections; Welcome excluded; no archived/deleted",
+  "snapshotId": "24dcafe39bc3dd5b831279480c0cfe6c9804203cbe7b804c9bf64110581273bc",
+  "sourceCorpusSha256": "3f7e870817d8829853eb98275f6a546020a3c05ccb2f81c1b6bb7a17dce0c08e"
+}

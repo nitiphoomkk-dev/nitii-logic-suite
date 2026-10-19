@@ -1,0 +1,285 @@
+# NaYoo Wiki knowledge index
+
+Snapshot: 24dcafe39bc3dd5b831279480c0cfe6c9804203cbe7b804c9bf64110581273bc
+
+- 52ae1735-7135-40b3-a2cb-83fe174025ec | UX/UI / ทรัพย์เด็ดคัดพิเศษ | revision 11 | https://wiki.infonayoo.co/doc/4lix4lij4lix4lie4lii4lmm4lma4liu4lmh4liu4lie4lix4liu4lie4li04lma4lio4lip-E57boejp6D
+- 03ee8450-6ffd-49ee-bb41-e53fcd09f793 | BA Nayoo / Nayoo center / NaYoo Center — สำเนา Google Docs | revision 39 | https://wiki.infonayoo.co/doc/nayoo-center-google-docs-TgnvhEW4iL
+- 77ecd1c9-d13d-4e95-b235-46888213ffc2 | BA Nayoo / Nayoo center / NaYoo Center — สำเนา Google Docs / insert card 3 ภาษา / การแสดงผล | revision 7 | https://wiki.infonayoo.co/doc/4lib4liy4lij4lmb4liq4liu4lih4lic4lil-KtcluN5j4E
+- efdd4676-3b68-499e-9e9b-6540bd0028cb | BA Nayoo / Nayoo center / NaYoo Center — สำเนา Google Docs / Tab 38 | revision 13 | https://wiki.infonayoo.co/doc/tab-38-xSkaCS75hX
+- 3cf88c5f-fe35-4585-bf0f-b533c6d9bb05 | BA Nayoo / Nayoo center / NaYoo Center — สำเนา Google Docs / ฟีลเตอร์ center / ฟีลเตอร์เช่า center | revision 17 | https://wiki.infonayoo.co/doc/center-oaOAG5Tr7J
+- 1d5bd1d3-62f7-4467-b19f-da696a293da6 | BA Nayoo / Nayoo center / NaYoo Center — สำเนา Google Docs / Nayoo center / คำนวณสินเชื่อ center | revision 18 | https://wiki.infonayoo.co/doc/center-o2aajyb8PI
+- 30b60eec-23b9-464c-b515-1f4a612ae8ac | BA Nayoo / Nayoo center / NaYoo Center — สำเนา Google Docs / Nayoo center / หน้าเสิร์ชแบบบ้าน | revision 10 | https://wiki.infonayoo.co/doc/4lir4liz4lmj4liy4lma4liq4li04lij4lmm4lik4lmb4lia4lia4lia4lmj4liy4liz-Lc7tsn9mZw
+- 8d01f313-75e3-4037-b546-6680628e2c9f | BA Nayoo / Nayoo center / NaYoo Center — สำเนา Google Docs / Nayoo center / หน้าเสิร์ชโปรไฟล์รับสร้างบ้าน | revision 9 | https://wiki.infonayoo.co/doc/4lir4liz4lmj4liy4lma4liq4li04lij4lmm4lik4lmc4lib4lij4lme4lif4lil4lmm4lij4lix4lia4liq4lij4lmj4liy4lih4lia4lmj4liy4liz-iAFDfGL91e
+- 918b1122-35e3-4c27-bb9b-3c3feaffa94e | BA Nayoo / Nayoo center / NaYoo Center — สำเนา Google Docs / Nayoo center / เสิร์ชหอพัก | revision 12 | https://wiki.infonayoo.co/doc/4lma4liq4li04lij4lmm4lik4lir4lit4lie4lix4lib-soAxdiLAtw
+- b452a6ce-6fad-4e75-aaa2-7cc8b1390b38 | BA Nayoo / Nayoo center / NaYoo Center — สำเนา Google Docs / Nayoo center / เสิร์ชนายหน้า | revision 15 | https://wiki.infonayoo.co/doc/4lma4liq4li04lij4lmm4lik4liz4liy4lii4lir4liz4lmj4liy-FW8N6UMal2
+- c15ad8d4-6913-4852-88d2-250a68485fec | BA Nayoo / Nayoo center / NaYoo Center — สำเนา Google Docs / Nayoo center / เสิร์ชแบรนด์โครงการ | revision 12 | https://wiki.infonayoo.co/doc/4lma4liq4li04lij4lmm4lik4lmb4lia4lij4liz4liu4lmm4lmc4lie4lij4lih4lib4liy4lij-RyAmecvVcK
+- 27eb415b-442b-4078-b074-12c5b268a2b4 | BA Nayoo / Nayoo center / NaYoo Center — สำเนา Google Docs / Nayoo center / เสิร์ชเช่า | revision 19 | https://wiki.infonayoo.co/doc/4lma4liq4li04lij4lmm4lik4lma4lik4lmi4liy-L85cLhtgXI
+- 6e3b3e35-adf6-4dc8-aa44-ca9c87d4f29f | BA Nayoo / Nayoo center / NaYoo Center — สำเนา Google Docs / Nayoo center / เสิร์ชใบประกาศมือ 2 | revision 21 | https://wiki.infonayoo.co/doc/2-Yqb2hwToah
+- a18efd04-2f98-4f4f-a013-5875de1c8838 | BA Nayoo / Nayoo center / NaYoo Center — สำเนา Google Docs / Nayoo center / เสิร์ชใบประกาศมือ 1 | revision 18 | https://wiki.infonayoo.co/doc/1-kphu5dqP8c
+- b3c3217b-1da9-405f-aed3-4709e9163ed4 | BA Nayoo / Nayoo center / NaYoo Center — สำเนา Google Docs / Nayoo center / รีวิว center | revision 14 | https://wiki.infonayoo.co/doc/center-ImQRmnN7gk
+- 141011fa-fd1e-49ce-8ffc-be944262c2b3 | BA Nayoo / Nayoo center / NaYoo Center — สำเนา Google Docs / บทความหน้าเสิร์ชและ home | revision 20 | https://wiki.infonayoo.co/doc/home-OkZG8eRp8L
+- ed8de3ab-a271-4ff3-a76f-4372ddc21f65 | BA Nayoo / Nayoo center / NaYoo Center — สำเนา Google Docs / coming soon | revision 11 | https://wiki.infonayoo.co/doc/coming-soon-eGk3f6Sjwg
+- 6f939573-7744-438b-b0af-0922fbcfdf25 | BA Nayoo / Nayoo center / NaYoo Center — สำเนา Google Docs / VR 360 หน้า home และ search มือ1 | revision 11 | https://wiki.infonayoo.co/doc/vr-360-home-search-1-OV27N9gsgs
+- d1fff299-876f-48eb-ab49-4877c2367ffc | BA Nayoo / Nayoo center / NaYoo Center — สำเนา Google Docs / Top banner 3 ภาษา | revision 13 | https://wiki.infonayoo.co/doc/top-banner-3-RMsWHHfjZs
+- 82462738-21fa-4d87-b838-2929fee7dd0e | BA Nayoo / Nayoo center / NaYoo Center — สำเนา Google Docs / Top ads ใบประกาศมือ 1 center | revision 19 | https://wiki.infonayoo.co/doc/top-ads-1-center-dQCeUGbben
+- 1fb21f44-6a84-40ea-85f6-3c016fb6c220 | BA Nayoo / Nayoo center / NaYoo Center — สำเนา Google Docs / Super top ads ใบประกาศมือ 1 | revision 17 | https://wiki.infonayoo.co/doc/super-top-ads-1-hnIfTiipkr
+- c173f97c-8d48-4f21-a62e-9b66129d47c4 | BA Nayoo / Nayoo center / NaYoo Center — สำเนา Google Docs / Tab 51 | revision 3 | https://wiki.infonayoo.co/doc/tab-51-yidSOd55ml
+- 0666b11f-039c-41e3-826f-6c94505c5140 | BA Nayoo / Nayoo center / NaYoo Center — สำเนา Google Docs / VR 360 หน้าเสิร์ชแบบบ้าน. โปรไฟล์บรืษัท | revision 4 | https://wiki.infonayoo.co/doc/vr-360-Gocz4JPXhI
+- a439e945-99c8-4628-9028-706e202784af | BA Nayoo / Nayoo center / NaYoo Center — สำเนา Google Docs / insert card 3 ภาษา | revision 4 | https://wiki.infonayoo.co/doc/insert-card-3-y3Zp0zHyHV
+- 04d2fc7c-c150-4fff-aece-829171d0d3f9 | BA Nayoo / Nayoo center / NaYoo Center — สำเนา Google Docs / Nayoo center / บทความ center | revision 17 | https://wiki.infonayoo.co/doc/center-b6TBBBZwwG
+- 81f45a87-5447-49f0-8be1-c4cc73b3b664 | BA Nayoo / Nayoo center / NaYoo Center — สำเนา Google Docs / Logo brand. | revision 4 | https://wiki.infonayoo.co/doc/logo-brand-kSSuJ22HFf
+- 307b9d15-506a-4d2e-8c45-e70f35da21d9 | BA Nayoo / Nayoo center / NaYoo Center — สำเนา Google Docs / Banner 3 ภาษา | revision 18 | https://wiki.infonayoo.co/doc/banner-3-Xfb8HGQLZJ
+- 0ca236dc-73e6-461c-a0be-5b6c52f70e86 | BA Nayoo / Nayoo center / NaYoo Center — สำเนา Google Docs / pop up 3 ภาษา | revision 16 | https://wiki.infonayoo.co/doc/pop-up-3-rQNm3x0i3g
+- b5b00118-7fef-4543-8233-258c2db67792 | BA Nayoo / Nayoo center / NaYoo Center — สำเนา Google Docs / super top ads โปรไฟล์รับสร้างบ้าน / บริษัทชั้นนำ | revision 9 | https://wiki.infonayoo.co/doc/4lia4lij4li04lip4lix4lix4lik4lix4lmj4liz4liz4liz-an2e3xuj8C
+- 9baea319-3d76-417f-bcaa-6b42627978d5 | BA Nayoo / Nayoo center / NaYoo Center — สำเนา Google Docs / super top ads โปรไฟล์รับสร้างบ้าน / Top ads โปรไฟล์บริษัทรับสร้าง. | revision 3 | https://wiki.infonayoo.co/doc/top-ads-jMtLqWirU7
+- 5d7dfb87-5705-4df5-8827-02107d88a7f0 | BA Nayoo / Nayoo center / NaYoo Center — สำเนา Google Docs / super top ads โปรไฟล์รับสร้างบ้าน | revision 20 | https://wiki.infonayoo.co/doc/super-top-ads-LWetddeWvj
+- 2052c74e-a262-4312-bf4d-a889f7ad0b35 | BA Nayoo / Nayoo center / NaYoo Center — สำเนา Google Docs / Top ads แบรนด์โครงการ | revision 13 | https://wiki.infonayoo.co/doc/top-ads-DluNExpq9h
+- 3569e9c8-e4ca-4724-9ea3-388bbd3b9a56 | ขนาดรูปแต่หน้าฟีเจอร์ / แคมเปญ ออนไลน์ | revision 39 | https://wiki.infonayoo.co/doc/4lmb4lie4lih4lma4lib4linioc4rec4rec4mec5hoc4pec4mec5ja-S1FvejAy79
+- 8bfc81ec-d8f0-487b-aab4-198c3c8b1e58 | BA Nayoo / Test case | revision 6 | https://wiki.infonayoo.co/doc/test-case-p6I4oOfDfK
+- ff6ebd91-c284-46c2-8d9c-452d141c10e6 | BA Nayoo / Nayoo center / NaYoo Center — สำเนา Google Docs / ฟีลเตอร์ center / ฟีลเตอร์แบบบ้าน | revision 11 | https://wiki.infonayoo.co/doc/4lif4li14lil4lma4liv4lit4lij4lmm4lmb4lia4lia4lia4lmj4liy4liz-8jbe8IELTg
+- 2eede110-e2b0-42c2-8b76-213b9cf1aaec | BA Nayoo / Nayoo center / NaYoo Center — สำเนา Google Docs / ฟีลเตอร์ center / ฟีลเตอร์เสิร์ชรับสร้างบ้าน | revision 14 | https://wiki.infonayoo.co/doc/4lif4li14lil4lma4liv4lit4lij4lmm4lma4liq4li04lij4lmm4lik4lij4lix4lia4liq4lij4lmj4liy4lih4lia4lmj4liy4liz-ObV1A0VDN8
+- dc363e01-cabf-4fee-88fc-f378d2311ec3 | BA Nayoo / Nayoo center / NaYoo Center — สำเนา Google Docs / ฟีลเตอร์ center / ฟีลเตอร์มือ 2 center | revision 13 | https://wiki.infonayoo.co/doc/2-center-SDvQFUdXVZ
+- e3aab96f-e8b1-4bfb-b0f7-2415989b292b | BA Nayoo / Nayoo center / NaYoo Center — สำเนา Google Docs / ฟีลเตอร์ center / ฟีลเตอร์มือ 1 center | revision 12 | https://wiki.infonayoo.co/doc/1-center-KPSpLhAHmD
+- 4beef3f6-acfc-4460-86c8-52743f0140d3 | BA Nayoo / Nayoo center / NaYoo Center — สำเนา Google Docs / Nayoo center / เสิร์ช NPA | revision 13 | https://wiki.infonayoo.co/doc/npa-aryY8kMHuD
+- 5870fb28-0c64-4c91-8aaf-73d72367e416 | BA Nayoo / Nayoo center / NaYoo Center — สำเนา Google Docs / Nayoo center / Home center | revision 12 | https://wiki.infonayoo.co/doc/home-center-t7SreuzwYL
+- c34aa237-f078-4725-a9dc-f73df05472ce | BA Nayoo / Nayoo center / NaYoo Center — สำเนา Google Docs / TOP ads แบบบ้าน | revision 5 | https://wiki.infonayoo.co/doc/top-ads-dqfyVqSbBV
+- c089f2f4-9644-4859-997c-e07d0fdc7969 | BA Nayoo / Nayoo center / NaYoo Center — สำเนา Google Docs / Top ads เช่า | revision 11 | https://wiki.infonayoo.co/doc/top-ads-DmtrQp02OU
+- 16a28db6-482e-4d9b-96d2-848e21db90f9 | BA Nayoo / Nayoo center / NaYoo Center — สำเนา Google Docs / Top ads มือสอง | revision 11 | https://wiki.infonayoo.co/doc/top-ads-3nMBAGxInJ
+- 8e8d703a-021a-46ee-8d2d-626bfa27f505 | BA Nayoo / Nayoo center / NaYoo Center — สำเนา Google Docs / Top ads โปรไฟล์นายหน้า | revision 6 | https://wiki.infonayoo.co/doc/top-ads-KLgI7zPPLf
+- a3004394-08d3-464b-9462-c9dd710e0856 | BA Nayoo / Nayoo center / NaYoo Center — สำเนา Google Docs / top ads โปรไฟล์ NPA | revision 6 | https://wiki.infonayoo.co/doc/top-ads-npa-p9AlvCY7wE
+- 753ed968-7d29-4d81-af3c-2c61e2d96057 | BA Nayoo / Nayoo center / NaYoo Center — สำเนา Google Docs / Top ads ใบประกาศมือ 1 center / BO | revision 3 | https://wiki.infonayoo.co/doc/bo-BvCHRTvvlF
+- c2097200-bcc5-4c09-b92b-615777c33a4a | BA Nayoo / Nayoo center / NaYoo Center — สำเนา Google Docs / Super top ads ใบประกาศมือ 1 / backoffice | revision 3 | https://wiki.infonayoo.co/doc/backoffice-moQWnIyVlW
+- 94467e9d-4735-4cce-a8ea-ca06c3486a3f | BA Nayoo / Nayoo center / NaYoo Center — สำเนา Google Docs / ฟีเจอร์ดันใบประกาศ center | revision 6 | https://wiki.infonayoo.co/doc/center-d1LCfKeJ4j
+- c2dc8f22-65c0-45dd-9484-abd86b108526 | BA Nayoo / นิติ๊ ศูนย์กลางทีมและชุดติดตั้ง / สมอง Wiki น่าอยู่ — แผนที่เอกสารและต้นฉบับ | revision 3 | https://wiki.infonayoo.co/doc/wiki-e9PNcNeKvD
+- 84b15030-9d08-44a3-ae01-15572e16d26e | BA Nayoo / Nayoo center / NaYoo Center — สำเนา Google Docs / Nayoo center / ฟีลเตอร์จังหวัดและ center | revision 7 | https://wiki.infonayoo.co/doc/center-U8sPlpkmhz
+- 82850f3b-efe4-4463-8e7e-64e373dea79f | BA Nayoo / Nayoo center / NaYoo Center — สำเนา Google Docs / ทรัพย์เด็ด center | revision 14 | https://wiki.infonayoo.co/doc/center-IASiuJ0Eqm
+- 014f4261-ab98-409b-8992-c89d6eb2bf01 | BA Nayoo / Nayoo center / NaYoo Center — สำเนา Google Docs / Nayoo center / navbar center | revision 5 | https://wiki.infonayoo.co/doc/navbar-center-15nWSzHsoO
+- d25cb5d6-ec12-48ae-af27-ff2e8f8d8fb3 | BA Nayoo / ฟีด Nayoo v.2 สำเนา Google Docs | revision 5 | https://wiki.infonayoo.co/doc/nayoo-v2-google-docs-CEnsldy7GM
+- db94d3ea-53fc-490c-9726-b45a25f725c6 | BA Nayoo / ฟีด Nayoo v.2 สำเนา Google Docs / ลงฟีด CS โปรไฟล์รับสร้างบ้าน | revision 3 | https://wiki.infonayoo.co/doc/cs-jt1UCuc2Hc
+- d2e41bdb-d0ec-46d4-ba2a-a486578cb047 | BA Nayoo / ฟีด Nayoo v.2 สำเนา Google Docs / ลงฟีด CS จัดการมือ 1 | revision 7 | https://wiki.infonayoo.co/doc/cs-1-7vGsGExq9z
+- b6882ad7-6454-496d-ba79-6d43f4e3d117 | BA Nayoo / นิติ๊ ศูนย์กลางทีมและชุดติดตั้ง | revision 5 | https://wiki.infonayoo.co/doc/4liz4li04liv4li04lmkioc4qoc4uec4mec4ouc5joc4gec4pec4suc4hc4lc4tec4oec5gec4pec4soc4iuc4uoc4loc4lec4toc4loc4lec4sec5iec4hw-MPUp4fY0PL
+- 86fd3ac1-6591-4e21-a913-46db8d7ddaa4 | BA Nayoo / บ้านพร้อม — สำเนา Google Docs | revision 6 | https://wiki.infonayoo.co/doc/google-docs-NyvfScZ7Cw
+- 3ce020c2-efd4-485d-b953-186ce5566c9d | BA Nayoo / บ้านพร้อม — สำเนา Google Docs / ระบบจัดใบประกาศ cs | revision 9 | https://wiki.infonayoo.co/doc/cs-VRsuRdm9rN
+- 102e4a9b-45d9-4f34-896a-fbce11929469 | BA Nayoo / บ้านพร้อม — สำเนา Google Docs / ระบบจัดการสัญญา / จัดการใบประกาศ bo ต่ออายุ | revision 10 | https://wiki.infonayoo.co/doc/bo-batBOJieyj
+- d7f8136f-85dc-4147-bd47-da582501b3cf | BA Nayoo / บ้านพร้อม — สำเนา Google Docs / ระบบจัดการสัญญา / จัดการประกาศ CS | revision 8 | https://wiki.infonayoo.co/doc/cs-GwnqXgiSSE
+- 1d817ded-76bd-4f63-84c1-4df9d1504f19 | BA Nayoo / บ้านพร้อม — สำเนา Google Docs / ระบบจัดการสัญญา / สร้างมือ 2  cs | revision 8 | https://wiki.infonayoo.co/doc/2-cs-WJjva0aFO1
+- c7a0303e-b168-4683-b835-31f43cacff63 | BA Nayoo / บ้านพร้อม — สำเนา Google Docs / ระบบจัดการสัญญา / สร้างใบประกาศ Bo | revision 8 | https://wiki.infonayoo.co/doc/bo-9nBMOCcgvO
+- 551fb043-972d-4282-bcf9-5eea749ac494 | BA Nayoo / บ้านพร้อม — สำเนา Google Docs / requirement ทรัพย์ดี / สร้างใบโคลน bo | revision 9 | https://wiki.infonayoo.co/doc/bo-f4LgWAifD3
+- 89629cab-0bbb-4fc2-b0d8-bfde0d9290c3 | BA Nayoo / บ้านพร้อม — สำเนา Google Docs / requirement ทรัพย์ดี / สร้างใบประกาศ console | revision 9 | https://wiki.infonayoo.co/doc/console-KaCTs4pOru
+- 017ec0a9-cf8b-4f07-92cb-7d13db1a0bb4 | BA Nayoo / บ้านพร้อม — สำเนา Google Docs / requirement ทรัพย์ดี / รายชื่อ CS มือสอง | revision 9 | https://wiki.infonayoo.co/doc/cs-iDemlS6l0r
+- 4e862c18-2a8b-4374-86ca-abc875bcfd92 | BA Nayoo / บ้านพร้อม — สำเนา Google Docs / requirement ทรัพย์ดี / จัดการใบประกาศ CS | revision 9 | https://wiki.infonayoo.co/doc/cs-OAVAvmBvNQ
+- 190539d0-91d1-4f84-9fe8-83c8653df3b3 | BA Nayoo / บ้านพร้อม — สำเนา Google Docs / requirement ทรัพย์ดี / สร้างใบมาสเตอร์ BO | revision 9 | https://wiki.infonayoo.co/doc/bo-NdEAnWXcNb
+- efb4968a-b65b-4e93-9ba2-4408f9b8ad5a | BA Nayoo / บ้านพร้อม — สำเนา Google Docs / ระบบจัดการสัญญา / แก้ไข auto apporve | revision 8 | https://wiki.infonayoo.co/doc/auto-apporve-lap1yOy886
+- d83c39ba-ac20-4e2c-8f8e-e22336bfae72 | BA Nayoo / บ้านพร้อม — สำเนา Google Docs / ระบบจัดการสัญญา / จัดการนายหน้า | revision 6 | https://wiki.infonayoo.co/doc/4lii4lix4liu4lib4liy4lij4liz4liy4lii4lir4liz4lmj4liy-w2yBu04Iek
+- 22c3dbc9-7c80-4e6f-b151-888403a04fd2 | BA Nayoo / บ้านพร้อม — สำเนา Google Docs / requirement ทรัพย์ดี / รายชื่อ ฺBO มือสอง | revision 7 | https://wiki.infonayoo.co/doc/bo-HAoduVu3HD
+- f44e8324-e3a8-42c0-998f-3f49345ff586 | BA Nayoo / บ้านพร้อม — สำเนา Google Docs / requirement แก้ไขใบประกาศ | revision 5 | https://wiki.infonayoo.co/doc/requirement-bV1KogToDV
+- 4e6673b2-417f-43e2-a9e4-1266d69d974e | BA Nayoo / บ้านพร้อม — สำเนา Google Docs / ระบบจัดการสัญญา / ระบบจัดการเอกสาร | revision 6 | https://wiki.infonayoo.co/doc/4lij4liw4lia4lia4lii4lix4liu4lib4liy4lij4lma4lit4lib4liq4liy4lij-L68mWIssfr
+- eee981b1-c879-4d20-a63b-ab62a6f4732d | BA Nayoo / บ้านพร้อม — สำเนา Google Docs / ระบบจัดการสัญญา | revision 5 | https://wiki.infonayoo.co/doc/4lij4liw4lia4lia4lii4lix4liu4lib4liy4lij4liq4lix4lin4lin4liy-OZdx3aEnau
+- 298578b6-080d-45bc-bd4c-41a59bb4797e | BA Nayoo / บ้านพร้อม — สำเนา Google Docs / requirement ทรัพย์ดี / ัจัดการใบโคลน BO | revision 5 | https://wiki.infonayoo.co/doc/bo-VMni2MssCp
+- 8e82afe3-8cc1-4f6d-9540-a0b89c49e734 | BA Nayoo / บ้านพร้อม — สำเนา Google Docs / requirement ทรัพย์ดี / สร้างใบประกาศ console / แสดงผลเฟด 2 | revision 5 | https://wiki.infonayoo.co/doc/2-jpcaeKuRrP
+- 1f0266bc-feba-421f-83d9-aec942d19b40 | BA Nayoo / บ้านพร้อม — สำเนา Google Docs / requirement ทรัพย์ดี / สร้างใบประกาศ console / auto approve ใบประกาศ | revision 5 | https://wiki.infonayoo.co/doc/auto-approve-Ac5hgl7M1I
+- e3541ab6-ef8b-44b0-90ac-687680939c20 | BA Nayoo / บ้านพร้อม — สำเนา Google Docs / requirement ทรัพย์ดี / สถิติใบประกาศมือ 2 CS | revision 5 | https://wiki.infonayoo.co/doc/2-cs-9ChrJtlwhX
+- abb20188-e387-43bb-8b85-456b00c9a39b | BA Nayoo / บ้านพร้อม — สำเนา Google Docs / requirement ทรัพย์ดี / จัดการมาสเตอร์ BO | revision 5 | https://wiki.infonayoo.co/doc/bo-QL7Gdncpck
+- 16f13fe9-c833-48f6-84cf-fbb209d5813f | BA Nayoo / บ้านพร้อม — สำเนา Google Docs / requirement ทรัพย์ดี / backoffice ทรัพย์เด็ดคัดพิเศษ | revision 5 | https://wiki.infonayoo.co/doc/backoffice-fOYwajNEju
+- 4082e7d0-26f2-4771-9fd0-a1afe065b812 | BA Nayoo / บ้านพร้อม — สำเนา Google Docs / requirement ทรัพย์ดี / แสดงผลเฟด 1 / ฟีลเตอร์ | revision 4 | https://wiki.infonayoo.co/doc/4lif4li14lil4lma4liv4lit4lij4lmm-ANAZ3ePPrm
+- d821e95d-b17e-4984-9be2-0157d98404dd | BA Nayoo / บ้านพร้อม — สำเนา Google Docs / requirement ทรัพย์ดี / แสดงผลเฟด 1 | revision 7 | https://wiki.infonayoo.co/doc/1-GSW8j6BYIh
+- 6bd02ef1-9963-499d-84a4-783be1a24593 | BA Nayoo / บ้านพร้อม — สำเนา Google Docs / requirement ทรัพย์ดี | revision 8 | https://wiki.infonayoo.co/doc/requirement-w3ObNn5wI7
+- 89adde09-121a-4d93-8316-7ebe47ee18fd | BA Nayoo / งานที่ต้องแก้ไขหลังบ้านตอนขึ้น 3 ภาษา | revision 49 | https://wiki.infonayoo.co/doc/3-BE93ygYpE1
+- 1eec0fae-05c3-4453-a631-981ea3ad0412 | BA Nayoo / ฟอร์มลงทะเบียนในรูปภาพ / การส่งไลน์ 2.2 version ใหม่ | revision 28 | https://wiki.infonayoo.co/doc/22-version-o7NtjoP94b
+- 1c02def3-0481-47b8-a5f6-a0cee49755ee | BA Nayoo / ฟอร์มลงทะเบียนในรูปภาพ | revision 48 | https://wiki.infonayoo.co/doc/4lif4lit4lij4lmm4lih4lil4lih4lix4liw4lma4lia4li14lii4liz4lmd4liz4lij4li54lib4lig4liy4lie-Vwe2eSQcT8
+- d3063971-8560-45c7-bed1-f8b842863621 | BA Nayoo / Nayoo center / NaYoo Center — สำเนา Google Docs / ลงทะเบียนในแกลเลอรีใบประกาศ | revision 9 | https://wiki.infonayoo.co/doc/4lil4lih4lix4liw4lma4lia4li14lii4liz4lmd4liz4lmb4lib4lil4lma4lil4lit4lij4li14lmd4lia4lib4lij4liw4lib4liy4lio-8f3N2CCPed
+- 5093dca1-c4e4-4d74-9e8d-7f146ef1098b | BA Nayoo / Nayoo center / NaYoo Center — สำเนา Google Docs / Top ads มือสอง / การแสดง | revision 4 | https://wiki.infonayoo.co/doc/4lib4liy4lij4lmb4liq4liu4lih-pm8zgU8F3x
+- 9554b563-eb64-49aa-8dd7-0471a71a56d2 | BA Nayoo / NAYOO 2.1 / Feed 2.1 / รับสร้างบ้าน | revision 13 | https://wiki.infonayoo.co/doc/4lij4lix4lia4liq4lij4lmj4liy4lih4lia4lmj4liy4liz-GMh2uaDXu0
+- 262d44c8-274a-47b2-95f9-b25d38d433b1 | BA Nayoo / NAYOO 2.1 / bo เฟดใหม่ new ver | revision 6 | https://wiki.infonayoo.co/doc/bo-new-ver-WRsWxwHtbM
+- a0bb10cd-ee8f-4b67-9d96-40fa0cfd5ca9 | BA Nayoo / NAYOO 2.1 / bo เปิดใหม่ new ver | revision 6 | https://wiki.infonayoo.co/doc/bo-new-ver-pKBXPd7dSD
+- d2472108-96bc-4e83-8465-9ba0eea0dc2c | BA Nayoo / NAYOO 2.1 / การเพิ่มใบประกาศที่เข้าร่วมพาร์ทเนอร์ | revision 6 | https://wiki.infonayoo.co/doc/4lib4liy4lij4lma4lie4li04lmi4lih4lmd4lia4lib4lij4liw4lib4liy4lio4lix4li14lmi4lma4lic4lmj4liy4lij4lmi4lin4lih4lie4liy4lij4lmm4lix4lma4liz4lit4lij4lmm-fs4rTGcyum
+- 40432f17-3471-44ac-9e5d-a919a60fc764 | BA Nayoo / NAYOO 2.1 / จัดการคูปอง/โค้ด/ใบประกาศ ที่เพิ่มในโปรพาร์ทเนอร์ | revision 6 | https://wiki.infonayoo.co/doc/4lii4lix4liu4lib4liy4lij4lie4li54lib4lit4lihlc5guc4hoc5iec4lcguypgujrgujvgukpguldguihgullgukgg4lix4li14lmi4lma4lie4li04lmi4lih4lmd4liz4lmc4lib4lij4lie4liy4lij4lmm4lix4lma4liz4lit4lij4lmm-UD2avnXtXM
+- 3cad08f6-e82a-434f-b7bc-3304f69ca8a5 | BA Nayoo / NAYOO 2.1 / Notification | revision 4 | https://wiki.infonayoo.co/doc/notification-EKbDnkcqh9
+- 754c7c91-1555-478f-b67a-6c40d298c175 | BA Nayoo / NAYOO 2.1 / Line 2.1 | revision 4 | https://wiki.infonayoo.co/doc/line-21-tejxoDhjqN
+- 40876c38-84b1-48d6-b032-6ed5f352dadc | BA Nayoo / NAYOO 2.1 / แก้ไขใบประกาศมือ 2 | revision 6 | https://wiki.infonayoo.co/doc/2-guFKFBK7mv
+- 69edbc12-adf4-4fa0-a89c-34235835a11b | BA Nayoo / NAYOO 2.1 / หน้าใบประกาศ ปรับปรุงคำ | revision 6 | https://wiki.infonayoo.co/doc/4lir4liz4lmj4liy4lmd4lia4lib4lij4liw4lib4liy4lioioc4mc4oc4sec4muc4mc4oc4uoc4hc4hoc4sw-GuPjAc1xf5
+- 5d72a9e8-2ee3-47e1-b438-40502e74cdf6 | BA Nayoo / NAYOO 2.1 / ปักหมุดติดดาวนายหน้า | revision 4 | https://wiki.infonayoo.co/doc/4lib4lix4lib4lir4lih4li44liu4liv4li04liu4liu4liy4lin4liz4liy4lii4lir4liz4lmj4liy-w5Ssgwuv2b
+- 362f40b0-78ed-44c7-b283-ad4cb913f493 | BA Nayoo / NAYOO 2.1 / Top ads นายหน้า | revision 4 | https://wiki.infonayoo.co/doc/top-ads-cuElZGvia1
+- ae74bf45-ea1b-4beb-be04-698dc6f19462 | BA Nayoo / NAYOO 2.1 / Feed 2.1 / โครงการมือ 1 | revision 6 | https://wiki.infonayoo.co/doc/1-EhJ20a4GRE
+- 0dde7257-a909-4314-bd44-8e29b5799255 | BA Nayoo / NAYOO 2.1 / Feed 2.1 | revision 4 | https://wiki.infonayoo.co/doc/feed-21-QAOO2333O8
+- 6ba87971-cbad-4518-ba21-1c05e72a7b9f | BA Nayoo / NAYOO 2.1 / ระบบ BO พรีเมี่ยม | revision 4 | https://wiki.infonayoo.co/doc/bo-G1ztLLMez9
+- dc86140b-340e-4cf7-88ca-e5b2009512a8 | BA Nayoo / NAYOO 2.1 / ระบบ insert card  update / การแสดงผลฝั่งหน้าอยู่ | revision 6 | https://wiki.infonayoo.co/doc/4lib4liy4lij4lmb4liq4liu4lih4lic4lil4lid4lix4lmi4lih4lir4liz4lmj4liy4lit4lii4li54lmi-O6d8y0vtfF
+- 0eb1c94a-1aaa-4bb6-b218-220c4a36c51b | BA Nayoo / NAYOO 2.1 / อื่นๆ | revision 4 | https://wiki.infonayoo.co/doc/4lit4li34lmi4liz4lmg-ow3QcfDn82
+- a25ed844-6bc5-46b6-9084-ab8fc254b7ff | BA Nayoo / NAYOO 2.1 / รับสร้างบ้าน. | revision 4 | https://wiki.infonayoo.co/doc/4lij4lix4lia4liq4lij4lmj4liy4lih4lia4lmj4liy4lizlg-GVC2qOU7aE
+- 8c4fe82c-45f1-4661-b966-3d495261788f | BA Nayoo / NAYOO 2.1 / มือสอง | revision 4 | https://wiki.infonayoo.co/doc/4lih4li34lit4liq4lit4lih-9JxbVWPcYE
+- ab3a174a-b9eb-4aa2-8d87-88121d4679dc | BA Nayoo / NAYOO 2.1 / มือ 1 | revision 4 | https://wiki.infonayoo.co/doc/1-JaaZtBqufy
+- db6b96ff-0b96-4074-a966-e410ed724901 | BA Nayoo / NAYOO 2.1 / ประชุม wallk-in / เปิดใหม่ walk-in | revision 4 | https://wiki.infonayoo.co/doc/walk-in-Or1Y519H5Y
+- 9b4643b2-5ef2-43a6-be7c-191cba342264 | BA Nayoo / NAYOO 2.1 / ประชุม wallk-in / เฟดใหม่ walk-in | revision 4 | https://wiki.infonayoo.co/doc/walk-in-afGZ6ZyX0R
+- 49779061-04ef-4643-b0ee-e2a868bedee2 | BA Nayoo / NAYOO 2.1 / ประชุม wallk-in / การส่ง sms | revision 4 | https://wiki.infonayoo.co/doc/sms-QMM1PCMsNS
+- f196b462-5d05-4400-89ea-49522a2bb1ac | BA Nayoo / NAYOO 2.1 / ประชุม wallk-in / การแสดงผลการ์ดwak-in | revision 4 | https://wiki.infonayoo.co/doc/wak-in-MbZySpOxrv
+- 487ee55f-9d87-4ef3-920d-db2db2d3e3db | BA Nayoo / NAYOO 2.1 / ประชุม wallk-in / QR | revision 6 | https://wiki.infonayoo.co/doc/qr-bV3l5vnQqy
+- a1344e4e-82c9-45f8-8c7c-2bdeaa3b715b | BA Nayoo / NAYOO 2.1 / ประชุม wallk-in / การส่งรายชื่อ walk-in | revision 4 | https://wiki.infonayoo.co/doc/walk-in-aX6ankXAHc
+- a36315eb-29a5-4e47-9252-7e5c8236a4d1 | BA Nayoo / NAYOO 2.1 / ประชุม wallk-in / คูปองของฉัน | revision 6 | https://wiki.infonayoo.co/doc/4lie4li54lib4lit4lih4lic4lit4lih4lij4lix4liz-KjjaSM0ZCT
+- 5dc07c61-b604-49e8-8da7-5193ccad1e7a | BA Nayoo / NAYOO 2.1 / ประชุม wallk-in / หน้ารายละเอียดใบประกาศ | revision 6 | https://wiki.infonayoo.co/doc/4lir4liz4lmj4liy4lij4liy4lii4lil4liw4lma4lit4li14lii4liu4lmd4lia4lib4lij4liw4lib4liy4lio-eOviDIb06v
+- 02281380-4bc0-4c1a-9d4f-5db65c669b8e | BA Nayoo / NAYOO 2.1 / ประชุม wallk-in / console เพิ่มคูปอง | revision 4 | https://wiki.infonayoo.co/doc/console-uHBV71Kug4
+- 46e90af8-a1ad-4874-9bb7-d7cc7b8750e0 | BA Nayoo / NAYOO 2.1 / ประชุม wallk-in / backoffice walk in | revision 6 | https://wiki.infonayoo.co/doc/backoffice-walk-in-VQzekRa5vL
+- 189d167b-a61b-410f-bcfa-700d5a0540e9 | BA Nayoo / NAYOO 2.1 / ประชุม wallk-in / แคมเปญ walk-in | revision 6 | https://wiki.infonayoo.co/doc/walk-in-yOWMIUbPc2
+- ba993602-ed8d-47b6-a659-8d88d5e2a5d6 | BA Nayoo / NAYOO 2.1 / รายชื่อแคมเปญใหม่ | revision 4 | https://wiki.infonayoo.co/doc/4lij4liy4lii4lik4li34lmi4lit4lmb4lie4lih4lma4lib4lin4lmd4lir4lih4lmi-CCQZ7zDNHK
+- 7f279509-4dcb-414a-9efa-d9fa92de58a0 | BA Nayoo / NAYOO 2.1 / ฟีลเตอร์ v2.1 แคมเปญและwalk-in | revision 4 | https://wiki.infonayoo.co/doc/v21-walk-in-OGx37czrhQ
+- 0472ad22-a566-4c68-88d9-4f06f223e23b | BA Nayoo / NAYOO 2.1 / Requirement ประชุม / เฟด 2 | revision 4 | https://wiki.infonayoo.co/doc/2-WL03sXfcMv
+- 409e5a19-37bb-4f1c-9d8a-376f7d5a6791 | BA Nayoo / NAYOO 2.1 / Requirement ประชุม / หน้าHome จังหวัด / เปิดใหม่ | revision 6 | https://wiki.infonayoo.co/doc/4lma4lib4li04liu4lmd4lir4lih4lmi-rb9zmH20H1
+- 5fb87ca4-1a04-4678-936c-cc90acdc4f13 | BA Nayoo / NAYOO 2.1 / Requirement ประชุม / หน้าHome จังหวัด / เฟดใหม่ | revision 6 | https://wiki.infonayoo.co/doc/4lma4lif4liu4lmd4lir4lih4lmi-c9DeIxpa5L
+- 19965f23-0d3a-4c55-ba68-eca717ee0173 | BA Nayoo / NAYOO 2.1 / Requirement ประชุม / หน้าHome จังหวัด / console video โปร | revision 6 | https://wiki.infonayoo.co/doc/console-video-FsxsbjdE1n
+- da0e987f-1677-45de-9dd8-46db3e8318e4 | BA Nayoo / NAYOO 2.1 / Requirement ประชุม / หน้าHome จังหวัด / การส่งรายชื่ออีเว้นท์ | revision 4 | https://wiki.infonayoo.co/doc/4lib4liy4lij4liq4lmi4lih4lij4liy4lii4lik4li34lmi4lit4lit4li14lma4lin4lmj4liz4lix4lmm-qH614ClU2C
+- 63bf81e9-289a-4fbd-bbf6-dc9f9e668256 | BA Nayoo / NAYOO 2.1 / Requirement ประชุม / หน้าHome จังหวัด / ใบประกาศหมวดหมู่ที่ไม่เข้าร่วม | revision 4 | https://wiki.infonayoo.co/doc/4lmd4lia4lib4lij4liw4lib4liy4lio4lir4lih4lin4liu4lir4lih4li54lmi4lix4li14lmi4lme4lih4lmi4lma4lic4lmj4liy4lij4lmi4lin4lih-PTAiaEqFsK
+- bd3aae32-56f8-444b-9359-076b591773c5 | BA Nayoo / NAYOO 2.1 / Requirement ประชุม / หน้าHome จังหวัด / ใบประกาศพรีเมี่ยม | revision 4 | https://wiki.infonayoo.co/doc/4lmd4lia4lib4lij4liw4lib4liy4lio4lie4lij4li14lma4lih4li14lmi4lii4lih-V0pvVOiJni
+- 4d20959b-23f8-434e-840a-45f21f935f1d | BA Nayoo / NAYOO 2.1 / Requirement ประชุม / หน้าHome จังหวัด / ใบประกาศที่ไม่เข้าร่วม | revision 6 | https://wiki.infonayoo.co/doc/4lmd4lia4lib4lij4liw4lib4liy4lio4lix4li14lmi4lme4lih4lmi4lma4lic4lmj4liy4lij4lmi4lin4lih-h4StvecWPz
+- 45a69fef-f19c-46f6-b050-58edada332e7 | BA Nayoo / NAYOO 2.1 / Requirement ประชุม / หน้าHome จังหวัด / แบรนด์โครงการ | revision 6 | https://wiki.infonayoo.co/doc/4lmb4lia4lij4liz4liu4lmm4lmc4lie4lij4lih4lib4liy4lij-i0cGz0ur4q
+- b066bba5-c5c7-4ba6-9a80-7692c8959fb4 | BA Nayoo / NAYOO 2.1 / Requirement ประชุม / หน้าHome จังหวัด / แก้ไขรับส้ร้างบ้าน | revision 6 | https://wiki.infonayoo.co/doc/4lmb4lib4lmj4lme4lic4lij4lix4lia4liq4lmj4lij4lmj4liy4lih4lia4lmj4liy4liz-LO2R8Erseb
+- 783b057f-0cf3-4386-bed6-a3dab0f44560 | BA Nayoo / NAYOO 2.1 / Requirement ประชุม / หน้าHome จังหวัด / บริษัทรับสร้างบ้าน | revision 6 | https://wiki.infonayoo.co/doc/4lia4lij4li04lip4lix4lix4lij4lix4lia4liq4lij4lmj4liy4lih4lia4lmj4liy4liz-2QYU8rwZwo
+- 8e330f59-876e-4d9e-b68c-9697b9d9c1b5 | BA Nayoo / NAYOO 2.1 / Requirement ประชุม / หน้าHome จังหวัด / ใบประกาศเช่า | revision 6 | https://wiki.infonayoo.co/doc/4lmd4lia4lib4lij4liw4lib4liy4lio4lma4lik4lmi4liy-yruuIK3JCm
+- 77b64bd0-3b10-4076-a261-51e96d068057 | BA Nayoo / NAYOO 2.1 / Requirement ประชุม / หน้าHome จังหวัด / แก้ไขแบบบ้าน | revision 6 | https://wiki.infonayoo.co/doc/4lmb4lib4lmj4lme4lic4lmb4lia4lia4lia4lmj4liy4liz-fIMzXv7OLN
+- 1b45d0ad-685f-454a-a978-df87d44a9814 | BA Nayoo / NAYOO 2.1 / Requirement ประชุม / หน้าHome จังหวัด / ใบประกาศแบบบ้าน | revision 6 | https://wiki.infonayoo.co/doc/4lmd4lia4lib4lij4liw4lib4liy4lio4lmb4lia4lia4lia4lmj4liy4liz-5jZweQbEn4
+- bc1f6476-8e69-4cf6-b7a8-d233492896dc | BA Nayoo / NAYOO 2.1 / Requirement ประชุม / หน้าHome จังหวัด / แก้ไขใบประกาศมือ2 | revision 6 | https://wiki.infonayoo.co/doc/2-ERTxO81mRk
+- 3343209c-fd34-461f-aa5d-0273f1d590cf | BA Nayoo / NAYOO 2.1 / Requirement ประชุม / หน้าHome จังหวัด / ใบประกาศมือ 2 | revision 6 | https://wiki.infonayoo.co/doc/2-EqqA6Edn0F
+- 4d741851-704d-4bf2-8611-b0dc97df6737 | BA Nayoo / NAYOO 2.1 / Requirement ประชุม / หน้าHome จังหวัด / แก้ไขใบประกาศมือ 1 | revision 6 | https://wiki.infonayoo.co/doc/1-8S6hHurTf3
+- 917b59af-8d6d-47d6-bd19-15b4e82dbc4f | BA Nayoo / NAYOO 2.1 / Requirement ประชุม / หน้าHome จังหวัด / ใบประกาศมือ 1 | revision 6 | https://wiki.infonayoo.co/doc/1-LzF4pfBE8I
+- 05bd6033-eb1f-4f4d-a216-71480d06c917 | BA Nayoo / NAYOO 2.1 / Requirement ประชุม / หน้าHome จังหวัด / เสิร์ชแบบบ้าน บริษัท | revision 6 | https://wiki.infonayoo.co/doc/4lma4liq4li04lij4lmm4lik4lmb4lia4lia4lia4lmj4liy4lizioc4muc4oc4toc4qec4sec4lw-V4sa0adPvp
+- 17bc5f13-5260-45aa-872c-d26c63b5f3bc | BA Nayoo / NAYOO 2.1 / Requirement ประชุม / หน้าHome จังหวัด / เสิร์ชเช่า | revision 6 | https://wiki.infonayoo.co/doc/4lma4liq4li04lij4lmm4lik4lma4lik4lmi4liy-UQJODgpDoJ
+- 08a4b360-5f08-4b89-92ae-d54c92d0be54 | BA Nayoo / NAYOO 2.1 / Requirement ประชุม / หน้าHome จังหวัด / แก้ไขมือสอง | revision 6 | https://wiki.infonayoo.co/doc/4lmb4lib4lmj4lme4lic4lih4li34lit4liq4lit4lih-KApNL3dmSM
+- a7def8fa-8733-4d84-845f-9bbb3a94815a | BA Nayoo / NAYOO 2.1 / Requirement ประชุม / หน้าHome จังหวัด / เสิร์ชมือใบประกาศมือ 2 | revision 6 | https://wiki.infonayoo.co/doc/2-12kmB2EgVo
+- f2ce3a4b-3965-4762-b798-91d3c3cd1005 | BA Nayoo / NAYOO 2.1 / Requirement ประชุม / หน้าHome จังหวัด / แก้ไข เสิร์ชมือ 1 | revision 6 | https://wiki.infonayoo.co/doc/1-s4PUn4ERv7
+- 2545d8aa-b9da-4920-a82c-053fba380238 | BA Nayoo / NAYOO 2.1 / Requirement ประชุม / หน้าHome จังหวัด / เสิร์ชมือ 1ใบประกาศและหน้าเสิร์ชโปรไฟล์ | revision 6 | https://wiki.infonayoo.co/doc/1-mLZFQhgGg7
+- 6ac4eb40-30e7-45c1-a6d5-b164fac584ba | BA Nayoo / NAYOO 2.1 / Requirement ประชุม / หน้าHome จังหวัด / EP- change | revision 4 | https://wiki.infonayoo.co/doc/ep-change-ab2LaeyD3b
+- dbeea058-7bd7-41c0-9911-cd2805ba4b5e | BA Nayoo / NAYOO 2.1 / Requirement ประชุม / หน้าHome จังหวัด | revision 6 | https://wiki.infonayoo.co/doc/home-zvqXFbZxwH
+- 50febcbf-b2cd-45ca-b53b-6b8e323535e3 | BA Nayoo / NAYOO 2.1 / Requirement ประชุม / backoffice event online | revision 6 | https://wiki.infonayoo.co/doc/backoffice-event-online-f6bD0nRGOZ
+- 75575acf-0e81-4a05-8138-b2df2479f0b8 | BA Nayoo / NAYOO 2.1 / Requirement ประชุม / event online landing page / แก้ไข แคมเปญ landing page 2.1 | revision 6 | https://wiki.infonayoo.co/doc/landing-page-21-S0enBdfXGh
+- a639710e-257b-4100-8a95-48f867db2ece | BA Nayoo / NAYOO 2.1 / Requirement ประชุม / event online landing page | revision 6 | https://wiki.infonayoo.co/doc/event-online-landing-page-0YXvNZRfUY
+- 96755706-eac7-4a87-8cd9-1375ff18b93e | BA Nayoo / NAYOO 2.1 / Requirement ประชุม | revision 8 | https://wiki.infonayoo.co/doc/requirement-frGhaE2mba
+- 7a9af1ca-f34f-4d8f-82a2-95ee8c237072 | BA Nayoo / NAYOO 2.1 / ระบบ insert card  update | revision 4 | https://wiki.infonayoo.co/doc/insert-card-update-tLi39bhzge
+- 0ead833e-9f5b-47e0-8846-24d88c742fb5 | BA Nayoo / NAYOO 2.1 / ประชุม wallk-in / EP- change - | revision 4 | https://wiki.infonayoo.co/doc/ep-change-eU1Rptw9RS
+- cfafd39a-8420-4323-bd82-e704975a2665 | BA Nayoo / NAYOO 2.1 / ประชุม wallk-in | revision 4 | https://wiki.infonayoo.co/doc/wallk-in-BpgYk4Fe3y
+- 15515794-b00d-4705-8909-c352043b895b | BA Nayoo / NAYOO 2.1 | revision 4 | https://wiki.infonayoo.co/doc/nayoo-21-OBsTAazwZ7
+- b91981fd-bc81-4d84-b60c-ffcfb43559ae | BA Nayoo / NAYOO V2 BRD / VR 360 รับสร้างบ้าน | revision 4 | https://wiki.infonayoo.co/doc/vr-360-53WvBpvD0G
+- 1d42481c-621c-4935-a31a-7c2e9e6402e3 | BA Nayoo / NAYOO V2 BRD / Tab 47 | revision 4 | https://wiki.infonayoo.co/doc/tab-47-54ChNGgMQf
+- 1c88d1da-1226-4a67-a8ae-cb82accba06e | BA Nayoo / NAYOO V2 BRD / ไลน์ 2.1 | revision 4 | https://wiki.infonayoo.co/doc/21-uxgx11Qh2e
+- bb6cd6aa-a610-43cd-8fce-08799e08af01 | BA Nayoo / NAYOO V2 BRD / ฟีด 2.1 | revision 4 | https://wiki.infonayoo.co/doc/21-Fv7DAcT3vx
+- ccca1b00-2865-4a23-a593-7b671f0ce73d | BA Nayoo / NAYOO V2 BRD / หน้าสรุปผลข้อมูล | revision 4 | https://wiki.infonayoo.co/doc/4lir4liz4lmj4liy4liq4lij4li44lib4lic4lil4lic4lmj4lit4lih4li54lil-Vw2hfJVAnb
+- 29c09e2b-a4bc-49b8-a204-fac362b93921 | BA Nayoo / NAYOO V2 BRD / Product เปิดใหม่ เฟดใหม่ / ฺBo เปิดใหม่ | revision 3 | https://wiki.infonayoo.co/doc/bo-Fp8IjO1QcZ
+- 7293e4d1-e614-4103-a631-4c7f87e39c9a | BA Nayoo / NAYOO V2 BRD / Product เปิดใหม่ เฟดใหม่ / ใบประกาศเปิดใหม่่ | revision 3 | https://wiki.infonayoo.co/doc/4lmd4lia4lib4lij4liw4lib4liy4lio4lma4lib4li04liu4lmd4lir4lih4lmi4lmi-ftJ5wafZZT
+- 6990c65b-10b2-4485-bff4-80cd33056e4b | BA Nayoo / NAYOO V2 BRD / Product เปิดใหม่ เฟดใหม่ | revision 4 | https://wiki.infonayoo.co/doc/product-Pg71nuN4Of
+- 65c7319e-b27e-4866-a469-14ad99c28c0b | BA Nayoo / NAYOO V2 BRD / Product  BO / Insert card / การแสดงผล inset card | revision 4 | https://wiki.infonayoo.co/doc/inset-card-ZfqMSI7wmp
+- 6fff566a-25d4-441e-be4e-6867fa35c9a8 | BA Nayoo / NAYOO V2 BRD / Product  BO / Insert card | revision 4 | https://wiki.infonayoo.co/doc/insert-card-8bZkRHJL5l
+- 6ae62ac4-d27e-49f6-bed0-ac0ab831bdd4 | BA Nayoo / NAYOO V2 BRD / Product  BO / หน้าลงทะเบียน | revision 4 | https://wiki.infonayoo.co/doc/4lir4liz4lmj4liy4lil4lih4lix4liw4lma4lia4li14lii4liz-0NcA6YZsFd
+- f22c9480-30b9-47c1-bb63-ffc6b1b771eb | BA Nayoo / NAYOO V2 BRD / Product  BO / Top ads นายหน้า | revision 4 | https://wiki.infonayoo.co/doc/top-ads-nmc5e9K6K0
+- 7f0ffe80-b5ac-480a-8749-bd3f39fd74f5 | BA Nayoo / NAYOO V2 BRD / Product  BO / ปักหมุดนายหน้า | revision 4 | https://wiki.infonayoo.co/doc/4lib4lix4lib4lir4lih4li44liu4liz4liy4lii4lir4liz4lmj4liy-WUVXbwOXOH
+- 4bf2a8b1-4936-4a31-a84f-af747e5bd6a3 | BA Nayoo / NAYOO V2 BRD / Product  BO / เอกสารและการรับรอง | revision 4 | https://wiki.infonayoo.co/doc/4lma4lit4lib4liq4liy4lij4lmb4lil4liw4lib4liy4lij4lij4lix4lia4lij4lit4lih-yTawMHJkhA
+- a2e5d3ab-7338-4986-9067-a367780f5320 | BA Nayoo / NAYOO V2 BRD / Product  BO / แถบสื่อสาร | revision 4 | https://wiki.infonayoo.co/doc/4lmb4liw4lia4liq4li34lmi4lit4liq4liy4lij-e7koSUWmg8
+- f5b4f988-d8b0-4daf-8b23-c0460c0987fa | BA Nayoo / NAYOO V2 BRD / Product  BO / pop up ติดตาม | revision 4 | https://wiki.infonayoo.co/doc/pop-up-pl1IS26LPz
+- 6b8094f8-4ad0-4cdb-93e2-d1f521ff991e | BA Nayoo / NAYOO V2 BRD / Product  BO / ใบประกาศพรีรับสร้าง | revision 4 | https://wiki.infonayoo.co/doc/4lmd4lia4lib4lij4liw4lib4liy4lio4lie4lij4li14lij4lix4lia4liq4lij4lmj4liy4lih-juH8PoisfO
+- 87b823a6-91de-43fa-b7a2-9550ab9c0804 | BA Nayoo / NAYOO V2 BRD / Product  BO / ใบประกาศพรีเมี่ยม 1 | revision 4 | https://wiki.infonayoo.co/doc/1-KbSIJKoFgn
+- 4e12fc2f-a908-4eb5-8595-e9279b51881b | BA Nayoo / NAYOO V2 BRD / Product  BO / BO review | revision 4 | https://wiki.infonayoo.co/doc/bo-review-VM7O9GcFqe
+- bbe739ce-dd65-4e9a-add5-5d0ee15aa495 | BA Nayoo / NAYOO V2 BRD / Product  BO / BO ปักหมุดรับสร้างบ้าน | revision 4 | https://wiki.infonayoo.co/doc/bo-KJQIX5fPTI
+- b80963f4-eed4-44bd-becb-42c87d7ca1a2 | BA Nayoo / NAYOO V2 BRD / Product  BO / ฺBO ปักหมุดรีวิวมือสอง | revision 4 | https://wiki.infonayoo.co/doc/bo-Oh5tVvAbyw
+- b2e653b0-8c6f-4622-b058-65c7f572427f | BA Nayoo / NAYOO V2 BRD / Product  BO / BO ปักหมุดรีวิวมือ1 | revision 4 | https://wiki.infonayoo.co/doc/bo-1-dRT71P3OCf
+- 33d5711a-76c0-41f3-a541-1a328508c4d1 | BA Nayoo / NAYOO V2 BRD / Product  BO / vr รับสร้างบ้าน | revision 4 | https://wiki.infonayoo.co/doc/vr-d0ss9rd4jZ
+- acad8fe1-9f30-4ccd-a56d-6b36d3fcb088 | BA Nayoo / NAYOO V2 BRD / Product  BO / VR 360 แบรนด์โครงการ | revision 4 | https://wiki.infonayoo.co/doc/vr-360-VgL1mVEJLV
+- 1cdcf5a8-4cb5-422d-897b-5ce6f952f304 | BA Nayoo / NAYOO V2 BRD / Product  BO / Super top ads | revision 4 | https://wiki.infonayoo.co/doc/super-top-ads-Zlavn0PReg
+- 0ab1c05a-7118-4196-8d2c-7b4cb0217193 | BA Nayoo / NAYOO V2 BRD / Product  BO / รับสร้างบ้านชั้นนำ | revision 4 | https://wiki.infonayoo.co/doc/4lij4lix4lia4liq4lij4lmj4liy4lih4lia4lmj4liy4liz4lik4lix4lmj4liz4liz4liz-zJDXcfl4EM
+- 9c31bbd5-35e3-4d98-b521-e9521bbc3696 | BA Nayoo / NAYOO V2 BRD / Product  BO / จัดการ ads แบรนด์โครงการ | revision 4 | https://wiki.infonayoo.co/doc/ads-b0HXath69I
+- 9228704c-cca5-44b8-8344-151e5bb53c31 | BA Nayoo / NAYOO V2 BRD / Product  BO / Top ads รับสร้างบ้าน | revision 4 | https://wiki.infonayoo.co/doc/top-ads-KXem76b4j3
+- 65136246-0817-4ca2-b71c-75b30ea273c8 | BA Nayoo / NAYOO V2 BRD / Product  BO / Top ads มือ 1 2 เช่า | revision 4 | https://wiki.infonayoo.co/doc/top-ads-1-2-9f7BVBAWwt
+- 510945aa-6af1-4f45-a72f-4e141daff6e7 | BA Nayoo / NAYOO V2 BRD / Product  BO | revision 4 | https://wiki.infonayoo.co/doc/product-bo-ByqEts3fDo
+- 9463c5be-4016-4ca3-81e2-4dbf8e438446 | BA Nayoo / NAYOO V2 BRD / รีวิว / รายละเอียดรีวิว | revision 4 | https://wiki.infonayoo.co/doc/4lij4liy4lii4lil4liw4lma4lit4li14lii4liu4lij4li14lin4li04lin-wNArlBEXRa
+- 55d22be5-57aa-4723-9bbd-046806e4b8c4 | BA Nayoo / NAYOO V2 BRD / รีวิว / รวมรีวิว2 จังหวัด | revision 4 | https://wiki.infonayoo.co/doc/2-uCmc4REiYD
+- d1430b85-a0fc-4f28-8658-bfb297f6a2c1 | BA Nayoo / NAYOO V2 BRD / รีวิว / รวมรีวิว1 จังหวัด | revision 4 | https://wiki.infonayoo.co/doc/1-8ZLP1cZEld
+- 3d586e0a-217e-4775-8a34-33633971170a | BA Nayoo / NAYOO V2 BRD / รีวิว / รวมรีวิว center | revision 4 | https://wiki.infonayoo.co/doc/center-8NK2RB4qDo
+- 35296414-9b0f-465a-8848-bbff06d36bc3 | BA Nayoo / NAYOO V2 BRD / รีวิว | revision 4 | https://wiki.infonayoo.co/doc/4lij4li14lin4li04lin-Arh8UxGspl
+- bd7ea73c-af2f-433b-9c27-c9d4579f2f56 | BA Nayoo / NAYOO V2 BRD / รายละเอียดบทความ | revision 4 | https://wiki.infonayoo.co/doc/4lij4liy4lii4lil4liw4lma4lit4li14lii4liu4lia4lix4lie4lin4liy4lih-yiAC96ctJU
+- 7e822a06-be41-4d50-80d1-4258e3e197f1 | BA Nayoo / NAYOO V2 BRD / บทความ / รวมบทความ จังหวัด | revision 4 | https://wiki.infonayoo.co/doc/4lij4lin4lih4lia4lix4lie4lin4liy4lihioc4ioc4sec4hc4qc4pc4sec4la-VMk7l85ZQx
+- 70ae025d-7f07-4e2c-937c-23fcac1347b6 | BA Nayoo / NAYOO V2 BRD / บทความ / รวมบทความ center | revision 4 | https://wiki.infonayoo.co/doc/center-TGnxchnNXD
+- f3f2f642-d24e-4867-adf8-a8131bd5fff7 | BA Nayoo / NAYOO V2 BRD / บทความ | revision 4 | https://wiki.infonayoo.co/doc/4lia4lix4lie4lin4liy4lih-XjB0Lf1nkz
+- 60552be1-b7c8-4660-8dbf-083d3dfd074f | BA Nayoo / NAYOO V2 BRD / Filter / ฟีลเตอร์ profile รับสร้าง center | revision 4 | https://wiki.infonayoo.co/doc/profile-center-WKxPxjfnUi
+- 9b6a9ddd-483e-4e23-8b6c-c879d4de29fd | BA Nayoo / NAYOO V2 BRD / Filter / ฟีลเตอร์แบบบ้าน center | revision 4 | https://wiki.infonayoo.co/doc/center-9nTLhvbJPv
+- 20ee17e8-94c1-4eb4-b8cf-6d456ac7022c | BA Nayoo / NAYOO V2 BRD / Filter / ฟีลเตอร์ เช่า center | revision 4 | https://wiki.infonayoo.co/doc/center-AlOrkzOcPT
+- 1d779032-ce11-436b-80d4-38cb2ae23e14 | BA Nayoo / NAYOO V2 BRD / Filter / ฟีลเตอรืมือ 2 center | revision 4 | https://wiki.infonayoo.co/doc/2-center-TfxAXGfcbM
+- 8af6ab04-7e6f-4dba-8376-8a1bbad10021 | BA Nayoo / NAYOO V2 BRD / Filter | revision 4 | https://wiki.infonayoo.co/doc/filter-cL1CLaemFP
+- fe2b4937-0e01-49e2-8c41-d386393500a7 | BA Nayoo / NAYOO V2 BRD / Home | revision 4 | https://wiki.infonayoo.co/doc/home-KuQ2GkF2ry
+- efcba207-9ca8-41e6-84d3-e978ffd85dae | BA Nayoo / NAYOO V2 BRD / ฟีเจอร์ดันใบประกาศ | revision 4 | https://wiki.infonayoo.co/doc/4lif4li14lma4lii4lit4lij4lmm4liu4lix4liz4lmd4lia4lib4lij4liw4lib4liy4lio-14ZkPYwBmX
+- d0169fcf-80f3-48ae-928d-a0edca6ad0cc | BA Nayoo / NAYOO V2 BRD / ฟีเจอร์ hook | revision 4 | https://wiki.infonayoo.co/doc/hook-X7X0YDe3xK
+- 567be435-0835-4736-a1ba-c9102ed73ddd | BA Nayoo / NAYOO V2 BRD / ฟีเจอร์ฺ FAQ | revision 4 | https://wiki.infonayoo.co/doc/faq-XzvahUzUsL
+- 069734bb-47df-4955-86fa-3afa7a104080 | BA Nayoo / NAYOO V2 BRD / Profile User view / รับสร้างบ้าน | revision 3 | https://wiki.infonayoo.co/doc/4lij4lix4lia4liq4lij4lmj4liy4lih4lia4lmj4liy4liz-WDBXypd7s3
+- e002b30c-664a-4b2d-a405-957e6ea91c0b | BA Nayoo / NAYOO V2 BRD / Profile User view / มือ 1 | revision 8 | https://wiki.infonayoo.co/doc/1-dfQ1NpYY3v
+- 6826bc36-0841-44fa-b503-e3b093719030 | BA Nayoo / NAYOO V2 BRD / Profile User view | revision 4 | https://wiki.infonayoo.co/doc/profile-user-view-9y8wklLNWe
+- b0d42824-7ef6-48ac-9422-c17105695504 | BA Nayoo / NAYOO V2 BRD | revision 6 | https://wiki.infonayoo.co/doc/nayoo-v2-brd-c7nSpvc6nJ
+- 4acbd064-3f43-4998-bebd-3adcc7bd9186 | BA Nayoo / Nayoo center / NaYoo Center — สำเนา Google Docs / ฟีลเตอร์ center | revision 8 | https://wiki.infonayoo.co/doc/center-d4iG1kQHf0
+- ce06d1db-657b-46c0-a9cf-38e48b045260 | BA Nayoo / Nayoo center / NaYoo Center — สำเนา Google Docs / Nayoo center | revision 8 | https://wiki.infonayoo.co/doc/nayoo-center-2Ht8ADd55j
+- 3eed8422-20f5-462c-a41c-2d612e9d9b8f | ขนาดรูปแต่หน้าฟีเจอร์ / Popup | revision 23 | https://wiki.infonayoo.co/doc/popup-RfQF4i3xjw
+- c2ac4466-3c97-4858-b56d-3a842399fed2 | ขนาดรูปแต่หน้าฟีเจอร์ / รูปปก Review | revision 25 | https://wiki.infonayoo.co/doc/review-37sl9MGPuN
+- e09400ce-7823-434b-b82e-ab32d7921e4a | BA Nayoo / ลงทะเบียนหน้าใบประกาศมือ 1 (ปกติ, เฟดใหม่)  แบบบ้าน | revision 160 | https://wiki.infonayoo.co/doc/1-eq5Q5W1HBn
+- 4bd33fcc-a4c5-4701-a05d-e867951fabc0 | BA Nayoo / Nayoo center / super top ads โครงการใหม่ | revision 9 | https://wiki.infonayoo.co/doc/super-top-ads-ebizIBTgme
+- 8f146bc4-d1a8-40c5-a735-a40218cc140e | BA Nayoo / Nayoo center | revision 3 | https://wiki.infonayoo.co/doc/nayoo-center-4cXI5iIqEz
+- b53db964-a201-4dd0-9711-d6efc486d0c3 | BA Nayoo / ลงทะเบียนหน้าใบประกาศมือ 1 (ปกติ, เฟดใหม่)  แบบบ้าน / logic การส่งรายชื่อ | revision 5 | https://wiki.infonayoo.co/doc/logic-IEJHqv5Fld
+- bce6baa7-2e29-458e-9320-afb71b85a877 | ขนาดรูปแต่หน้าฟีเจอร์ / Insert card | revision 17 | https://wiki.infonayoo.co/doc/insert-card-QMHomxALXd
+- db08aaf9-571d-44fe-a694-f7d9bc204666 | ขนาดรูปแต่หน้าฟีเจอร์ / Top Banner | revision 5 | https://wiki.infonayoo.co/doc/top-banner-eUiJBKVmvU
+- 48d54f04-68ab-404e-9740-7c77e1101fef | ขนาดรูปแต่หน้าฟีเจอร์ / Banner | revision 59 | https://wiki.infonayoo.co/doc/banner-vlvbObvfPI
+- 27f8be8d-e313-418f-ab70-04e6746da661 | ขนาดรูปแต่หน้าฟีเจอร์ / โปรไฟล์โครงการใหม่ | revision 144 | https://wiki.infonayoo.co/doc/4lmc4lib4lij4lme4lif4lil4lmm4lmc4lie4lij4lih4lib4liy4lij4lmd4lir4lih4lmi-3zMPgrSCiK
+- f6cc07a3-c8fe-40eb-b170-dc20241da2d5 | ขนาดรูปแต่หน้าฟีเจอร์ | revision 5 | https://wiki.infonayoo.co/doc/4lic4liz4liy4liu4lij4li54lib4lmb4liv4lmi4lir4liz4lmj4liy4lif4li14lma4lii4lit4lij4lmm-3tAPbojNDE
+- 37c11dfe-51ba-4959-b840-cf926a7790be | UX/UI | revision 9 | https://wiki.infonayoo.co/doc/uxui-ZgRMXzefsa
+- 2d722db5-5f7f-4aee-87c7-6f0ddc744011 | BA Nayoo | revision 6 | https://wiki.infonayoo.co/doc/ba-nayoo-nWwn1gqMmz
+- aa694b2c-53f6-4efc-b288-492b4ca6ac80 | UX/UI / Line แจ้งเตือน Campaign | revision 24 | https://wiki.infonayoo.co/doc/line-campaign-SrMVwaqnoi
+- 1f7fe0f1-6f6a-4d18-9e76-5d3949c687df | UX/UI / Line แจ้งเตือน Walk-in | revision 11 | https://wiki.infonayoo.co/doc/line-walk-in-MN4HvF5lb9
+- bb755c0d-01bc-4b96-9ecd-8d3d2fe049c9 | Frontend / Tracking / Docs / Product-And-Non-Product / Campaign Landing Page | revision 3 | https://wiki.infonayoo.co/doc/campaign-landing-page-yM0tD77Cb8
+- b6987b6b-fe22-4819-9e82-d7e2f788fc3f | Frontend / Tracking / Docs / Product-And-Non-Product / Page section IDs | revision 3 | https://wiki.infonayoo.co/doc/page-section-ids-H2g38TFYoA
+- 4acad87b-5e93-4ab8-b8fe-3dcbbf3a0ac5 | Frontend / Tracking / Docs / Product-And-Non-Product / Register Interest | revision 3 | https://wiki.infonayoo.co/doc/register-interest-mvU2N3bMV3
+- 5ce8afb8-78d6-4830-a0cd-69b49b93be06 | Frontend / Tracking / Docs / Product-And-Non-Product / product datadict | revision 3 | https://wiki.infonayoo.co/doc/product-datadict-eVo0MEIQGv
+- 87024699-002d-4600-86d4-f2776a99a3ce | Frontend / Tracking / Docs / Product-And-Non-Product / Campaign Homebuilder Profile Page | revision 3 | https://wiki.infonayoo.co/doc/campaign-homebuilder-profile-page-J7IO7hWzsN
+- 22187e41-ee73-45e8-a182-db8cf3cb2a09 | Frontend / Tracking / Docs / Product-And-Non-Product / Campaign Search Page | revision 3 | https://wiki.infonayoo.co/doc/campaign-search-page-xgCaVNorR4
+- 467ed0f2-ca27-4f2a-bc4c-e2491813c668 | Frontend / Tracking / Docs / Product-And-Non-Product / Campaign Post Page | revision 3 | https://wiki.infonayoo.co/doc/campaign-post-page-fefNuEbO6q
+- ad77ddfb-47a5-4c51-b4ef-8015172669a4 | Frontend / Tracking / Docs / Product-And-Non-Product / Campaign Home Page | revision 3 | https://wiki.infonayoo.co/doc/campaign-home-page-AlQPW8E1dg
+- 9d745f62-6c9f-47c3-afaa-cf21e76744b8 | Frontend / Tracking / Docs / Product-And-Non-Product / tracking.csv | revision 3 | https://wiki.infonayoo.co/doc/trackingcsv-ukDuwmkYMf
+- fcfb968d-5429-4c7f-88c1-aec613aebd9b | Frontend / Tracking / Docs / Product-And-Non-Product | revision 3 | https://wiki.infonayoo.co/doc/product-and-non-product-A3BdURFcQ1
+- a89f91c6-a449-4a41-a410-dc5fb1129eac | Frontend / Tracking / Docs | revision 4 | https://wiki.infonayoo.co/doc/docs-eDMrXRlcwp
+- 7b856513-f3fd-4b4a-b9d8-2ab3c3fed4ef | Backend / i18n-request | revision 6 | https://wiki.infonayoo.co/doc/i18n-request-K0wbKz60vL
+- f4329307-fea6-4008-8079-d0795944caaf | Backend | revision 6 | https://wiki.infonayoo.co/doc/backend-YkqSQrbRCd
+- db285e90-528d-4ff1-9196-97dbc11cb0a3 | Frontend | revision 6 | https://wiki.infonayoo.co/doc/frontend-Na3JXaEH54
+- a4aabcc7-0ea5-4953-9e56-29f77d9f0abe | Frontend / Tracking | revision 4 | https://wiki.infonayoo.co/doc/tracking-NxtcrdYKZa
+- a05ab069-b35d-4cd9-bfc7-44b9d50d9d84 | Frontend / Tracking / Console / ส่วนกลาง (ทุกหน้า) | revision 6 | https://wiki.infonayoo.co/doc/4liq4lmi4lin4liz4lib4lil4liy4lihicjgujfguljguihgukvgujnguyngulip-yaUAZTXgkP
+- b1249f30-a1c7-4a6a-a5ee-c5f8262c1ca7 | Frontend / Tracking / Console / หน้าสร้างใบประกาศ | revision 6 | https://wiki.infonayoo.co/doc/4lir4liz4lmj4liy4liq4lij4lmj4liy4lih4lmd4lia4lib4lij4liw4lib4liy4lio-53VOZwEcmA
+- 4d2d4c8c-4ded-473c-a57d-4890c0b00508 | Frontend / Tracking / Console / หน้าแก้ไขใบประกาศ | revision 6 | https://wiki.infonayoo.co/doc/4lir4liz4lmj4liy4lmb4lib4lmj4lme4lic4lmd4lia4lib4lij4liw4lib4liy4lio-GKvV4Jjb77
+- ac55a52f-9351-4326-959f-f79dfb46f52c | Frontend / Tracking / Console / หน้าลงประกาศบ้านมือสอง | revision 5 | https://wiki.infonayoo.co/doc/4lir4liz4lmj4liy4lil4lih4lib4lij4liw4lib4liy4lio4lia4lmj4liy4liz4lih4li34lit4liq4lit4lih-k9Mugzs8jf
+- 853379fe-348d-48ff-946f-008f9a8663ed | Frontend / Tracking / Console / หน้าลงประกาศรับสร้างบ้าน | revision 5 | https://wiki.infonayoo.co/doc/4lir4liz4lmj4liy4lil4lih4lib4lij4liw4lib4liy4lio4lij4lix4lia4liq4lij4lmj4liy4lih4lia4lmj4liy4liz-DcEtqWF5ay
+- 3ede2654-c954-4d79-a79f-294ab24af6fd | Frontend / Tracking / Nayoo / หน้าโปรไฟล์ Developer | revision 8 | https://wiki.infonayoo.co/doc/developer-2nm1REupBI
+- 6ad78e95-69a2-43bd-96b6-115f17c24fee | Frontend / Tracking / Nayoo / หน้าโปรไฟล์บริษัทรับสร้างบ้าน | revision 9 | https://wiki.infonayoo.co/doc/4lir4liz4lmj4liy4lmc4lib4lij4lme4lif4lil4lmm4lia4lij4li04lip4lix4lix4lij4lix4lia4liq4lij4lmj4liy4lih4lia4lmj4liy4liz-Pb85dnMyE7
+- a5bef3f3-1a40-4040-8d06-f1e797c45a16 | Frontend / Tracking / Nayoo / หน้ารายละเอียดแบบบ้าน | revision 9 | https://wiki.infonayoo.co/doc/4lir4liz4lmj4liy4lij4liy4lii4lil4liw4lma4lit4li14lii4liu4lmb4lia4lia4lia4lmj4liy4liz-tAlIFH4hQN
+- 166032f0-db39-4fcf-a19b-c9ea12d7acce | Frontend / Tracking / Nayoo / หน้าโปรไฟล์ตัวแทน | revision 6 | https://wiki.infonayoo.co/doc/4lir4liz4lmj4liy4lmc4lib4lij4lme4lif4lil4lmm4liv4lix4lin4lmb4lix4liz-n3JiyWOSuD
+- d8188214-6eb0-499c-be6f-9925019d1a46 | Frontend / Tracking / Nayoo / หน้ารายละเอียดโครงการ | revision 11 | https://wiki.infonayoo.co/doc/4lir4liz4lmj4liy4lij4liy4lii4lil4liw4lma4lit4li14lii4liu4lmc4lie4lij4lih4lib4liy4lij-Jr8qQNzgFk
+- f356230f-a29b-4732-9aeb-88b90d147a66 | Frontend / Tracking / Nayoo / หน้ารายละเอียดโครงการเปิดใหม่ | revision 9 | https://wiki.infonayoo.co/doc/4lir4liz4lmj4liy4lij4liy4lii4lil4liw4lma4lit4li14lii4liu4lmc4lie4lij4lih4lib4liy4lij4lma4lib4li04liu4lmd4lir4lih4lmi-P4Ncv4AAVM
+- cf69f51e-1c75-46de-b67f-26cd45c61f4d | Frontend / Tracking / Nayoo / หน้าค้นหามือสอง | revision 7 | https://wiki.infonayoo.co/doc/4lir4liz4lmj4liy4lie4lmj4liz4lir4liy4lih4li34lit4liq4lit4lih-c4UqrqUKr2
+- 0c37fa81-a1ee-49e3-bfde-a118e6a05778 | Frontend / Tracking / Nayoo / หน้าค้นหาโครงการ | revision 7 | https://wiki.infonayoo.co/doc/4lir4liz4lmj4liy4lie4lmj4liz4lir4liy4lmc4lie4lij4lih4lib4liy4lij-pgDYOiV4I7
+- c0aa5fc1-afea-467d-b384-29b8a0ae3dbf | Frontend / Tracking / Nayoo / หน้าค้นหารับสร้างบ้าน | revision 7 | https://wiki.infonayoo.co/doc/4lir4liz4lmj4liy4lie4lmj4liz4lir4liy4lij4lix4lia4liq4lij4lmj4liy4lih4lia4lmj4liy4liz-KOo8TayP4h
+- 99cc4fdc-54ab-45bc-9e3b-cf6d4319fc2d | Frontend / Tracking / Nayoo / หน้าค้นหาแบบบ้าน | revision 7 | https://wiki.infonayoo.co/doc/4lir4liz4lmj4liy4lie4lmj4liz4lir4liy4lmb4lia4lia4lia4lmj4liy4liz-NBRGp3lb40
+- 1a6ebccc-7ca5-45c9-92c7-20643599cbd8 | Frontend / Tracking / Nayoo / หน้าค้นหาเช่า | revision 7 | https://wiki.infonayoo.co/doc/4lir4liz4lmj4liy4lie4lmj4liz4lir4liy4lma4lik4lmi4liy-A4SvFAhZWw
+- 3561b6d0-8259-4739-a58d-70835f525902 | Frontend / Tracking / Nayoo / หน้ารายละเอียดมือสอง | revision 10 | https://wiki.infonayoo.co/doc/4lir4liz4lmj4liy4lij4liy4lii4lil4liw4lma4lit4li14lii4liu4lih4li34lit4liq4lit4lih-4NWsXxkxeK
+- f0c9fdfd-5842-4807-973c-6cd775e4ab0f | Frontend / Tracking / Nayoo / หน้ารายละเอียดเช่า | revision 9 | https://wiki.infonayoo.co/doc/4lir4liz4lmj4liy4lij4liy4lii4lil4liw4lma4lit4li14lii4liu4lma4lik4lmi4liy-IvGzIlN43K
+- c4afa1f5-1b80-4ce0-86cb-715c3818a9b1 | Frontend / Tracking / Nayoo / หน้าโปรไฟล์ธนาคาร NPA | revision 6 | https://wiki.infonayoo.co/doc/npa-fHF3JdrsS6
+- 8bbd2539-3b2b-40c0-aa6b-99ead0a4da20 | Frontend / Tracking / Nayoo / หน้าค้นหาธนาคาร NPA | revision 5 | https://wiki.infonayoo.co/doc/npa-dGtCHDSwg7
+- b19d4deb-7492-473d-ab17-14717e6e6b4e | Frontend / Tracking / Nayoo / หน้าค้นหาตัวแทน | revision 7 | https://wiki.infonayoo.co/doc/4lir4liz4lmj4liy4lie4lmj4liz4lir4liy4liv4lix4lin4lmb4lix4liz-yCa3JxIWJe
+- e7512edd-0562-48a7-9e30-cf32af6e9ddd | Frontend / Tracking / Nayoo / หน้าแคมเปญ Landing | revision 11 | https://wiki.infonayoo.co/doc/landing-ggZMFqHPpt
+- 7da5af81-e572-419a-aa8c-21a7695b17f5 | Frontend / Tracking / Nayoo / หน้าแคมเปญ Landing พิษณุโลก home-expo2026 | revision 13 | https://wiki.infonayoo.co/doc/landing-home-expo2026-fPGlTh6HWf
+- f80104c4-7439-44ea-9697-e0bc238fd21e | Frontend / Tracking / Nayoo / หน้าแคมเปญ Landing บุรีรัมย์ | revision 11 | https://wiki.infonayoo.co/doc/landing-hym6Xk4mlX
+- 1f0d41f0-26dd-4277-b69b-69ed8a46654f | Frontend / Tracking / Nayoo / หน้าค้นหา Developer | revision 6 | https://wiki.infonayoo.co/doc/developer-0Ne5eMcY3V
+- c7f76a16-d18d-40e3-acfd-607d748eb903 | Frontend / Tracking / Nayoo / หน้าคำนวณสินเชื่อ | revision 5 | https://wiki.infonayoo.co/doc/4lir4liz4lmj4liy4lie4liz4liz4lin4lit4liq4li04liz4lma4lik4li34lmi4lit-gMnpggC5mH
+- fdc1d642-d732-40eb-b898-f49c6f556fc1 | Frontend / Tracking / Nayoo / หน้ารีวิว (ตามหมวด) | revision 5 | https://wiki.infonayoo.co/doc/4lir4liz4lmj4liy4lij4li14lin4li04linicjgujxgullgukhgukvgukhgukfgujqp-RxVQP7OZJR
+- 76f840ff-fbfb-4e25-b410-c0c7ba5ebd2c | Frontend / Tracking / Nayoo / หน้ารีวิว (ทั้งประเทศ) | revision 5 | https://wiki.infonayoo.co/doc/4lir4liz4lmj4liy4lij4li14lin4li04linicjgujfgulhguynguifgujvgukpguldguydgujfgukgp-08qXVfdru4
+- e7cd4676-4c6a-4803-8c66-8f61071547f8 | Frontend / Tracking / Nayoo / หน้าบทความ | revision 6 | https://wiki.infonayoo.co/doc/4lir4liz4lmj4liy4lia4lix4lie4lin4liy4lih-GMVQRcWlmi
+- 729e7cad-d598-42b7-a6ab-d39a5fef13ef | Frontend / Tracking / Nayoo / หน้าคู่มือ | revision 3 | https://wiki.infonayoo.co/doc/4lir4liz4lmj4liy4lie4li54lmi4lih4li34lit-M9Fn1ZIZfE
+- 200916de-a361-41d0-9d51-b4c6d043df6b | Frontend / Tracking / Nayoo / หน้า Enroll ลงทะเบียน | revision 3 | https://wiki.infonayoo.co/doc/enroll-TCW4SxA8X4
+- 11dcf608-831c-43ef-be5d-99290c7ac793 | Frontend / Tracking / Nayoo / หน้ารีวิว | revision 5 | https://wiki.infonayoo.co/doc/4lir4liz4lmj4liy4lij4li14lin4li04lin-0o1L5v69Ej
+- 462ed867-7712-443d-b843-65fe56c76175 | Frontend / Tracking / Nayoo / หน้าคูปองของฉัน | revision 3 | https://wiki.infonayoo.co/doc/4lir4liz4lmj4liy4lie4li54lib4lit4lih4lic4lit4lih4lij4lix4liz-RbvqYV4tp0
+- a473bc2d-8baf-4f5b-956a-c5e3fc0c52a2 | Frontend / Tracking / Nayoo / หน้ารวมบทความ (ทั้งประเทศ) | revision 3 | https://wiki.infonayoo.co/doc/4lir4liz4lmj4liy4lij4lin4lih4lia4lix4lie4lin4liy4lihicjgujfgulhguynguifgujvgukpguldguydgujfgukgp-l1c1xkdIfA
+- 7d6b704f-6f7b-43b2-992a-5f452c0f961c | Frontend / Tracking / Nayoo / หน้ารวมบทความ | revision 3 | https://wiki.infonayoo.co/doc/4lir4liz4lmj4liy4lij4lin4lih4lia4lix4lie4lin4liy4lih-jGs8Bw0Uaf
+- b16095c5-b642-49a6-b8ab-383d754da9dc | Frontend / Tracking / Nayoo / หน้าแผนที่โครงการที่เข้าร่วม | revision 3 | https://wiki.infonayoo.co/doc/4lir4liz4lmj4liy4lmb4lic4liz4lix4li14lmi4lmc4lie4lij4lih4lib4liy4lij4lix4li14lmi4lma4lic4lmj4liy4lij4lmi4lin4lih-MKqVGg3pfW
+- 8aaad418-8049-4c73-b918-a57572052251 | Frontend / Tracking / Nayoo / หน้า Home จังหวัด | revision 23 | https://wiki.infonayoo.co/doc/home-9omxHR135V
+- 12efbe97-716a-4473-8e1d-3739fabd0c6b | Frontend / Tracking / Nayoo / หน้าบ้านพร้อม Buyer Requirement | revision 8 | https://wiki.infonayoo.co/doc/buyer-requirement-rBWEmbEMgk
+- a26acd03-38e5-4bfa-86b7-5b644bc619b4 | Backend / i18n-request / เรื่อง: Accept-Language (คำขอ 2026-10-16) | revision 6 | https://wiki.infonayoo.co/doc/accept-language-2026-10-16-amSnVrXkiO
+- 6351efbf-3076-4340-b7f0-78598599d293 | Frontend / Tracking / Nayoo / หน้าลงทะเบียนสนใจ | revision 5 | https://wiki.infonayoo.co/doc/4lir4liz4lmj4liy4lil4lih4lix4liw4lma4lia4li14lii4liz4liq4liz4lmd4lii-d6PXXNIrfh
+- 66cc92e3-2783-4a25-9fb4-65bd2ebf646d | Frontend / Tracking / Nayoo / หน้าลงประกาศ | revision 3 | https://wiki.infonayoo.co/doc/4lir4liz4lmj4liy4lil4lih4lib4lij4liw4lib4liy4lio-wNvSR3Pveo
+- e0711edb-2464-46b3-ad80-b5a2ce638e38 | Frontend / Tracking / Console | revision 3 | https://wiki.infonayoo.co/doc/console-hoRTOrp4Fk
+- 4659c7de-f82b-4f86-8a80-380fb97cb0d1 | Frontend / Tracking / Nayoo | revision 3 | https://wiki.infonayoo.co/doc/nayoo-Qf7HGhsloN
+- 4ccb3abb-2e21-4386-b073-0723d9fe254d | Backend / i18n-request / 2026-10-16 | revision 3 | https://wiki.infonayoo.co/doc/2026-10-16-VLS3bWKexb
