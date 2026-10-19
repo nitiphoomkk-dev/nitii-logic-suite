@@ -8,7 +8,7 @@
 
 ### 1. เตรียมไฟล์
 
-ดาวน์โหลด [nitii-logic-suite-skill-1.1.0.zip](https://github.com/nitiphoomkk-dev/nitii-logic-suite/releases/download/v1.1.0/nitii-logic-suite-skill-1.1.0.zip) เก็บเป็น ZIP ไม่ต้องแตกก่อนอัปโหลด
+ดาวน์โหลด [nitii-logic-suite-skill-1.2.0.zip](https://github.com/nitiphoomkk-dev/nitii-logic-suite/releases/download/v1.2.0/nitii-logic-suite-skill-1.2.0.zip) เก็บเป็น ZIP ไม่ต้องแตกก่อนอัปโหลด
 
 ### 2. เปิดหน้า Skills
 
@@ -33,7 +33,7 @@ Google ระบุเงื่อนไขอายุอย่างน้อ�
 
 ### 1. ดาวน์โหลดและแตก ZIP หลัก
 
-ดาวน์โหลด [Nitii_Logic_Suite_1.1.0.zip](https://github.com/nitiphoomkk-dev/nitii-logic-suite/releases/download/v1.1.0/Nitii_Logic_Suite_1.1.0.zip) แล้วเปิดโฟลเดอร์ที่มี `README_TH.md`
+ดาวน์โหลด [Nitii_Logic_Suite_1.2.0.zip](https://github.com/nitiphoomkk-dev/nitii-logic-suite/releases/download/v1.2.0/Nitii_Logic_Suite_1.2.0.zip) แล้วเปิดโฟลเดอร์ที่มี `README_TH.md`
 
 ### 2. สร้าง Gem
 
@@ -59,3 +59,10 @@ Google ระบุเงื่อนไขอายุอย่างน้อ�
 - อย่าลบสคริปต์หรือแปลงไฟล์เองเพียงเพื่อให้ผ่าน ให้ตรวจข้อความผิดพลาดและรูปแบบที่บัญชีรองรับก่อน
 
 อ้างอิง: [Google — Upload skills](https://support.google.com/gemini/answer/17094296), [Google — Use Gems](https://support.google.com/gemini/answer/15146780), [Google — Gems transition](https://support.google.com/gemini/answer/18560919) ตรวจ 19 ตุลาคม 2026
+
+## ข้อมูลอัปเดตทุกวัน
+
+รุ่น 1.2 เพิ่มตัวรับข้อมูลจาก GitHub ซึ่งตั้งให้ตรวจ Wiki ทุกวัน **20:00 น. เวลาไทย** ต้องใส่ WIKI_API_KEY ฝั่งผู้ดูแลและมีรอบซิงก์สำเร็จก่อนจึงนับเป็นข้อมูลสด ผู้รับไม่ต้องมี key
+
+AI ที่ใช้ Python/network ได้ ให้ทำตาม [คู่มืออัปเดต](AUTO_UPDATE_TH.md) เพื่อรันตัวอัปเดตครั้งเดียวเมื่อเริ่มใช้ ส่วนไฟล์ที่อัปโหลดใน Project/Gem/Skill ยังเป็นสำเนาและต้องเปลี่ยนไฟล์เอง การลงรุ่น 1.1 ไว้เดิมไม่ทำให้ได้สคริปต์รุ่น 1.2 โดยอัตโนมัติ
+

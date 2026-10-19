@@ -6,7 +6,7 @@
 
 ## 1. ดาวน์โหลดและแตกไฟล์
 
-ดาวน์โหลด [ZIP หลัก v1.1.0](https://github.com/nitiphoomkk-dev/nitii-logic-suite/releases/download/v1.1.0/Nitii_Logic_Suite_1.1.0.zip) แล้วแตกไฟล์ เช่น Windows คลิกขวา → **Extract All / แยกทั้งหมด**
+ดาวน์โหลด [ZIP หลัก v1.2.0](https://github.com/nitiphoomkk-dev/nitii-logic-suite/releases/download/v1.2.0/Nitii_Logic_Suite_1.2.0.zip) แล้วแตกไฟล์ เช่น Windows คลิกขวา → **Extract All / แยกทั้งหมด**
 
 เปิดโฟลเดอร์ที่แตกแล้วจนเห็น `README_TH.md` จากนั้นเปิด `web-assistants`
 
@@ -49,3 +49,10 @@
 **ใช้ครั้งถัดไป:** กลับมาสร้างแชตใน Project “นิติ๊ NaYoo” เพื่อใช้คำสั่งและไฟล์ชุดเดิม อย่าเปิดแชตนอก Project แล้วคาดว่าจะเห็นไฟล์ชุดนี้เอง
 
 อ้างอิงขั้นตอนการใช้ไฟล์และคำสั่งร่วมกันใน Project: [OpenAI — Projects and chats](https://learn.chatgpt.com/docs/projects) ตรวจ 19 ตุลาคม 2026
+
+## ข้อมูลอัปเดตทุกวัน
+
+รุ่น 1.2 เพิ่มตัวรับข้อมูลจาก GitHub ซึ่งตั้งให้ตรวจ Wiki ทุกวัน **20:00 น. เวลาไทย** ต้องใส่ WIKI_API_KEY ฝั่งผู้ดูแลและมีรอบซิงก์สำเร็จก่อนจึงนับเป็นข้อมูลสด ผู้รับไม่ต้องมี key
+
+AI ที่ใช้ Python/network ได้ ให้ทำตาม [คู่มืออัปเดต](AUTO_UPDATE_TH.md) เพื่อรันตัวอัปเดตครั้งเดียวเมื่อเริ่มใช้ ส่วนไฟล์ที่อัปโหลดใน Project/Gem/Skill ยังเป็นสำเนาและต้องเปลี่ยนไฟล์เอง การลงรุ่น 1.1 ไว้เดิมไม่ทำให้ได้สคริปต์รุ่น 1.2 โดยอัตโนมัติ
+

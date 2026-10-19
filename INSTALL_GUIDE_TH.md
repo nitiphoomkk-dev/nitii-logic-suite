@@ -1,6 +1,6 @@
 # ติดตั้งนิติ๊ — เลือก AI ที่คุณใช้
 
-คู่มือสำหรับ **Nitii Logic Suite v1.1.0** ตรวจขั้นตอนกับเอกสารทางการวันที่ **19 ตุลาคม 2026**
+คู่มือสำหรับ **Nitii Logic Suite v1.2.0** ตรวจขั้นตอนกับเอกสารทางการวันที่ **19 ตุลาคม 2026**
 
 ## เริ่มตรงนี้
 
@@ -15,13 +15,13 @@
 
 ## ดาวน์โหลดให้ถูกไฟล์
 
-[เปิดหน้า Release v1.1.0](https://github.com/nitiphoomkk-dev/nitii-logic-suite/releases/tag/v1.1.0) แล้วดูส่วน **Assets**
+[เปิดหน้า Release v1.2.0](https://github.com/nitiphoomkk-dev/nitii-logic-suite/releases/tag/v1.2.0) แล้วดูส่วน **Assets**
 
 | ไฟล์ | ใช้เมื่อไร |
 |---|---|
-| [Nitii_Logic_Suite_1.1.0.zip](https://github.com/nitiphoomkk-dev/nitii-logic-suite/releases/download/v1.1.0/Nitii_Logic_Suite_1.1.0.zip) | ชุดครบทุกแบบ เหมาะกับ ChatGPT, Gems, Codex และคนที่ต้องการเก็บสำรอง |
-| [nitii-logic-suite-skill-1.1.0.zip](https://github.com/nitiphoomkk-dev/nitii-logic-suite/releases/download/v1.1.0/nitii-logic-suite-skill-1.1.0.zip) | ใช้อัปโหลดเข้า Skills ของ Claude หรือ Gemini ตามเมนูที่บัญชีมี |
-| [nitii-logic-suite-plugin-1.1.0.zip](https://github.com/nitiphoomkk-dev/nitii-logic-suite/releases/download/v1.1.0/nitii-logic-suite-plugin-1.1.0.zip) | สำหรับคนที่เลือกติดตั้งแบบ Plugin โดยเฉพาะ |
+| [Nitii_Logic_Suite_1.2.0.zip](https://github.com/nitiphoomkk-dev/nitii-logic-suite/releases/download/v1.2.0/Nitii_Logic_Suite_1.2.0.zip) | ชุดครบทุกแบบ เหมาะกับ ChatGPT, Gems, Codex และคนที่ต้องการเก็บสำรอง |
+| [nitii-logic-suite-skill-1.2.0.zip](https://github.com/nitiphoomkk-dev/nitii-logic-suite/releases/download/v1.2.0/nitii-logic-suite-skill-1.2.0.zip) | ใช้อัปโหลดเข้า Skills ของ Claude หรือ Gemini ตามเมนูที่บัญชีมี |
+| [nitii-logic-suite-plugin-1.2.0.zip](https://github.com/nitiphoomkk-dev/nitii-logic-suite/releases/download/v1.2.0/nitii-logic-suite-plugin-1.2.0.zip) | สำหรับคนที่เลือกติดตั้งแบบ Plugin โดยเฉพาะ |
 
 **อย่าเลือก `Source code (zip)` หรือ `Source code (tar.gz)`** เพราะ repository นี้เก็บหน้าแนะนำและคู่มือ ส่วนแพ็กเกจติดตั้งอยู่ใน Assets
 
@@ -43,3 +43,10 @@
 - เมนูอาจต่างตามภาษา บัญชีและเวอร์ชัน คู่มือนี้อิงเอกสารทางการและตรวจโครงสร้างแพ็กเกจแล้ว ยังไม่ได้ติดตั้งจริงบนทุก AI และทุกบัญชี
 
 ถ้าติดตั้งรุ่นใหม่ ให้ปิดหรือเอารุ่นเก่าที่ชื่อซ้ำออกตามวิธีของ AI นั้นก่อนใช้รุ่นใหม่ และเก็บงาน/ผลทดสอบเดิมที่ต้องการไว้
+
+## ข้อมูลอัปเดตทุกวัน
+
+รุ่น 1.2 เพิ่มตัวรับข้อมูลจาก GitHub ซึ่งตั้งให้ตรวจ Wiki ทุกวัน **20:00 น. เวลาไทย** ต้องใส่ WIKI_API_KEY ฝั่งผู้ดูแลและมีรอบซิงก์สำเร็จก่อนจึงนับเป็นข้อมูลสด ผู้รับไม่ต้องมี key
+
+AI ที่ใช้ Python/network ได้ ให้ทำตาม [คู่มืออัปเดต](AUTO_UPDATE_TH.md) เพื่อรันตัวอัปเดตครั้งเดียวเมื่อเริ่มใช้ ส่วนไฟล์ที่อัปโหลดใน Project/Gem/Skill ยังเป็นสำเนาและต้องเปลี่ยนไฟล์เอง การลงรุ่น 1.1 ไว้เดิมไม่ทำให้ได้สคริปต์รุ่น 1.2 โดยอัตโนมัติ
+

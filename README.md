@@ -1,50 +1,38 @@
-# Nitii Logic Suite — v1.1.0
+# Nitii Logic Suite — v1.2.0
 
-ชุดทักษะ “นิติ๊” สำหรับค้น Business Logic, ทำ Solution, AC, Test Case และส่งต่องาน Dev พร้อมสำเนาข้อความ NaYoo Wiki 281 หน้า และ 11 ทักษะ
+ชุดทักษะ “นิติ๊” สำหรับค้น Business Logic, ทำ Solution, AC, Test Case และส่งต่องาน Dev มี 11 ทักษะ พร้อมฐานข้อความ NaYoo Wiki เดิม 281 หน้า และตัวรับข้อมูลรุ่นใหม่
 
-Repository นี้ใช้ส่งมอบแพ็กเกจติดตั้งแบบ ZIP ข้อมูลภายในยังเป็นของเจ้าของเดิม และไม่มีการให้สัญญาอนุญาตแบบ Open Source
+## อัปเดตความรู้ทุกวัน 20:00 น. เวลาไทย
 
-## คู่มือติดตั้งแบบเข้าใจง่าย
+GitHub Actions อ่าน Wiki เฉพาะ Solution และ Develop รวมหน้าเพิ่มใหม่ในสองชุดนี้ ใช้ข้อความเดิมที่ไม่เปลี่ยนและดึงหน้าใหม่/แก้ไขใหม่ ตรวจทั้งชุดก่อนเผยแพร่ หากอ่านไม่ครบเก็บชุดสำเร็จเดิม กด Run workflow เองได้ด้วย
 
-เลือก AI ที่คุณใช้:
+**เปิดใช้งานจริงเมื่อผู้ดูแลใส่ WIKI_API_KEY และรอบซิงก์ Wiki สำเร็จแล้ว** ผล bootstrap เป็นฐานเก่าเท่านั้น ตรวจ `bootstrap`, `checkedAtUtc` และ `syncedAtUtc` ใน [latest.json](https://raw.githubusercontent.com/nitiphoomkk-dev/nitii-logic-suite/knowledge/latest.json) ไม่ใช่ Realtime
 
-| [ChatGPT](INSTALL_CHATGPT_TH.md) | [Claude](INSTALL_CLAUDE_TH.md) | [Gemini](INSTALL_GEMINI_TH.md) | [Codex](INSTALL_CODEX_TH.md) |
-|---|---|---|---|
-| สร้าง Project และเพิ่มไฟล์ | อัปโหลด Skill ZIP | ใช้ Skills หรือ Gems | คัดลอกสกิลเข้าพื้นที่งาน |
+[คู่มือเปิดระบบและรับข้อมูลอัปเดต](AUTO_UPDATE_TH.md) · [ดูผล Actions](https://github.com/nitiphoomkk-dev/nitii-logic-suite/actions)
 
-[เริ่มจากหน้าเลือก AI และดาวน์โหลด](INSTALL_GUIDE_TH.md)
+## ดาวน์โหลดและติดตั้ง
 
-## ดาวน์โหลด
+[ดาวน์โหลด Release v1.2.0](https://github.com/nitiphoomkk-dev/nitii-logic-suite/releases/tag/v1.2.0) แล้วเลือกไฟล์ ZIP ใน Assets
 
-[เปิด Release v1.1.0](https://github.com/nitiphoomkk-dev/nitii-logic-suite/releases/tag/v1.1.0)
-
-| ไฟล์ใน Assets | ใช้สำหรับ |
+| AI | คู่มือ |
 |---|---|
-| `Nitii_Logic_Suite_1.1.0.zip` | ชุดครบทุกแบบ พร้อมคู่มือติดตั้งและไฟล์สำหรับ ChatGPT / Gemini แบบอัปโหลด |
-| `nitii-logic-suite-plugin-1.1.0.zip` | แพ็กเกจ Plugin |
-| `nitii-logic-suite-skill-1.1.0.zip` | แพ็กเกจ Standalone Skill |
-| `SHA256SUMS.txt` | ตรวจความถูกต้องของ ZIP |
+| ChatGPT | [Project และไฟล์ความรู้](INSTALL_CHATGPT_TH.md) |
+| Claude | [Standalone Skill](INSTALL_CLAUDE_TH.md) |
+| Gemini | [Skills หรือ Gems](INSTALL_GEMINI_TH.md) |
+| Codex | [ทักษะในพื้นที่งาน](INSTALL_CODEX_TH.md) |
 
-ให้เลือกไฟล์แพ็กเกจใน **Assets** โดยตรง ไฟล์ `Source code` ที่ GitHub สร้างอัตโนมัติเป็นเพียงหน้าแนะนำของ repository นี้
+[เริ่มจากหน้าเลือก AI](INSTALL_GUIDE_TH.md) ผู้ใช้รุ่น 1.1 ต้องลงรุ่น 1.2 ครั้งเดียวเพื่อได้ตัวอัปเดต
 
-## เริ่มใช้งาน
+## การรับข้อมูลใหม่
 
-1. ดาวน์โหลด ZIP หลักแล้วแตกไฟล์
-2. เปิด `INSTALL_TH.md` ภายในโฟลเดอร์ `nitii-logic-suite` ที่แตกแล้ว
-3. เลือกวิธีติดตั้งให้ตรงกับ AI ของผู้รับ ไม่จำเป็นต้องติดตั้งทุกแบบ
+- AI ที่รัน Python และออกอินเทอร์เน็ตได้: ใช้ `update_knowledge.py` ในสกิล ข้อมูลใหม่ผ่าน hash และสลับทั้งชุด จากนั้นตัวค้น/อ่านใช้ cache ที่ตรวจแล้ว ผู้รับไม่ต้องมี Wiki key
+- AI ที่ใช้เว็บได้: ตรวจ public feed และอ่านหน้าที่เกี่ยวข้องตามสิทธิ์เครื่องมือ
+- AI ที่ใช้เฉพาะไฟล์อัปโหลด: ดาวน์โหลด knowledge.zip รุ่นล่าสุด แล้วเปลี่ยนไฟล์ `web/*.txt` เอง ไฟล์ใน Project/Gem/Skill ไม่ถูกแทนที่อัตโนมัติ
 
-แพ็กเกจมีรูปแบบสำหรับ Codex, Claude, Gemini และไฟล์ Instructions/Knowledge สำหรับ ChatGPT Project หรือ Gemini Gem ความสามารถติดตั้งขึ้นกับบัญชีและเวอร์ชันของผู้รับ ยังไม่ได้ทดสอบติดตั้งจริงบนทุกบริการ
+ตัวรับอัปเดตเฉพาะข้อมูล ไม่ดาวน์โหลดหรือรันโค้ดจาก Wiki ไม่โหลด corpus ทั้งชุดเข้า context ของ AI เพื่อเช็กสถานะ ผู้รับควรค้นก่อนอ่านและอ่านเฉพาะหลักฐานที่เกี่ยวข้อง
 
-## รุ่นประหยัด Token
+## ขอบเขต
 
-- ค้นก่อนอ่าน เริ่มจากผลค้นแบบย่อ แล้วอ่านเฉพาะข้อความที่เกี่ยวข้อง
-- โหลดเฉพาะทักษะและ reference ที่งานต้องใช้
-- เก็บวิธีทำงานฉบับละเอียดและข้อความ Wiki ต้นฉบับไว้ครบ
+ฐานเริ่มต้นคัดข้อความจาก Wiki วันที่ 19 ตุลาคม 2026 ส่วนเวลาตรวจครั้งต่อไปอยู่ใน feed เนื้อหาอาจมีร่าง ข้อเสนอ กฎเก่า และข้อขัดแย้ง ต้องแยกสถานะหลักฐานก่อนสรุป ไม่ตามอ่าน Google Docs/Figma/Canva ภายนอก ไม่รวมไฟล์ภาพจากลิงก์ ไม่ส่ง credential หรือประวัติแชต ไม่มีการให้สัญญาอนุญาตแบบ Open Source แก่ข้อมูลภายใน
 
-ผลวัดข้อความด้วย `o200k_base`: คำสั่งหลักลด 37.7%, Instructions บนเว็บลด 50.6%, ผลค้นหาตัวอย่างลด 80.6% ตัวเลขนี้ไม่ใช่บิลการใช้งานจริง และไม่ใช่การรับประกันว่าจะประหยัดเท่ากันทุกคำถาม
-
-## ขอบเขตข้อมูล
-
-สำเนา Wiki วันที่ 19 ตุลาคม 2026 ครอบคลุม Solution และ Develop รวม 281 หน้า เป็นข้อความและตารางตามต้นฉบับซึ่งอาจรวมร่าง ข้อเสนอ และกฎเก่า ภาพที่เป็นลิงก์ไม่ได้บรรจุไฟล์ภาพ ผู้รับต้องมีสิทธิ์เปิดแหล่งนั้นเอง ไม่มี credential ประวัติแชต หรือระบบซิงก์อัตโนมัติรวมอยู่ในชุด
-
-รายละเอียดและหลักฐานการตรวจอยู่ใน `KNOWLEDGE_SCOPE.md`, `QUALITY.md`, `TOKEN_BENCHMARK.json` และ `VALIDATION_SUMMARY.json` ภายใน ZIP หลัก
+โค้ด sync/updater อยู่ใน repository นี้ แต่ชุดสกิลครบยังดาวน์โหลดจาก Release Assets การ clone source อย่างเดียวไม่ติดตั้งสกิลลง AI

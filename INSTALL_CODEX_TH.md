@@ -6,7 +6,7 @@
 
 ## 1. ดาวน์โหลดและแตกไฟล์
 
-ดาวน์โหลด [ZIP หลัก v1.1.0](https://github.com/nitiphoomkk-dev/nitii-logic-suite/releases/download/v1.1.0/Nitii_Logic_Suite_1.1.0.zip) แล้วแตกไฟล์ เปิดต่อจนเห็น `README_TH.md`
+ดาวน์โหลด [ZIP หลัก v1.2.0](https://github.com/nitiphoomkk-dev/nitii-logic-suite/releases/download/v1.2.0/Nitii_Logic_Suite_1.2.0.zip) แล้วแตกไฟล์ เปิดต่อจนเห็น `README_TH.md`
 
 ## 2. เปิดโฟลเดอร์สกิล
 
@@ -68,3 +68,10 @@ codex plugin marketplace add .
 repository GitHub ปัจจุบันเป็นหน้าส่งมอบ ZIP จึงต้องดาวน์โหลด Assets และแตกก่อนใช้คำสั่งนี้ การ clone repository อย่างเดียวไม่มีโฟลเดอร์สกิลครบ หลีกเลี่ยงการติดตั้งทั้งวิธีคัดลอกและ Plugin ซ้ำกันในพื้นที่งานเดียว
 
 อ้างอิง: [OpenAI — Build skills](https://learn.chatgpt.com/docs/build-skills), [OpenAI — Package your plugin](https://developers.openai.com/plugins/build/plugins) ตรวจ 19 ตุลาคม 2026
+
+## ข้อมูลอัปเดตทุกวัน
+
+รุ่น 1.2 เพิ่มตัวรับข้อมูลจาก GitHub ซึ่งตั้งให้ตรวจ Wiki ทุกวัน **20:00 น. เวลาไทย** ต้องใส่ WIKI_API_KEY ฝั่งผู้ดูแลและมีรอบซิงก์สำเร็จก่อนจึงนับเป็นข้อมูลสด ผู้รับไม่ต้องมี key
+
+AI ที่ใช้ Python/network ได้ ให้ทำตาม [คู่มืออัปเดต](AUTO_UPDATE_TH.md) เพื่อรันตัวอัปเดตครั้งเดียวเมื่อเริ่มใช้ ส่วนไฟล์ที่อัปโหลดใน Project/Gem/Skill ยังเป็นสำเนาและต้องเปลี่ยนไฟล์เอง การลงรุ่น 1.1 ไว้เดิมไม่ทำให้ได้สคริปต์รุ่น 1.2 โดยอัตโนมัติ
+
