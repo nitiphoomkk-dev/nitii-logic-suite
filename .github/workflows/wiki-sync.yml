@@ -1,0 +1,77 @@
+name: Update NaYoo knowledge - 20.00 Bangkok
+
+on:
+  schedule:
+    # 13:00 UTC = 20:00 Asia/Bangkok, once daily.
+    - cron: '0 13 * * *'
+  workflow_dispatch:
+    inputs:
+      bootstrap_only:
+        description: 'Initialize dated v1.1 baseline only (first setup, NOT a live Wiki sync)'
+        type: boolean
+        required: false
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nitii-knowledge-publish
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: Verify sync and client behavior
+        run: python3 -B -m unittest discover -p 'test_*.py' -v
+      - name: Prepare publication branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git show-ref --verify --quiet refs/remotes/origin/knowledge; then
+            git worktree add --detach publication origin/knowledge
+          else
+            git worktree add --detach publication HEAD
+            git -C publication switch --orphan knowledge
+          fi
+      - name: Initialize approved published baseline
+        if: ${{ inputs.bootstrap_only }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --fail --location --proto '=https' --tlsv1.2 --output "$RUNNER_TEMP/nitii-baseline.zip" \
+            https://github.com/nitiphoomkk-dev/nitii-logic-suite/releases/download/v1.1.0/Nitii_Logic_Suite_1.1.0.zip
+          python3 -B wiki_sync.py --feed publication --bootstrap-zip "$RUNNER_TEMP/nitii-baseline.zip"
+      - name: Read and validate current Wiki
+        if: ${{ !inputs.bootstrap_only }}
+        env:
+          WIKI_API_KEY: ${{ secrets.WIKI_API_KEY }}
+        run: python3 -B wiki_sync.py --feed publication
+      - name: Publish complete snapshot and pointer together
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f publication/latest.json
+          git -C publication config user.name 'github-actions[bot]'
+          git -C publication config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git -C publication add latest.json snapshots
+          if ! git -C publication diff --cached --quiet; then
+            git -C publication commit -m 'Update validated NaYoo knowledge snapshot'
+            git -C publication push origin HEAD:knowledge
+          fi
+      - name: Run summary
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          p=json.loads(Path('publication/latest.json').read_bytes())
+          mode='DATED BASELINE ONLY - add WIKI_API_KEY for live sync' if p.get('bootstrap') else 'Wiki metadata/body sync completed'
+          with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as f:
+              f.write(f"## {mode}\n\nDocuments: {p['documentCount']}\n\nSnapshot: `{p['snapshotId']}`\n\nScheduled daily at 20:00 Asia/Bangkok (GitHub may delay runs).\n")
+          PY
