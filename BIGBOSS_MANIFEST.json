@@ -1,0 +1,119 @@
+{
+  "component": "bigboss-phum",
+  "version": "1.0.0",
+  "prepared_on": "2026-11-03",
+  "activation": "explicit human command for the current task only",
+  "files": [
+    {
+      "path": ".agents/skills/bigboss-phum/SKILL.md",
+      "sha256": "5dbe6002c49395bd0986d61437d982f30cae04b3165046471b501476048ac398"
+    },
+    {
+      "path": ".agents/skills/bigboss-phum/agents/openai.yaml",
+      "sha256": "871319877f75bdaa41faea6cc73510167991931f6081c6aed286214211f0c9c3"
+    },
+    {
+      "path": ".agents/skills/nayoo-backend-review/SKILL.md",
+      "sha256": "452872dfd49500376eef16622032ec0df7c3a18a95dfddb75367ed6e43c28e35"
+    },
+    {
+      "path": ".agents/skills/nayoo-backend-review/agents/openai.yaml",
+      "sha256": "c0fc96c7adc07eda99a8fffda852b2d80a55ed14334c7596ecce4e029d7bd27a"
+    },
+    {
+      "path": ".agents/skills/nayoo-frontend-review/SKILL.md",
+      "sha256": "6a669f50cdd70225e9e5548a179eefac34bf55b8a390075c50beb27f338038e1"
+    },
+    {
+      "path": ".agents/skills/nayoo-frontend-review/agents/openai.yaml",
+      "sha256": "485e4e1624c21d77ed3c26f6d7bc345730df7e9a21767899b1edc617814c41ea"
+    },
+    {
+      "path": ".agents/skills/nayoo-pm-planning/SKILL.md",
+      "sha256": "425292b3e9e7b1ebd60b062b86ee5e774865535c7f71530271b64f99e3043195"
+    },
+    {
+      "path": ".agents/skills/nayoo-pm-planning/agents/openai.yaml",
+      "sha256": "d3a3283361fdfe603000f8360737b4fdcd794601815fef1a76a79e06c68fda8f"
+    },
+    {
+      "path": ".agents/skills/nayoo-po-review/SKILL.md",
+      "sha256": "983a5cb25d6a6613555bd8468592f635f899bacf04ed2b91c9a7c0d3c823ba9d"
+    },
+    {
+      "path": ".agents/skills/nayoo-po-review/agents/openai.yaml",
+      "sha256": "5323e0046c07cc04b540ec3928035aa4e22fdc40783ebd3821e76b29d7f57660"
+    },
+    {
+      "path": ".agents/skills/nayoo-sa-review/SKILL.md",
+      "sha256": "dd7ad55275994ed6750b624d16797063139531bd6e4dfef3d8cccdf337136d34"
+    },
+    {
+      "path": ".agents/skills/nayoo-sa-review/agents/openai.yaml",
+      "sha256": "67479bcc0458bd6c7f60e92b11d85dae51c3bd313246441635c9cbfab45da2d5"
+    },
+    {
+      "path": ".agents/skills/nayoo-uxui-review/SKILL.md",
+      "sha256": "d1c59173a8a18d7b80b80d65ae9295eb0ab7f55efdd8858b89ccdd16c68fe578"
+    },
+    {
+      "path": ".agents/skills/nayoo-uxui-review/agents/openai.yaml",
+      "sha256": "c74599ecdb1b7293ff57c0bc652bf481bda9e850076a902186f3ff0746cb2483"
+    },
+    {
+      "path": ".agents/skills/qa-test-design/SKILL.md",
+      "sha256": "b72be7cfcac813c34a7a301ca9639d7ce515d6455cf01b5644ba51c317f0aca9"
+    },
+    {
+      "path": ".codex/agents/nayoo-backend.toml",
+      "sha256": "15881fb2717f3176f887a1a5afd1910c4da144b8127781916706ab487b3df2e0"
+    },
+    {
+      "path": ".codex/agents/nayoo-bigboss-phum.toml",
+      "sha256": "8ed47bef277bc7fc14572fb08068583fa0dc97ad147d6375f7fb88bdd6110147"
+    },
+    {
+      "path": ".codex/agents/nayoo-frontend.toml",
+      "sha256": "3cd1bd93227035e4a3bec9b10b5fee3cb6e64ad59a8fd858825af7e93e3fd4dc"
+    },
+    {
+      "path": ".codex/agents/nayoo-pm.toml",
+      "sha256": "4fb17f3a1b92145f2d86774882055ac971f1e67c893bbab6c0d2c36ca72a6be1"
+    },
+    {
+      "path": ".codex/agents/nayoo-po.toml",
+      "sha256": "4a623c6b1fbdc7953dcfb2ea40b294b9733f5022452ee090ecf8125dc09947b2"
+    },
+    {
+      "path": ".codex/agents/nayoo-qa.toml",
+      "sha256": "d8589930dfc28b9db0a2baff0320ec5b2903da751da8f8189066503624c74172"
+    },
+    {
+      "path": ".codex/agents/nayoo-sa.toml",
+      "sha256": "6bb90b9d6913110788141c88e67c0f23a67e39f56326ff1fb79e94f512465c3f"
+    },
+    {
+      "path": ".codex/agents/nayoo-uxui.toml",
+      "sha256": "e12d75d068c62974b718ca3514f25b9a4749006a48f712ae4b498417b62ec9b9"
+    },
+    {
+      "path": "knowledge/bigboss_phum_workflow.md",
+      "sha256": "ee12059a2e7e39618f0c059ccb4c145c08b4635041b5a7c67a567fb3934435bc"
+    },
+    {
+      "path": "knowledge/team_contract.md",
+      "sha256": "8ecf174bae86086e1d18266b01b182f55625c8123c4e88d59256c20193b4fecd"
+    },
+    {
+      "path": "knowledge/wiki_sync_policy.md",
+      "sha256": "9905b1c6e97b31902c687ae1d5950b2bee5b63e18c38abe4d86f293d9146244a"
+    }
+  ],
+  "excluded": [
+    "credentials",
+    "chat history",
+    "active task records",
+    "local MCP runtime and connection state",
+    "new Wiki snapshots"
+  ]
+}
