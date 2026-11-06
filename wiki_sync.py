@@ -133,7 +133,6 @@ def inventory(api):
             if not isinstance(pagination,dict) or pagination.get('offset',offset)!=offset:
                 raise SyncError('Pagination position mismatch')
             if len(batch)<100:
-                if pagination.get('nextPath'): raise SyncError('Truncated page has continuation')
                 break
         else: raise SyncError('Pagination did not terminate')
         active={id:metadata(d) for id,d in listed.items()
