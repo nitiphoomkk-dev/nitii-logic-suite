@@ -1,0 +1,1111 @@
+
+
+=== f80104c4-7439-44ea-9697-e0bc238fd21e | หน้าแคมเปญ Landing บุรีรัมย์ ===
+SOURCE: https://wiki.infonayoo.co/doc/landing-hym6Xk4mlX
+REVISION: 11
+BODY READ: 2026-11-06T09:52:50.819259+00:00
+
+> ข้อมูลจากโค้ด FE ณ 2026-10-16 (branch `develop` commit `4c73f5e`)
+
+**Route:** `/buriram/campaign/landing/{slug แคมเปญ}` (ไม่มี rewrite ใน `proxy.ts`)
+
+**ไฟล์หน้า:** `app/[location]/campaign/landing/[slug]/page.tsx` → template `components/pages/campaign/event-online/EventOnlineLandingDefault.tsx`
+
+**TrackingProvider:** `source: campaign_landing`, `source_id` = id แคมเปญ, `source_type: campaign` (ไม่มี `category`)
+
+ทุก event ในหน้านี้ได้ค่าเริ่มต้นจาก `CampaignLandingTrackingProvider`: `entity_id` = id แคมเปญ (ถ้า component ไม่ได้ส่ง entity_id เอง) และ extra_data `page_view_id`, `campaign_slug`, `campaign_phase`
+
+Template นี้ใช้กับ `buriram` ทุกแคมเปญ จังหวัดอื่นดูเอกสาร "หน้าแคมเปญ Landing" ต่างจากหน้าแคมเปญ Landing คือไม่มี Flash Deal, ใช้ CampaignParticipantsSection แบบไม่มีปุ่ม "สนใจ" (ข้อ 10) และการ์ด "พิเศษจากแคมเปญ" ไม่มีปุ่มลงทะเบียน (ข้อ 5)
+
+## วิธีอ่านตาราง
+
+* **impression** = การ์ดหรือบล็อกเข้ามาในจอ, **click** = กด, **view** = เปิด modal หรือหน้า
+* **section_number** = ลำดับ section บนหน้า, **position** = ลำดับการ์ดใน section (เริ่มที่ 1)
+* **entity_id** = id ของสิ่งที่ถูกดูหรือกด เช่น id ประกาศ, id แบนเนอร์
+* ⚠️ = ค่าไม่ตรงกับ convention ของส่วนอื่น ควรเช็ก
+
+## สรุป
+
+| \#  | Component | Tracking |
+|-----|-----------|----------|
+| 0   | ทั้งหน้า + ส่วนกลาง (page_view) | ✅        |
+| 1   | EventCampaignHeader (แถบหัวแคมเปญ) | ✅        |
+| 2   | EventHeroSection (cover) | ✅        |
+| 3   | EventDetailsSection (รายละเอียดงาน) | ✅        |
+| 4   | InterestRegistrationSection (ฟอร์มลงทะเบียน, แสดงเมื่อมี id แคมเปญ) | ✅        |
+| 5   | BookingPromotionSection (โปรจอง) | ✅        |
+| 6   | WalkInPromotionSection (โปร Walk-in) | ✅        |
+| 7   | LuckyWinnersSection (รายชื่อผู้โชคดี) | ✅        |
+| 8   | PromotionVideosSection (วิดีโอโปรโมท) | ✅        |
+| 9   | EventVideosAndArticlesSection (วิดีโอและบทความ) | ✅        |
+| 10  | CampaignParticipantsSection (ผู้เข้าร่วมแคมเปญ) | ✅        |
+| 11  | CampaignParticipantMapSection (แผนที่ผู้เข้าร่วม) | ✅        |
+| 12  | ExhibitionFloorPlanSection (แผนผังงาน) | ✅        |
+| 13  | ParticipatingBrandsSection (แบรนด์ที่เข้าร่วม) | ✅        |
+| 14  | CampaignSponsorsSection (ผู้สนับสนุน) | ✅        |
+| 15  | ParticipationStatisticsSection (สถิติผู้เข้าร่วม) | ✅        |
+| 16  | HeroBottomSection (แถบล่าง) | ✅        |
+| 17  | EventMobileActionBar (แถบปุ่มล่าง เฉพาะมือถือ) | ✅        |
+| 18  | EventRegistrationModalHost (modal ลงทะเบียน) | ✅        |
+| 19  | WalkInRegistrationModalHost (modal เก็บโปร Walk-in) | ✅        |
+| 20  | SeoTargetPageContent (ข้อความ SEO ท้ายหน้า) | ❌ ยังไม่มี |
+
+ข้อ 5–13 แสดงเฉพาะ section ที่อยู่ใน `section_order` ของ API และมีข้อมูล เรียงตาม `position` จาก API (ลำดับในตารางนี้ไม่ใช่ลำดับจริงบนหน้า) และใช้ `position` นั้นเป็น section_number เหมือนข้อ 15 ส่วน section อื่นใช้เลขตายตัวในโค้ด
+
+## 0. ทั้งหน้า + ส่วนกลาง
+
+หน้านี้อยู่นอก layout `(interface)` จึงไม่มี Navbar, Pop-up และ Login / Register แถบหัวของหน้าคือ EventCampaignHeader ของแคมเปญเอง (ข้อ 1)
+
+| Component | Event | ประเภท | ยิงเมื่อ | section_name | หมายเหตุ |
+|-----------|-------|--------|----------|--------------|----------|
+| PageViewTracker | `page_view` | view   | เปิดหน้า | `page_section` | 1 ครั้งต่อหน้า |
+
+⚠️ ไม่มี userMeta จาก session: ทุก event ในหน้านี้ส่ง `is_logged_in = false` และไม่มี `user_id` แม้ผู้ใช้ login อยู่
+
+## 1. EventCampaignHeader
+
+ปุ่มแสดงเฉพาะจอ desktop บนมือถือปุ่มชุดนี้ย้ายไปอยู่ EventMobileActionBar (ข้อ 17)
+
+| Event | ประเภท | ยิงเมื่อ | section_name | section_number | หมายเหตุ |
+|-------|--------|----------|--------------|----------------|----------|
+| `campaign_cover_share` | click  | กดปุ่มแชร์ | `cover_section` | 1              | component_type `sticky_header`, destination = URL หน้า |
+| `copy_link`, `line`, `facebook`, `message`, `email` | click  | กดช่องทางในเมนูแชร์ | `cover_section` | 1              | component_type `sticky_header` |
+| `close` | click  | ปิดเมนูแชร์ | `cover_section` | 1              |          |
+| `campaign_cover_save` | click  | กด "เก็บโปร" (แสดงเมื่อมีโปร Walk-in) | `cover_section` | 1              | component_type `sticky_header`, เปิด modal เก็บโปร (ข้อ 19) |
+| `campaign_cover_register` | click  | กด "ลงทะเบียนสนใจ" | `cover_section` | 1              | destination = `register_modal`, เปิด modal ลงทะเบียน (ข้อ 18) |
+
+## 2. EventHeroSection
+
+| Event | ประเภท | ยิงเมื่อ | section_name | section_number | หมายเหตุ |
+|-------|--------|----------|--------------|----------------|----------|
+| `campaign_cover` | impression | cover เข้าจอ | `cover_section` | 1              | ยิงซ้ำทุกครั้งที่กลับเข้าจอ |
+| `campaign_cover_share` | click  | กดปุ่มแชร์บน cover | `cover_section` | 1              | component_type `hero`, destination = URL หน้า |
+| `copy_link`, `line`, `facebook`, `message`, `email` | click  | กดช่องทางในเมนูแชร์ | `cover_section` | 1              | component_type `hero` |
+| `close` | click  | ปิดเมนูแชร์ | `cover_section` | 1              |          |
+
+ปุ่มแชร์ที่หัว (ข้อ 1), cover และแถบมือถือ (ข้อ 17) ใช้ event และ section เดียวกัน แยกกันด้วย `component_type`
+
+## 3. EventDetailsSection
+
+| Event | ประเภท | ยิงเมื่อ | section_name | section_number | หมายเหตุ |
+|-------|--------|----------|--------------|----------------|----------|
+| `campaign_details` | impression | บล็อกรายละเอียดเข้าจอ | `campaign_details_section` | 2              |          |
+| `campaign_details_expand` / `campaign_details_collapse` | click  | กด "ดูเพิ่มเติม" / "ย่อ" | `campaign_details_section` | 2              | extra_data: `ui_state` |
+| `campaign_website` | click  | กดลิงก์ในข้อความรายละเอียด | `campaign_details_section` | 2              | destination = URL ลิงก์ |
+
+## 4. InterestRegistrationSection
+
+ชุด event ของฟอร์มลงทะเบียน (RegisterInterestForm) ชุดนี้ใช้ซ้ำใน modal ข้อ 5, 18, 19 โดยเปลี่ยนแค่ section
+
+| Event | ประเภท | ยิงเมื่อ | section_name | section_number | หมายเหตุ |
+|-------|--------|----------|--------------|----------------|----------|
+| `campaign_registration_form` | impression | ฟอร์มเข้าจอ | `campaign_registration_section` | 3              |          |
+| `campaign_registration_start` | click  | เริ่มกรอกชื่อ / เบอร์ หรือกด consent ครั้งแรก | `campaign_registration_section` | 3              | ครั้งเดียวต่อฟอร์ม, extra_data: `form_id` = `campaign_registration_form` |
+| `campaign_registration_consent` | click  | ติ๊ก / เอาติ๊ก consent | `campaign_registration_section` | 3              | extra_data: `consent` |
+| `campaign_registration_submit` | click  | กดส่งฟอร์ม | `campaign_registration_section` | 3              | extra_data: `form_id` |
+| `campaign_registration_success` | view   | ส่งสำเร็จ | `campaign_registration_section` | 3              | entity_id = id การลงทะเบียน, extra_data: `result_status` |
+| `campaign_registration_error` | view   | ส่งไม่ผ่าน | `campaign_registration_section` | 3              | extra_data: `error_code` (`validation_error`, `turnstile_required`, `http_{status}`, `network_error`, `missing_interest_context`), `failed_field_name` |
+
+## 5. BookingPromotionSection
+
+| Component | Event | ประเภท | ยิงเมื่อ | section_name | section_number | หมายเหตุ |
+|-----------|-------|--------|----------|--------------|----------------|----------|
+| การ์ดโปร  | `campaign_booking_promotion` | impression | การ์ดเข้าจอ | `campaign_booking_promotion_section` | ตาม API        | position = ลำดับการ์ด, entity_id = id โปร, extra_data: `participant_type`, `participant_id`, `slot_position` |
+| การ์ดโปร  | `campaign_booking_terms_open` | click  | กดการ์ด หรือปุ่ม "ลงทะเบียนรับโปรโมชัน" | `campaign_booking_promotion_section` | ตาม API        | เปิด modal เงื่อนไข, extra_data: `ui_state` = `open` |
+| แท็บหมวด  | `campaign_booking_tab` | click  | เปลี่ยนแท็บ (แสดงเมื่อมีหลายหมวด) | `campaign_booking_promotion_section` | ตาม API        | position = ลำดับแท็บ, extra_data: `category` |
+| carousel  | `campaign_booking_carousel` | click  | เลื่อนการ์ด | `campaign_booking_promotion_section` | ตาม API        | position = สไลด์ปลายทาง, extra_data: `direction`, `from_index`, `to_index` |
+| การ์ด "พิเศษจากแคมเปญ" | `campaign_booking_promotion` | impression | การ์ดเข้าจอ | `campaign_booking_promotion_section` | ตาม API        | position = จำนวนการ์ดโปร + 1, extra_data: `participant_type` (ค่าเริ่มต้น `campaign`) |
+| การ์ด "พิเศษจากแคมเปญ" | `campaign_booking_terms_open` | click  | กดการ์ด หรือ "เงื่อนไข" | `campaign_booking_promotion_section` | ตาม API        | extra_data: `ui_state` = `open` |
+| modal เงื่อนไข | `click` | click  | ปิด modal เงื่อนไข | `campaign_booking_promotion_section` | \-             | ⚠️ event_name เป็น `click` (action_name = `close`) |
+| ฟอร์มใน modal เงื่อนไข | ชุด event ฟอร์ม (ข้อ 4) | impression, click, view | ตามข้อ 4 | `campaign_registration_booking_modal_section` | ตาม API        | component_type `modal`, แสดงเมื่อโปรผูกกับผู้เข้าร่วม |
+
+การ์ด "พิเศษจากแคมเปญ" ไม่มีปุ่มลงทะเบียน (template นี้ส่ง `showFeaturedRegistration={false}`) และ modal เงื่อนไขไม่มีปุ่มลงทะเบียนท้าย modal เพราะ `buriram` อยู่ใน `disableCTARegistrationCampaign`
+
+## 6. WalkInPromotionSection
+
+| Event | ประเภท | ยิงเมื่อ | section_name | section_number | หมายเหตุ |
+|-------|--------|----------|--------------|----------------|----------|
+| `walkin_offer` | impression | คูปองเข้าจอ | `walkin_promotion_section` | ตาม API        | position = ลำดับคูปองในกลุ่ม, entity_id = id คูปอง, extra_data: `coupon_type`, `participant_type`, `participant_id`, `slot_position` |
+| `walkin_offer_open` | click  | กดคูปอง  | `walkin_promotion_section` | ตาม API        | เปิด modal รายละเอียด, extra_data: `entry_page` = `campaign_landing`, `participant_id` |
+| `walkin_offer_terms_open` | click  | กด "เงื่อนไข" บนคูปอง | `walkin_promotion_section` | ตาม API        | extra_data: `ui_state` = `open` |
+| `walkin_offer_carousel` | click  | เลื่อนคูปอง (กลุ่มที่เป็น carousel) | `walkin_promotion_section` | ตาม API        | position = สไลด์ปลายทาง, extra_data: `direction`, `from_index`, `to_index` |
+| `walkin_offer_collect` | click  | กด "เก็บโปร" ใน modal รายละเอียด | `walkin_promotion_section` | ตาม API        | entity_id = id คูปอง, extra_data: `entry_page`, เปิด modal เก็บโปร (ข้อ 19) |
+| `close` | click  | ปิด modal รายละเอียด | `walkin_promotion_section` | ตาม API        | entity_id = id คูปอง, extra_data: `entry_page` |
+| `walkin_offers_view_all` | click  | กดปุ่มเก็บโปรทั้งหมด | `walkin_promotion_section` | ตาม API        | position = 1, extra_data: `entry_page`, `offer_count_visible`, เปิด modal เก็บโปร (ข้อ 19) |
+
+## 7. LuckyWinnersSection
+
+| Event | ประเภท | ยิงเมื่อ | section_name | section_number | หมายเหตุ |
+|-------|--------|----------|--------------|----------------|----------|
+| `campaign_winner_list` | impression | บล็อกผู้โชคดีเข้าจอ | `campaign_winners_section` | ตาม API        | extra_data: `winner_count` |
+| `campaign_winner_slide` | click  | เลื่อนรูปโปสเตอร์ใน modal รูป | `campaign_winners_section` | ตาม API        | position = รูปปลายทาง, extra_data: `direction`, `from_index`, `to_index` |
+
+
+## 8. PromotionVideosSection
+
+| Component | Event | ประเภท | ยิงเมื่อ | section_name | section_number | หมายเหตุ |
+|-----------|-------|--------|----------|--------------|----------------|----------|
+| การ์ดวิดีโอ | `campaign_video` | impression | การ์ดเข้าจอ | `campaign_promotion_videos_section` | ตาม API        | position = ลำดับการ์ด, entity_id = id วิดีโอ, extra_data: `category` |
+| แท็บ      | `campaign_video_tab` | click  | เปลี่ยนแท็บ | `campaign_promotion_videos_section` | ตาม API        | position = ลำดับแท็บ, extra_data: `category` |
+| carousel  | `campaign_video_carousel` | click  | เลื่อนการ์ด | `campaign_promotion_videos_section` | ตาม API        | position = สไลด์ปลายทาง, extra_data: `direction`, `from_index`, `to_index` |
+| VideoAutoplayModal | `campaign_video` | view   | เปิด modal (กดการ์ด) | `campaign_promotion_videos_section` | ⚠️ -           | entity_id = id วิดีโอ, การกดการ์ดไม่มี click event แยก |
+| VideoAutoplayModal | `campaign_video` | click  | กดแชร์ / อ่านรีวิว / ไปหน้าประกาศ / ปิด modal | `campaign_promotion_videos_section` | ⚠️ -           | action_name = `campaign_video_share` / `campaign_video_read_review` / `campaign_video_go_to_post` / `close`, ⚠️ event_name เหมือนกันหมด แยกได้จาก action_name เท่านั้น |
+| VideoAutoplayModal | `campaign_video_play` | click  | วิดีโอเริ่มเล่น | `campaign_promotion_videos_section` | ตาม API        | position = ลำดับการ์ด, extra_data: `category`, `current_seconds` |
+| VideoAutoplayModal | `campaign_video_progress` | view   | ปิด modal | `campaign_promotion_videos_section` | ตาม API        | ยิงคู่กับ event ปิด modal, extra_data: `milestone_percent` |
+| SocialShareModal | `copy_link`, `line`, `facebook`, `message`, `email`, `close` | click  | กดในเมนูแชร์ของ modal | `pop_up_share` | 1              | entity_id = id วิดีโอ |
+
+⚠️ ปุ่ม "ลงทะเบียนสนใจ" ใน modal (แสดงเมื่อวิดีโอผูกกับประกาศ) ไม่ยิง click event มีแค่ event ฟอร์มใน modal ลงทะเบียน (ข้อ 18)
+
+## 9. EventVideosAndArticlesSection
+
+| Component | Event | ประเภท | ยิงเมื่อ | section_name | section_number | หมายเหตุ |
+|-----------|-------|--------|----------|--------------|----------------|----------|
+| วิดีโอ    | `campaign_content` | impression | วิดีโอเข้าจอ | `campaign_content_section` | ตาม API        | position = ลำดับวิดีโอ, entity_id = id วิดีโอ, extra_data: `content_type` = `video` |
+| วิดีโอ    | `campaign_content` | click  | กดวิดีโอ (เปิด modal) | `campaign_content_section` | ตาม API        | destination = URL วิดีโอ |
+| วิดีโอ    | `campaign_content_play` | click  | วิดีโอเริ่มเล่นใน modal | `campaign_content_section` | ตาม API        | entity_id = id วิดีโอ |
+| วิดีโอ    | `campaign_content_carousel` | click  | เลื่อนวิดีโอ | `campaign_content_section` | ตาม API        | position = สไลด์ปลายทาง, extra_data: `direction`, `from_index`, `to_index` |
+| บทความ    | `campaign_content` | impression, click | บทความเข้าจออย่างน้อย 1 วินาที / กด | `campaign_content_section` | ตาม API        | position = ลำดับบทความ, entity_id = id บทความ, extra_data: `content_type` = `article` |
+| ปุ่มสนใจ  | `campaign_interest_button_investment` / `campaign_interest_button_residential` | impression, click | ปุ่มเข้าจออย่างน้อย 1 วินาที / กด | `campaign_content_section` | ตาม API        | entity_id = `investment` / `residential`, destination = URL ปุ่ม, แสดงเมื่อมีบทความและเปิดปุ่มไว้ |
+
+วิดีโอและบทความใช้ event `campaign_content` เดียวกันและนับ position แยกกัน แยกได้ด้วย `content_type`
+
+## 10. CampaignParticipantsSection
+
+แสดงเมื่อ API มี section `participants` และมีผู้เข้าร่วมอย่างน้อย 1 กลุ่ม (โครงการใหม่, มือสอง, รับสร้างบ้าน)
+
+| Component | Event | ประเภท | ยิงเมื่อ | section_name | section_number | หมายเหตุ |
+|-----------|-------|--------|----------|--------------|----------------|----------|
+| section   | `campaign_participants` | impression | section เข้าจอ | `campaign_participants_section` | ตาม API        | entity_id = id แคมเปญ |
+| ปุ่มดูทั้งหมด | `campaign_participants_view_all` | click  | กด "ดูทั้งหมด" ของกลุ่ม | `campaign_participants_section` | ตาม API        | position = ลำดับกลุ่ม, destination = หน้า search ของหมวด `?event_online=1`, extra_data: `category` |
+| carousel  | `campaign_participants_carousel` | click  | ผู้ใช้เลื่อนการ์ด | `campaign_participants_section` | ตาม API        | position = สไลด์ปลายทาง, extra_data: `category`, `direction`, `from_index`, `to_index` |
+| PostTileCard / PostTileCompanyCard | `post` / `post_top_ad` / `post_new_project` / `post_new_phase` / `post_company_home_builder` / `super_top_ad` (และแบบ `_top_ad`) | impression, click | การ์ดเข้าจออย่างน้อย 1 วินาที / กดการ์ด | `campaign_participants_section` | ตาม API        | position = ลำดับการ์ดในกลุ่ม, entity_id = id ประกาศ / id บริษัท, action_id = ลำดับการ์ด, extra_data: `entity_type` (`post` / `company`), `participant_id` |
+
+ปุ่มบันทึกบนการ์ดไม่แสดง เพราะ flag `SHOW_BOOKMARK = false` event `_save` จึงไม่ยิง
+
+template นี้ไม่มีปุ่ม "สนใจ" ใต้การ์ด (`showSelectButton={false}`)
+
+## 11. CampaignParticipantMapSection
+
+| Component | Event | ประเภท | ยิงเมื่อ | section_name | section_number | หมายเหตุ |
+|-----------|-------|--------|----------|--------------|----------------|----------|
+| แผนที่    | `campaign_participant_map` | impression | แผนที่โหลดเสร็จและเข้าจอ | `campaign_participant_map_section` | ตาม API        | extra_data: `visible_marker_count` |
+| ตัวกรองประเภท | `campaign_map_category_filter` | click  | กดใช้ตัวกรอง | `campaign_participant_map_section` | ตาม API        | 1 event ต่อ 1 ประเภทที่เลือก, extra_data: `category` (ไม่เลือก = null) |
+| ตัวกรองโซน | `campaign_map_zone_filter` | click  | กดใช้ตัวกรอง | `campaign_participant_map_section` | ตาม API        | 1 event ต่อ 1 โซนที่เลือก, extra_data: `zone_id` |
+| หมุด      | `campaign_map_marker` | click  | กดหมุด   | `campaign_participant_map_section` | ตาม API        | entity_id = id ผู้เข้าร่วม, extra_data: `map_zoom`, `participant_type`, ยิงเฉพาะหมุดที่มี id ผู้เข้าร่วม |
+| กล่องรายละเอียดหมุด | `campaign_map_entity` | click  | กดการ์ด หรือปุ่มในกล่อง | `campaign_participant_map_section` | ตาม API        | entity_id = id ผู้เข้าร่วม, destination = หน้าประกาศ, extra_data: `participant_type` |
+| PostTileCard ในกล่อง | `post` / `post_top_ad` / `post_new_project` / `post_new_phase` / `post_style` / `super_top_ad` (และแบบ `_top_ad`) | impression, click | กล่องเปิด / กดการ์ด | `posts_first_section` | ⚠️ 1           | position = 1 ตายตัว, ⚠️ กดการ์ดยิงซ้อนกับ `campaign_map_entity` |
+
+ปุ่มบันทึกบนการ์ดไม่แสดง เพราะ flag `SHOW_BOOKMARK = false` event `_save` จึงไม่ยิง
+
+## 12. ExhibitionFloorPlanSection
+
+| Event | ประเภท | ยิงเมื่อ | section_name | section_number | หมายเหตุ |
+|-------|--------|----------|--------------|----------------|----------|
+| `campaign_exhibition_plan` | impression | บล็อกแผนผังเข้าจอ | `campaign_exhibition_plan_section` | ตาม API        |          |
+| `campaign_exhibition_plan_open` | click  | กดเปิดแผนผัง | `campaign_exhibition_plan_section` | ตาม API        | extra_data: `ui_state` = `open` |
+
+## 13. ParticipatingBrandsSection
+
+| Event | ประเภท | ยิงเมื่อ | section_name | section_number | หมายเหตุ |
+|-------|--------|----------|--------------|----------------|----------|
+| `campaign_logo_brand` / `campaign_logo_brand_ad` | impression, click | การ์ดแบรนด์เข้าจอ / กด | `campaign_brand_section` | ตาม API        | ใช้ `_ad` เมื่อแบรนด์เป็น ads, position = ลำดับการ์ด, entity_id = id แบรนด์, destination = หน้าแบรนด์ |
+| `campaign_logo_brand_carousel` | click  | เลื่อนการ์ด | `campaign_brand_section` | ตาม API        | position = สไลด์ปลายทาง, extra_data: `direction`, `from_index`, `to_index` |
+
+## 14. CampaignSponsorsSection
+
+| Event | ประเภท | ยิงเมื่อ | section_name | section_number | หมายเหตุ |
+|-------|--------|----------|--------------|----------------|----------|
+| `campaign_sponsor` | impression, click | โลโก้เข้าจอ / กด | `campaign_sponsors_section` | ⚠️ 0           | position = ลำดับโลโก้ในแต่ละระดับ, entity_id = id สปอนเซอร์, extra_data: `sponsor_tier` (`primary` / `secondary`), click ยิงเฉพาะโลโก้ที่มีลิงก์ |
+
+⚠️ section_number เป็น 0 เพราะหน้านี้ส่ง `positionTracking={0}` ให้ CampaignSponsorsSection
+
+## 15. ParticipationStatisticsSection
+
+ถ้า API ไม่มี `post_count_section` ใน `section_order` FE ต่อท้ายให้เอง (position = ค่าสูงสุด + 1) จึงแสดงเสมอ
+
+| Event | ประเภท | ยิงเมื่อ | section_name | section_number | หมายเหตุ |
+|-------|--------|----------|--------------|----------------|----------|
+| `campaign_participation_summary` | impression | บล็อกสถิติเข้าจอ | `campaign_participation_summary_section` | ตาม API        | extra_data: `counts_by_category` |
+| `campaign_participation_category` | click  | กดหมวด   | `campaign_participation_summary_section` | ตาม API        | position = ลำดับหมวด, destination = หน้า search ของหมวด `?event_online=1`, extra_data: `category` |
+
+## 16. HeroBottomSection
+
+มือถือแสดงเป็น footer ท้ายหน้า, desktop แสดงเป็นแถบ sticky ล่างจอ
+
+| Event | ประเภท | ยิงเมื่อ | section_name | section_number | หมายเหตุ |
+|-------|--------|----------|--------------|----------------|----------|
+| `campaign_sticky_bar` | impression | แถบ desktop เข้าจอ | `campaign_sticky_bar_section` | ⚠️ 0           | footer มือถือไม่มี impression |
+| `campaign_sticky_register` | click  | กด "ลงทะเบียน" | `campaign_sticky_bar_section` | ⚠️ 0           | destination = `register_modal`, เปิด modal ลงทะเบียน (ข้อ 18), ไม่มี component_type แยกมือถือ / desktop |
+| `campaign_cover_share` | click  | กดปุ่มแชร์ | `campaign_sticky_bar_section` | ⚠️ 0           | component_type `sticky_bar_mobile` / `sticky_bar_desktop`, ใช้ชื่อ event เดียวกับปุ่มแชร์บน cover |
+| `copy_link`, `line`, `facebook`, `message`, `email`, `close` | click  | กดในเมนูแชร์ / ปิดเมนู | `campaign_sticky_bar_section` | ⚠️ 0           | component_type เหมือนแถวบน |
+
+⚠️ section_number เป็น 0 ทุก event ใน section นี้ (เขียนตายตัวในโค้ด)
+
+## 17. EventMobileActionBar
+
+แถบปุ่มติดล่างจอ แสดงเฉพาะมือถือ
+
+| Event | ประเภท | ยิงเมื่อ | section_name | section_number | หมายเหตุ |
+|-------|--------|----------|--------------|----------------|----------|
+| `campaign_cover_share` | click  | กดปุ่มแชร์ | `cover_section` | 1              | component_type `contact_bar`, destination = URL หน้า |
+| `copy_link`, `line`, `facebook`, `message`, `email`, `close` | click  | กดในเมนูแชร์ / ปิดเมนู | `cover_section` | 1              | component_type `contact_bar` |
+| `campaign_cover_save` | click  | กด "เก็บโปร" (แสดงเมื่อมีโปร Walk-in) | `cover_section` | 1              | component_type `contact_bar`, เปิด modal เก็บโปร (ข้อ 19) |
+| `campaign_cover_register` | click  | กด "ลงทะเบียนสนใจ" | `cover_section` | 1              | component_type `contact_bar`, destination = `register_modal`, เปิด modal ลงทะเบียน (ข้อ 18) |
+
+## 18. EventRegistrationModalHost
+
+เปิดจากปุ่มลงทะเบียนในข้อ 1, 16, 17 และปุ่ม "ลงทะเบียนสนใจ" ใน modal วิดีโอ (ข้อ 8)
+
+| Event | ประเภท | ยิงเมื่อ | section_name | section_number | หมายเหตุ |
+|-------|--------|----------|--------------|----------------|----------|
+| ชุด event ฟอร์ม (ข้อ 4) | impression, click, view | ตามข้อ 4 | `campaign_registration_section` | 3              | component_type `modal`, ⚠️ section_name และ section_number เดียวกับฟอร์มในหน้า (ข้อ 4) แยกได้ด้วย component_type เท่านั้น |
+
+⚠️ ปิด modal ไม่ยิง `close` เพราะหน้านี้ไม่ได้ส่ง `section` ให้ EventRegistrationModalHost
+
+## 19. WalkInRegistrationModalHost
+
+เปิดจาก "เก็บโปร" ในข้อ 1, 17 และปุ่มเก็บโปรในข้อ 6 ทุก event มี component_type `modal`
+
+| Event | ประเภท | ยิงเมื่อ | section_name | section_number | หมายเหตุ |
+|-------|--------|----------|--------------|----------------|----------|
+| `walkin_offer_selector` | impression | ตัวเลือกประกาศเข้าจอ | `walkin_promotion_section` | ⚠️ 3           | 1 ครั้งต่อการเปิด modal, extra_data: `entry_page`, `available_offer_count`, ไม่แสดงเมื่อเปิดจากคูปองที่ระบุประเภทไว้ |
+| `walkin_offer_select` | click  | ติ๊กเลือก / เอาออกประกาศ | `walkin_promotion_section` | ⚠️ 3           | position = ลำดับในรายการ, entity_id = id ผู้เข้าร่วม, extra_data: `selected`, `offer_category`, `entry_page` |
+| `walkin_offer_claim_submit` | click  | กด "ลงทะเบียนเก็บโปร" | `walkin_promotion_section` | ⚠️ 3           | extra_data: `selected_count`, `entry_page`, ⚠️ ยิงพร้อม `campaign_registration_submit` |
+| ชุด event ฟอร์ม (ข้อ 4) | impression, click, view | ตามข้อ 4 | `walkin_promotion_section` | ⚠️ 3           |          |
+| `close` | click  | ปิด modal | `walkin_promotion_section` | ⚠️ 3           |          |
+
+⚠️ section_number เป็น 3 ตายตัว (ค่า default ของ modal) ไม่ตรงกับ section_number ของ WalkInPromotionSection ที่มาจาก API
+
+=== f9675f17-e8c5-4942-92f0-e83410e7349b | Console ===
+SOURCE: https://wiki.infonayoo.co/doc/console-SAXplbcoOD
+REVISION: 3
+BODY READ: 2026-11-06T09:52:50.946117+00:00
+
+เอกสาร Frontend ของ Console (`next-frontend-console-service`)
+
+=== f97675f1-b259-4a26-b9ad-69b5ddbf343e | Role การสมัครสมาชิก ===
+SOURCE: https://wiki.infonayoo.co/doc/role-y74JHdXPAQ
+REVISION: 3
+BODY READ: 2026-11-06T09:52:51.019943+00:00
+
+**การสมัครสมาชิกของเว็บน่าอยู่**
+
+| Role | สมัครสมาชิกหน้าเว็บ NaYoo | สมัครสมาชิกหลังบ้าน Console |
+|------|---------------------------|-----------------------------|
+| ผู้ใช้ทั่วไป | ใช่                       |                             |
+| เจ้าของทรัพย์มือสอง | ใช่                       |                             |
+| เจ้าของหอพัก | ใช่                       |                             |
+| นายหน้าอิสระ | ใช่                       |                             |
+| นายหน้าบริษัท | ใช่                       |                             |
+| โครงการมือ 1 |                           | ใช่                         |
+| บริษัทรับสร้างบ้าน |                           | ใช่                         |
+| ทรัพย์ธนาคาร NPA |                           | ใช่                         |
+
+| Role | สมัคร | เงื่อนไข | ข้อจำกัด |
+|------|-------|----------|----------|
+| ผู้ใช้ทั่วไป | nayoo | สมัครอย่างเดียว | \-       |
+| เจ้าของทรัพย์มือสอง |       | ใบประกาศทั่วไป ≥ 1 | สามารถเป็นนายหน้าได้ |
+| เจ้าของหอพัก |       | ใบประกาศหอพัก ≥ 1 | **ไม่สามารถเป็นนายหน้าได้** |
+| นายหน้าอิสระ | nayoo | สมัครนายหน้า | ไม่มีประกาศหอพัก |
+| นายหน้าบริษัท | nayoo | สมัครนายหน้า | ไม่มีประกาศหอพัก |
+| โครงการมือ 1 | Console,Backoffice | Admin สร้างให้ | ไม่มีประกาศหอพัก,ขาย/เช่า |
+| บริษัทรับสร้างบ้าน | Console,Backoffice | Admin สร้างให้ | ไม่มีประกาศหอพัก,ขาย/เช่า |
+| ทรัพย์ธนาคาร NPA | Console,Backoffice | Admin สร้างให้ | **ไม่สามารถเป็นนายหน้าได้** |
+
+=== f9e2fab8-04c2-4271-87a2-023499b18037 | สถิติใบประกาศหอพัก ===
+SOURCE: https://wiki.infonayoo.co/doc/4liq4liw4li04liv4li04lmd4lia4lib4lij4liw4lib4liy4lio4lir4lit4lie4lix4lib-9m17NXeQzb
+REVISION: 3
+BODY READ: 2026-11-06T09:52:51.111882+00:00
+
+[**__https://docs.google.com/spreadsheets/d/1NbUCmQSdp-vLtFujZ3RD2BUj14vE3Y8fuIakWTt7XH8/edit?gid=261148402#gid=261148402__**](https://docs.google.com/spreadsheets/d/1NbUCmQSdp-vLtFujZ3RD2BUj14vE3Y8fuIakWTt7XH8/edit?gid=261148402#gid=261148402)
+
+\n**ข้อมูลการแมพกับกราฟการแสดงผลแต่ละประเภทใบประกาศยึดตาม google sheets**
+
+**การเก็บข้อมูล เก็บหมด แต่แสดงข้อมูลแต่ข้อมุลในหน้าใบประกาศเท่านั้น**
+
+ ![](https://wiki.infonayoo.co/api/attachments.redirect?id=2c75eea6-fa10-46ee-95e6-bb0716a7f3d4)
+
+**ฟีเจอร์ สถิติใบประกาศมือ 2**
+
+1\. **สามารถเลือการแสดงผลค่าบนกรากฟได้ดังต่อนี้ แสดงผล 3 ค่า (default 3 ค่า)**
+
+1\. **การมองเห็น X ครั้ง**
+
+2\. **การเข้าดูใบประกาศ X ครั้ง**
+
+3\. **ความสนใจ X คลิก**
+
+4\. **สามารถเลือกที่จะฟีลเตอร์ค่าบนกราฟได้ด้วยการกดติักถูกที่**
+
+ ![](https://wiki.infonayoo.co/api/attachments.redirect?id=e8a2f048-9e23-4b82-a90e-c44b150fe8d4)
+
+\n2. **สามารถฟีลเตอร์วันเวลาได้ ข้อมูล**
+
+5\. 7 วัน (7 วันนับวันปัจจุบันถอยหลังไปอีก 7 วัน)
+
+6\. **30 วัน เป็นค่า default** ของสถิติใบประกาศ (30 วันนับวันปัจจุบันถอยหลังไปอีก 30 วัน)
+
+7\. รายปี (12 เดือนนับวันปัจจุบันถอยหลังไปอีก 12 เดือน)
+
+8\. ทั้งหมด (นับตั้งแต่การสร้างใบประกาศ )
+
+ ![](https://wiki.infonayoo.co/api/attachments.redirect?id=5b086863-4a0c-481a-9a98-5b3356b7e52a)
+
+**การใช้ข้อมูลมี 5 ค่า (ฟีลเตอร์ค่าตามวันเวลาที่เลือก)**
+
+1\. การมองเห็น ครั้ง(เฉลี่ย ครั้ง/วัน)
+
+2\. การเข้าดูใบประกาศ ครั้ง (เฉลี่ย ครั้งวัน)
+
+3\. ความสนใจ คลิก (เฉลี่ย คลิก/วัน)
+
+4\. การติดต่อ คลิก (เฉลี่ย คลิก/วัน)
+
+5\. รายชื่อ คน (เฉลี่ย X/วัน)
+
+3\. **Custom วันที่ไม่ได้**
+
+\n\n**การแสดงข้อมูลรูปแบบกราฟแต่ละแบบในรูปการฟีลเตอร์ตามเวลา ดังต่อไปนี้**
+
+\- 7 วัน (7 วันนับวันปัจจุบันถอยหลังไปอีก 7 วัน) แสดงข้อมูลวันที่ย้อนหลัง 1 วันเสมอ กราฟใน mobile แสดงค่าวันที่ย้อนหลังวัน ปัจจุบันก่อนใน mobile
+
+\n\n ![](https://wiki.infonayoo.co/api/attachments.redirect?id=cab8448e-8af7-487e-ac96-f2c07bb355d1)
+
+\n- รายชื่อ 30 วัน แสดงข้อมูลวันที่ย้อนหลัง 1 วันเสมอ กราฟใน mobile แสดงค่าวันที่ย้อนหลังวัน
+
+ปัจจุบันก่อนใน mobile
+
+ ![](https://wiki.infonayoo.co/api/attachments.redirect?id=7ae5b7f4-d5da-4919-ae5c-03227c6336f9)
+
+\- รายปี แสดงข้อมูลเดือนที่ปัจจุบันย่อนหลังไป 12 เดือนนับรวมเดือนที่ปัจจุบัน ปัจจุบันก่อนใน mobile
+
+ ![](https://wiki.infonayoo.co/api/attachments.redirect?id=0f64c9ba-a160-4423-8594-d935ecc66cb6)
+
+\n\n- ทั้งหมด แสดงข้อมูลเดือนที่ปัจจุบันย่อนหลังไป ทั้งหมดเดือนนับรวมเดือนที่ปัจจุบัน ปัจจุบันก่อนใน mobile
+
+\n ![](https://wiki.infonayoo.co/api/attachments.redirect?id=0ed34bf8-50ea-4049-85a1-380549e3252d)
+
+\n\n\n\n\n\n\n**การ tracking data ในหน้าใบประกาศ นับครั้งแรกที่กด**
+
+1\. **ปุ่มลงทะเบียน นับข้อมูลรวมกันทั้งหมด ถ้าการลงทะเบียนั้นมี modal ด้านใน จะนับแค่การคลิกปุ่มที่ด้านนอกเท่านั้น ด้านในไม่นับ**
+
+ ![](https://wiki.infonayoo.co/api/attachments.redirect?id=830a3e24-d5e4-4e7b-b8a0-b309afe51e81)
+
+2\. ปุ่มแชร์ แชร์ นับทุกปุ่มที่บนหน้าใบประกาศ นับรวมเข้าในการแชร์ไม่นับแยก
+
+3\. ข้อมูลอื่นๆที่อยู่ในตาราง นับทุกครั้งที่มีการคลิก
+
+4\. Layer ภาพนับทุกครั้งที่มีการคลิกภาพเข้าไป ครั้งแรกที่กด
+
+5\. Event online
+
+1\. นับเฉพาะการคลิกดูข้อมูล event ไม่นับการลงทะเบียน
+
+**การแสดงผลกราฟสถิติใปบระกาศเจ้าของหอพัก ชื่อใบประกาศ แสดงยาวมากจะเป็นจุดๆ ถ้าล้น contraner ดึงชื่อภาษาไทยมาแสดง**
+
+**ถ้ากดดูรายชื่อวิ่งไปหน้ารายชื่อผู้สนใจแล้วฟีลเตอร์ใบประกาศนั้น**
+
+\n\n ![](https://wiki.infonayoo.co/api/attachments.redirect?id=5fbd456f-270c-4f10-8cd2-c196ab7d38ff)
+
+\n\nการ hover จะต้อง hover ไดนามิกข้อมูลบนกราฟได่้
+
+ ![](https://wiki.infonayoo.co/api/attachments.redirect?id=468c68a1-4ce7-4d93-bd33-8878ea406921)
+
+แต่การแสดงผลกราฟเป็น **Basic area chart**
+
+ ![](https://wiki.infonayoo.co/api/attachments.redirect?id=7e9a25e8-c707-45ee-8010-d2a250deab5d)
+
+\n\n\n**การแสดงผลเมื่อไม่มีข้อมูล**
+
+ ![](https://wiki.infonayoo.co/api/attachments.redirect?id=71c21edb-6235-401f-93a6-20a4c826bf73)
+
+\n**Product ถ้าไม่ได้ซื้อหรือเข้าร่วม ให้ hide จากการแสดงผล และเลื่อนการแสดงผลข้อมูลชุดทันไปมาแทนทีในตำแหน่งที่ถูกวางไว้ใน UI**
+
+\- VR 360 คลิกวิดีโอรีวิว คลิกบทความ walk-in event online
+
+\n\n\n\n\n\n\n\n\n**EP-02 วันที่ออนไลน์**
+
+\n ![](https://wiki.infonayoo.co/api/attachments.redirect?id=858f877c-e24f-4106-a6dc-2674430c8576)
+
+**EP-03 การคำนวณ**
+
+ ![](https://wiki.infonayoo.co/api/attachments.redirect?id=8bc1b2b5-4c1a-4d25-8c17-185c7d282332)
+
+\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n**การเซ็นยินยอมความรับผิดชอบและหน้าที่ในฟีเจอร์สถิติใบประกาศ**
+
+| **ชื่อ-สกุล** | **ตำ<br>แหน่ง** | **วันที่ เซ็น** | **วันที่กำหนดส่ง** | **บทบาท** | **ความรับผิดชอบในการยืนยัน** | **ลายเซ็น** |
+|-----------|----------|-------------|----------------|-------|--------------------------|---------|
+| ภัคณัฏฐ์ บุญเชิดชัยยันต์ | CEO      | 16/5/2569   | 16/5/2569      | CF UI<br>/logic | ยืนยันว่าสามารถใช้งานได้ตามหลักการของ /เข้าใจหลักการทำงาน ฟีเจอร์**สถิติใบประกาศ** |  ![](https://wiki.infonayoo.co/api/attachments.redirect?id=6c676762-62b7-4e3b-8f1f-33c8ed1eb82d) |
+| นายวุฒิชัย ประเสริฐสังข์ | Head of technology |             | 16/5/2569      | ReviewUI<br>/logic | รีวิวว่าสามารถ dev ได้ตามความต้องการของ business requirement / ตรวจสอบความถูกต้องของการทำงานฟีเจอร์**สถิติใบประกาศ** |         |
+| กิตติธร เพ็งศรี | Lead dev |             | 16/5/2569      | ReviewUI/<br>logic | รีวิวว่าสามารถ dev ได้ตามความต้องการของ business requirement / ตรวจสอบความถูกต้องของการทำงานฟีเจอร์**สถิติใบประกาศ** |         |
+
+=== fcfb968d-5429-4c7f-88c1-aec613aebd9b | Product-And-Non-Product ===
+SOURCE: https://wiki.infonayoo.co/doc/product-and-non-product-A3BdURFcQ1
+REVISION: 3
+BODY READ: 2026-11-06T09:52:51.224422+00:00
+
+
+
+=== fd3d42fa-0ddd-429d-9c6e-3d8ca34ca093 | log-in B2B ===
+SOURCE: https://wiki.infonayoo.co/doc/log-in-b2b-5vwHkV4MM1
+REVISION: 4
+BODY READ: 2026-11-06T09:52:51.299989+00:00
+
+<https://www.figma.com/design/Hh16Ype4uvoaetjEJaDIFL/Nayoo-V2?node-id=2701-7258&t=3BQVYoIqgRLnG5s8-4>
+
+**Functional Requirements version 1**
+
+FR 0 ระบบจะสร้าง Profile บริษัทเอาไว้ หลังจากการสร้าง Profile เอาไว้แล้วทางทีมหน้าบ้าน จะนำการขออีเมลจริง ของบริษัท/โครงการนั้น เพื่อทำการเชิญให้เข้าสู่ระบบผ่านการส่งอีเมลพร้อมลิ้งที่จะนำพาไปสู่Flow การเปลี่ยนรหัส  กรณีในการเข้าใช้งานครั้งแรก
+
+FR01 กรณีในการเข้าใช้งานครั้งแรก ระบบจะต้องสามารถนำพา User ที่เราได้การเชิญไปนั้นด้วย link URL เมื่อ user กด link URL จะนำพาเข้าสู่เว็บน่าอยู่ แล้วแสดง modal ดังต่อไปนี้
+
+ ![](https://wiki.infonayoo.co/api/attachments.redirect?id=6fc933fb-9109-48a4-a890-19acc66f992d)
+
+ข้อมูลบังคับ
+
+● ชื่อ กรอกได้ทั้งตัวเลขภาษาไทยและอังกฤษอักขระพิเศษ
+
+● สกุล กรอกได้ทั้งตัวเลขภาษาไทยและอังกฤษอักขระพิเศษ
+
+● เบอร์โทรศัพท์ : ดักเฉพาะตัวเลข 06 08 09 ตัวเลขตามภุมิภาค
+
+● รหัสผ่านใหม่
+
+● ยืนยันรหัสผ่านใหม่
+
+มีช่องกรอกรหัสผ่านยืนยัน 2 ครั้ง โดยรหัสผ่านและยืนยันรหัสผ่าน ต้องตรงกันถึงจะสามารถสมัครสมาชิกได้ต้องติ๊กยืนยัน PDPA ก่อน
+
+Policy รหัสผ่านขั้นต่ำ 6 ตัวอักษร ถึงสามารถสมัตรได้
+
+ตาม logic BA  
+
+● รหัสผ่านขั้นต่ำ 6 ตัวอักษร = แดง 
+
+● รหัสผ่านขั้น 8 ตัวอักษร = เหลือง
+
+● รหัสผ่านขั้น10 ตัวอักษร = เขียว 
+
+ ![](https://wiki.infonayoo.co/api/attachments.redirect?id=cb97779a-16fa-4a8d-aee3-9f993f4cb5f1)
+
+**FR02 การทำงานของ modal เปลี่ยนรหัสผ่าน**
+
+\-สามารถเปลี่ยน 3 ภาษาได้ที่ modal นี้หากเปลี่ยนภาษาตรงนี้เท่ากับเปลี่ยนภาษาทั้งเว็บ
+
+\-รหัสผ่านตั้งตามนโยบาย Policy ที่ Dev คิด 2 ขั้นตอนในการยืนยัน
+
+\-ปุ่มตา สามารถกดดูรหัสผ่านที่พิมพ์ไปได้ จากจุดๆ เมื่อกดรูปตาแล้วจะมองเห็นเป็นตัวอักษร
+
+\- user ไม่สามารถกดปิด modal นี้ได้ หากปิดเว็บน่าอยู่ไปเลยจะเท่ากับยังไม่สามารถเข้าสู่ระบบได้
+
+\-เมื่อกดปุ่มยืนยัน แสดงmodal ดังต่อไปนี้
+
+ ![](https://wiki.infonayoo.co/api/attachments.redirect?id=cd5b59ec-2be0-4da2-a70d-d13f0304f0a2)
+
+แสดง modal เป็นเวลา 2 วินาทีแล้ว หายไปอัตโนมัติ  สามารถใช้งานเว็บไซต์น่าอยู่ได้
+
+**FR03 เมื่อผู้ใช้เข้าสู่ระบบสำเร็จหลังจากเปลี่ยนรหัสผ่าน จะเข้าสู่หน้า default ที่หน้า home center**
+
+**FR04 เงื่อนไขการเข้าสู่ระบบในครั้งถัดไป**
+
+เมื่อ user เข้ามาที่เว็บน่าอยู่ user สามารถกดเลือกลงใบประกาศฟรีหรือเข้าสู่ระบบ ทั้งสองปุ่ม default 
+
+Modal เข้าสู่ระบบ
+
+ ![](https://wiki.infonayoo.co/api/attachments.redirect?id=26e909fb-d109-43cf-b400-6e561c45794b)
+
+กรณีกรอกข้อมูลสำเร็จเข้าสู่ระบบแสดง modal  แสดง modal เป็นเวลา 2 วินาทีแล้ว หายไปอัตโนมัติ  สามารถใช้งานเว็บไซต์น่าอยู่ได้
+
+ ![](https://wiki.infonayoo.co/api/attachments.redirect?id=cd5b59ec-2be0-4da2-a70d-d13f0304f0a2)
+
+**FR 04 กรณีแสดงข้อผิดพลาดไม่ถูกต้องในการกรอกข้อมูล**
+
+กรณี modal เปลี่ยนรหัสผ่าน 
+
+ตาม logic ต่อไปนี้
+
+ ![](https://wiki.infonayoo.co/api/attachments.redirect?id=6646ff44-ed24-40fe-a98e-e087a68037a7)
+
+กรณีที่ 1 ไม่กรอกอะไรเลยแล้วกดยืนยัน แสดงกรอกบสีแดงทั้งสองกรอบ แล้วขึ้นข้อความกรอกข้อความ "กรุณากรอกข้อมูล" เป็นข้อความสีแดง ใต้ช่องกรอก
+
+กรณีที่ 2 กรอกแล้วรหัสผ่านไม่ตรงกัน แสดงกรอกสีแดงทั้งสองกรอบ แล้วขึ้นความข้อควาาม "รหัสผ่านไม่ตรงกัน" เป็นข้อความสีแดงใต้ช่องกรอก
+
+กรณี modal เข้าสู๋ระบบ 
+
+ ปุ่มเข้าสู่ระบบสามารถกดได้ หากกรอกข้อมูลไม่ครบระบบจะแสดง
+
+ ![](https://wiki.infonayoo.co/api/attachments.redirect?id=d5e00bac-6190-4eb1-a655-3e7649a439d3)
+
+เมื่อกรอกอีเมลหรือรหัสผ่านไม่ถูกต้องระบบจะแสดงฟีลกรอบสีแดงที่ช่องกรอกนั้น
+
+ทั้ง 2 ช่องและขึ้นข้อความดังต่อไปนี้
+
+ ![](https://wiki.infonayoo.co/api/attachments.redirect?id=dd85087e-9a51-4272-9a78-135d7c2c910b)
+
+=== fdc1d642-d732-40eb-b898-f49c6f556fc1 | หน้ารีวิว (ตามหมวด) ===
+SOURCE: https://wiki.infonayoo.co/doc/4lir4liz4lmj4liy4lij4li14lin4li04linicjgujxgullgukhgukvgukhgukfgujqp-RxVQP7OZJR
+REVISION: 8
+BODY READ: 2026-11-06T09:52:51.546684+00:00
+
+> ข้อมูลจากโค้ด FE ณ 2026-11-03 (branch `develop`)
+
+**Route:** `/reviews/{หมวด}/{จังหวัด}` เช่น `/reviews/property-project/khonkaen` และหน้าถัดไป `/reviews/{หมวด}/{จังหวัด}/page/{N}` (หมวด: `property-project`, `home-builder`, `property-for-sale`, `life-style`)
+
+**ไฟล์หน้า:** `app/(interface)/(other)/reviews/[category]/[location]/page.tsx` และ `page/[page]/page.tsx` (ทั้งคู่ใช้ `review-listing.tsx`), layout `app/(interface)/(other)/reviews/layout.tsx`
+
+**TrackingProvider:** `source_type: review` (อยู่ใน layout)
+
+`/reviews/{หมวด}/center` เป็น 404
+
+## วิธีอ่านตาราง
+
+* **impression** = การ์ดหรือบล็อกเข้ามาในจอ, **click** = กด, **view** = เปิด modal หรือหน้า
+* **section_number** = ลำดับ section บนหน้า, **position** = ลำดับการ์ดใน section (เริ่มที่ 1)
+* **entity_id** = id ของสิ่งที่ถูกดูหรือกด เช่น id ประกาศ, id แบนเนอร์
+* ⚠️ = ค่าไม่ตรงกับ convention ของส่วนอื่น ควรเช็ก
+
+## สรุป
+
+| \#  | Component | Tracking |
+|-----|-----------|----------|
+| 0   | ทั้งหน้า + ส่วนกลาง (Navbar, Pop-up, Login) | ✅        |
+| 1   | ส่วนหัว (H1 + คำอธิบาย) | ❌ ยังไม่มี |
+| 2   | ReviewProvincePinned (รีวิวน่าสนใจ, แสดงเมื่อมี) | ✅        |
+| 3   | ReviewCenterFilterBar (หมวด + ค้นหา) | ❌ ยังไม่มี |
+| 4   | ReviewCenterGrid (รวมรีวิวในจังหวัด) | ✅        |
+| 5   | BannerBFirstSection (แบนเนอร์ B กลาง grid) | ✅        |
+| 6   | Pagination (เลขหน้า) | ❌ ยังไม่มี |
+
+## 0. ทั้งหน้า + ส่วนกลาง
+
+| Component | Event | ประเภท | ยิงเมื่อ | section_name | หมายเหตุ |
+|-----------|-------|--------|----------|--------------|----------|
+| PageViewTracker | `page_view` | view   | เปิดหน้า / เปลี่ยน path | `page_section` | 1 ครั้งต่อหน้า, เปลี่ยนเลขหน้า (`/page/{N}`) ยิงใหม่ |
+
+Navbar, Pop-up และ Login / Register เหมือนทุกหน้า ดูตารางในเอกสาร "หน้า Home จังหวัด"
+
+## 2. ReviewProvincePinned
+
+| Component | Event | ประเภท | ยิงเมื่อ | section_name | section_number | หมายเหตุ |
+|-----------|-------|--------|----------|--------------|----------------|----------|
+| การ์ดรีวิว | `interest_review_ad` (การ์ดใหญ่) / `interest_review` (การ์ดเล็ก) | impression, click | การ์ดเข้าจอ / กด | `interest_reviews_section` | 1              | position = ลำดับการ์ด (1–3), entity_id = id รีวิว, destination = ลิงก์บทความ, ⚠️ การ์ดใหญ่ใช้ `_ad` เสมอ ไม่ได้ดูจากข้อมูล |
+| VideoAutoplayModal | `review` | view   | เปิด modal วิดีโอ | `pop_up_review` | \-             | entity_id = id รีวิว |
+| VideoAutoplayModal | `share`, `read_review`, `go_to_post` | click  | กดปุ่มใน modal | `pop_up_review` | \-             | entity_id = id รีวิว |
+| VideoAutoplayModal | `close` | click  | ปิด modal (X, คลิกนอกกรอบ, Esc) | `pop_up_review` | \-             | entity_id = id รีวิว |
+| SocialShareModal | `copy_link`, `line`, `facebook`, `message`, `email`, `close` | click  | กดในเมนูแชร์ของ modal | `pop_up_share` | 1              | entity_id = id รีวิว |
+
+⚠️ event ของการ์ดเรียก `track` ตรง ไม่ผ่าน TrackingProvider: ไม่มี `source_type`, `user_id` และ `is_logged_in` เป็น false เสมอ
+
+## 4. ReviewCenterGrid
+
+| Component | Event | ประเภท | ยิงเมื่อ | section_name | section_number | หมายเหตุ |
+|-----------|-------|--------|----------|--------------|----------------|----------|
+| การ์ดรีวิว | `review` | impression, click | การ์ดเข้าจอ / กด | `reviews_section` | 3              | entity_id = id รีวิว, destination = ลิงก์บทความ, ⚠️ ไม่ส่ง position |
+| VideoAutoplayModal | `review` | view   | เปิด modal วิดีโอ (กดการ์ดที่มีวิดีโอ) | `pop_up_review` | \-             | entity_id = id รีวิว |
+| VideoAutoplayModal | `share`, `read_review`, `go_to_post` | click  | กดปุ่มใน modal | `pop_up_review` | \-             | entity_id = id รีวิว |
+| VideoAutoplayModal | `close` | click  | ปิด modal (X, คลิกนอกกรอบ, Esc) | `pop_up_review` | \-             | entity_id = id รีวิว |
+| SocialShareModal | `copy_link`, `line`, `facebook`, `message`, `email`, `close` | click  | กดในเมนูแชร์ของ modal | `pop_up_share` | 1              | entity_id = id รีวิว |
+
+⚠️ event ของการ์ดเรียก `track` ตรง ไม่ผ่าน TrackingProvider: ไม่มี `source_type`, `user_id` และ `is_logged_in` เป็น false เสมอ
+
+⚠️ ไม่ส่ง position ทุกหน้า จึงแยกลำดับการ์ดในหน้าและข้ามหน้าไม่ได้
+
+## 5. BannerBFirstSection
+
+แสดงเมื่อมีแบนเนอร์ B (`url=review`) ของจังหวัด แทรกกลาง grid (หลังการ์ดครึ่งแรก)
+
+| Event | ประเภท | ยิงเมื่อ | section_name | section_number | หมายเหตุ |
+|-------|--------|----------|--------------|----------------|----------|
+| `banner` / `banner_ad` | impression, click | สไลด์เข้าจอ / กด | `banner_first_section` | 8              | entity_id = id แบนเนอร์, มี `ab_id`, ⚠️ ไม่ส่ง position |
+
+=== fe2b4937-0e01-49e2-8c41-d386393500a7 | Home ===
+SOURCE: https://wiki.infonayoo.co/doc/home-KuQ2GkF2ry
+REVISION: 4
+BODY READ: 2026-11-06T09:52:51.645354+00:00
+
+
+
+=== fe53b706-a2e6-4bb9-8874-11f1e354c2e4 | ฟีเจอร์ notification ===
+SOURCE: https://wiki.infonayoo.co/doc/notification-lLynSOgiyM
+REVISION: 7
+BODY READ: 2026-11-06T09:52:51.708026+00:00
+
+## **เอกสารข้อกำหนดทางธุรกิจ (BRD)**
+
+**Notification การแจ้งเตือนและการแสดงผล\nแบ่งออกเป็น 3 ระบบ**
+
+1\.ระบบการแจ้งเตือน Backoffice ใช้โดย super admin,admin ของน่าอยู่
+
+2\.ระบบการแจ้งเตือน Console
+
+3\.ระบบการแจ้งเตือนน่าอยู่ Nayoo
+
+**1.บทนำและที่มา**
+
+ฟีเจอร์ Notification มีเพื่อให้เกิดการแจ่งเตือนให้เกิดผลสัมฤทธิ์ในการแจ้งเตือน เพื่อทำให้แพลตฟอร์มเกิดระบบ hook ที่ครบวงจร ในการทำให้เกิดการทำซ้ำในการเข้าใช่งานเข้าสู่ระบบ และการแจ้งเตือนที่ทำให้ผู้ใช้งานสามารถได้รับผลประโยชน์สูงสุด
+
+**2.วัตถุประสงค์ทางธุรกิจ**
+
+แจ้งเตือนผู้ดูแลระบบให้ทราบถึงงานที่ต้องดำเนินการ เพื่อให้ผู้ดูแลระบบสามารถที่จะทำสิ่งที่แพลตฟอร์มแจ้งเตือนไป ให้สำเร็จผลในการทำ
+
+**3.Scope of work**
+
+**3.1 In of scope**
+
+**3.1.1 ระบบแจ้งเตือน Backoffice**
+
+\- ศูนย์การแจ้งเตือน (Notification center): ไอคอนกระดิ่ง, badge นับจำนวนที่ยังไม่อ่าน, รายการแจ้งเตือน
+
+\- อ่านแล้ว / อ่านทั้งหมด (mark as read / mark all as read)
+
+\- คลิกแจ้งเตือนแล้ว deep-link ไปยังหน้า/รายการที่เกี่ยวข้องโดยตรง
+
+\- **มีการแบ่งระบบ notification ออกเป็นประเภทในการแจ้งเตือน**
+
+\- **แจ้งเตือนตามความต้องการของระบบ**
+
+**3.1.2 ระบบการแจ้งเตือน Console**
+
+\- ศูนย์การแจ้งเตือน (Notification center): ไอคอนกระดิ่ง, badge นับจำนวนที่ยังไม่อ่าน, รายการแจ้งเตือน
+
+\- อ่านแล้ว / อ่านทั้งหมด (mark as read / mark all as read)
+
+\- คลิกแจ้งเตือนแล้ว deep-link ไปยังหน้า/รายการที่เกี่ยวข้องโดยตรง
+
+\- **มีการแบ่งระบบ notification ออกเป็นประเภทในการแจ้งเตือน**\n
+
+\- **แจ้งเตือนตามความต้องการของระบบ**
+
+**3.1.3 ระบบการแจ้งเตือน Nayoo**
+
+\- ศูนย์การแจ้งเตือน (Notification center): ไอคอนกระดิ่ง, badge นับจำนวนที่ยังไม่อ่าน, รายการแจ้งเตือน
+
+\- อ่านแล้ว / อ่านทั้งหมด (mark as read / mark all as read)
+
+\- คลิกแจ้งเตือนแล้ว deep-link ไปยังหน้า/รายการที่เกี่ยวข้องโดยตรง
+
+\- **มีการแบ่งระบบ notification ออกเป็นประเภทในการแจ้งเตือน**
+
+\- **แจ้งเตือนตามความต้องการของระบบ**
+
+\n**3.2 Out of scope**
+
+**3.2.1 ไม่มีในระบบในเฟดนี้**
+
+\- ระบบแชท / ข้อความโต้ตอบสองทาง
+
+\- เครื่องมือแคมเปญการตลาด / mass marketing push
+
+\- หน้า analytics หรือ dashboard วิเคราะห์ผลการแจ้งเตือน
+
+\- การตั้งค่า preference การแจ้งเตือนรายบุคคล ช่องทาง SMS
+
+\n**4. ภาพรวมการแจ้งเตือน**
+
+**4.1 ระบบที่ 1 การแจ้งเตือนสำหรับผู้ดูแลระบบ backoffice**
+
+ ![](https://wiki.infonayoo.co/api/attachments.redirect?id=cb96547d-ad29-484d-8384-c6c4a373e3fa)
+
+\n\n\n\n\n\n\n\n**4.2 ระบบที่ 2 การแจ้งเตือนสำหรับผู้ดูแลระบบ console**
+
+ ![](https://wiki.infonayoo.co/api/attachments.redirect?id=872a7c37-078a-40df-abf0-e934b4481a6b)
+
+\n**4.3 ระบบที่ 3 การแต้วเตือนสำหรับผู้ใช้งานบนเว็บไซต์**
+
+ ![](https://wiki.infonayoo.co/api/attachments.redirect?id=3e744316-fd6f-4dbf-bc95-32fbb1683371)
+
+\n**5.ข้อกำหนดทั่วไป**
+
+• การแจ้งเตือนต้องถูกส่งไปยังเฉพาะกลุ่มผู้รับ (Role) ที่กำหนดไว้ในแต่ละรายการเท่านั้น
+
+• รายการที่ระบุ "แจ้งทันที" ต้องส่งการแจ้งเตือนทันทีเมื่อเกิดเหตุการณ์ (Real-time / Near real-time)
+
+• ผู้ใช้ต้องสามารถดูประวัติการแจ้งเตือน และสถานะอ่าน/ยังไม่อ่านได้
+
+• การแจ้งเตือนแต่ละรายการควรมีลิงก์/ปุ่มนำทางไปยังหน้าที่เกี่ยวข้อง (เช่น หน้าตรวจสอบใบประกาศ หรือหน้ารายชื่อผู้สนใจ หรือแสดงเป็น modal ตามที่ต้องการ)
+
+\n\n\n\n\n\n\n\n**6. Requirement เพิ่มเติมที่ต้องการ**
+
+
+
+| **ลำดับ** | **เรื่อง** | **Priority** |
+|-------|--------|----------|
+| **1** |        |          |
+| **2** |        |          |
+| **3** |        |          |
+
+=== ff6ebd91-c284-46c2-8d9c-452d141c10e6 | ฟีลเตอร์แบบบ้าน ===
+SOURCE: https://wiki.infonayoo.co/doc/4lif4li14lil4lma4liv4lit4lij4lmm4lmb4lia4lia4lia4lmj4liy4liz-8jbe8IELTg
+REVISION: 74
+BODY READ: 2026-11-06T09:52:51.845536+00:00
+
+**UI ยึดตาม Figma เป็นหลัก**
+
+<u>[**https://www.figma.com/design/Hh16Ype4uvoaetjEJaDIFL/Nayoo-V2?node-id=13608-112729&t=quFg2nzIQz6VE4nU-4**](https://www.figma.com/design/Hh16Ype4uvoaetjEJaDIFL/Nayoo-V2?node-id=13608-112729&t=quFg2nzIQz6VE4nU-4)</u>
+
+**EP-NEW ทุกปุ่ม action ที่กดทั้งหมดจะเป็นสีฟ้า**
+
+**EP-00 การแสดงผลหน้า center จะมีปุ่มเปลี่ยนจังหวัด ถ้าเปลี่ยนจังหวัดแล้วจะไม่มีปุ่มจังหวัดให้้เปลี่่ยนต้องไปเปลี่ยนที่ navbar เท่านั้น** 
+
+ในตัวกรองจะมีที่เลือกจังหวัดสำหรับหน้า center เพิ่ม4/3/2569 แต่เข้าหน้าจังหวัดแล้วจะไม่มีเลือกจังหวัด
+
+* **ตัวเลือกพิเศษใน full filterและด้านนอก**  จะมีจุดสีแดงเสมอ และไดนามิกตามประเภททรัพย์
+  * **ตัวเลือกพิเศษใน full filter**  จะมีจุดสีแดงเสมอ และไดนามิกตามประเภททรัพย์
+    * ตัวเลือกพิเศษจะถูก check โดย dev ก่อนว่าใบประกาศนั้น เข้าร่วมตัวเลือกพิเศษไหม ในแต่ละประเภททรัพย์ ถ้าไม่มีเลยจะไม่แสดงเลย
+      * แต่ถ้าเข้าร่วมประเภททรัพย์ใดทรัพย์หนึ่งจะแสดงทั้งหมด ไอคอนนั้นและไม่หายไป
+      * ถ้าเลือกแล้วไม่มีผลลัพธ์จะไม่แสดงผลลัพธ์การค้นหา
+      * เช่น คอนโด มีเลี้ยงสัตว์ และ EV เลือกบ้านและติ๊กคอนโดออก และค้น หาจะไม่เจอผลลัพธ์เพราะบ้านไม่มีผลลัพธ์ของเลี้ยงสัตว์และ EV
+      * * **เมื่อเปลี่ยนจังหวัด ระบบจะนำตัวกรองเดิมไปใช้ต่อ โดยตรวจสอบค่าที่จังหวัดใหม่รองรับ ดังนี้**
+          * ค่าที่จังหวัดใหม่ไม่รองรับ เช่น แคมเปญหรือโปร Walk-in ให้ล้างเฉพาะค่านั้นออกจากตัวกรองด้านนอก Full Filter และ URL โดยคงตัวกรองอื่นที่ยังใช้ได้
+          * ค่าที่จังหวัดใหม่ยังรองรับ ให้คงไว้ แม้เมื่อนำเงื่อนไขทั้งหมดมาค้นหาแล้วไม่พบทรัพย์ ให้แสดง  ไม่พบผลลัพธ์โดยไม่ล้างตัวกรองเพิ่มเติม
+      * **เงื่อนไขพิเศษแสดง walk-in และแคมเปญในหน้า center แสดงแล้ว**
+* **ตัวเลือกธรรมดา**
+  * ถ้าเลือกคำตอบไว้แล้ว แล้วไปเลือกคำตอบอื่น เช่น เลือกบ้าน 1 ห้องนอนแล้วไปเลือกคอนโด 1 ห้องนอน จะยังจดจำคำตอบที่ตรงกันในตัวเลือกที่เหมือนกันของแต่ละประเภททรัพย์
+
+  \
+
+**Logic ที่ทำในเฟดนี้** 
+
+| การเปลี่ยนขอบเขต | กฎตัวกรอง |
+|------------------|-----------|
+| **Center → จังหวัด A** | ล้างตัวกรองทั้งหมด กลับค่าเริ่มต้นของจังหวัด A |
+| **จังหวัด A → จังหวัด B** | ล้างตัวกรองทั้งหมด กลับค่าเริ่มต้นของจังหวัด B |
+| **จังหวัด A → Center** | ล้างตัวกรองทั้งหมด กลับค่าเริ่มต้นของ Center |
+| **อยู่ขอบเขตเดิม** | คงค่าที่เลือกตามปกติ |
+
+| เหตุการณ์ | ข้อมูลปลายทาง | ค่าตัวกรองหลังเปลี่ยน | ผลที่ต้องแสดง |
+|-----------|---------------|-----------------------|---------------|
+| Center เลือก **บ้าน + Walk-in** → จังหวัด A | มีแบบบ้านประเภทบ้านเข้าร่วม Walk-in | ล้างทั้งหมด กลับค่าเริ่มต้น | แสดงแบบบ้านทุกประเภทในจังหวัด A ตามค่าเริ่มต้น รวมแบบบ้านที่ไม่ได้เข้าร่วม Walk-in |
+| Center เลือก **บ้าน + Walk-in** → จังหวัด A | ไม่มี Walk-in | ล้างทั้งหมด กลับค่าเริ่มต้น | แสดงแบบบ้านในจังหวัด A ตามค่าเริ่มต้น และไม่แสดงตัวเลือก Walk-in |
+| จังหวัด A เลือก **บ้าน + Walk-in** → จังหวัด B | จังหวัด B มี Walk-in | ล้างทั้งหมด กลับค่าเริ่มต้น | แสดงแบบบ้านทุกประเภทในจังหวัด B ตามค่าเริ่มต้น; Walk-in แสดงแบบยังไม่เลือก |
+| จังหวัด A เลือก **บ้าน + Walk-in** → จังหวัด B | จังหวัด B ไม่มี Walk-in | ล้างทั้งหมด กลับค่าเริ่มต้น | แสดงแบบบ้านในจังหวัด B ตามค่าเริ่มต้น และไม่แสดงตัวเลือก Walk-in |
+| จังหวัด A เลือก **บ้าน + Walk-in** → Center | มี Walk-in ในบางจังหวัด | ล้างทั้งหมด กลับค่าเริ่มต้น | แสดงแบบบ้านทุกจังหวัดตามค่าเริ่มต้น; Walk-in ยังไม่ถูกเลือก |
+| อยู่จังหวัด A เดิม เลือก **บ้าน + Walk-in** | มีแบบบ้านประเภทบ้านเข้าร่วม Walk-in | คงทั้งสองค่า          | แสดงเฉพาะแบบบ้านประเภทบ้านที่เข้าร่วม Walk-in |
+| อยู่จังหวัด A เดิม เลือก **บ้าน + Walk-in** | มี Walk-in เฉพาะคอนโด | คงทั้งสองค่า          | **ไม่แสดงผลลัพธ์การค้นหา** |
+| หลังเปลี่ยนขอบเขต ผู้ใช้กด **Walk-in ใหม่** | ปลายทางมี Walk-in | เลือก Walk-in โดยประเภททรัพย์ยังเป็น “ทั้งหมด” | แสดงแบบบ้านทุกประเภทที่เข้าร่วม Walk-in ในขอบเขตนั้น |
+
+**ตารางเหตุการณ์ใช้ Walk-in เป็นตัวอย่าง โดยกฎเดียวกันนี้ใช้กับตัวเลือกพิเศษอื่นทั้งหมดที่หน้าปัจจุบันรองรับ เช่น แคมเปญ รีวิวจากน่าอยู่ และ VDO 360 ดังนี้**
+
+* เมื่อเปลี่ยนขอบเขต จาก Center ไปจังหวัด จากจังหวัดหนึ่งไปอีกจังหวัด หรือจากจังหวัดกลับ Center ให้ล้างตัวกรองทั้งหมด รวมตัวเลือกพิเศษ แล้วกลับเป็นค่าเริ่มต้นของหน้าปลายทาง โดยค่าด้านนอก Full Filter และ URL ต้องตรงกัน
+* การแสดงตัวเลือกพิเศษในหน้าปลายทาง ให้ตรวจจากใบประกาศของสถาบันในขอบเขตนั้น หากมีใบประกาศเข้าร่วมอย่างน้อยหนึ่งประเภททรัพย์ ให้แสดงตัวเลือกนั้นแบบยังไม่เลือก หากไม่มีใบประกาศเข้าร่วมเลย ให้ซ่อนตัวเลือกนั้น
+* เมื่ออยู่ขอบเขตเดิม ให้คงค่าที่ผู้ใช้เลือกไว้ หากตัวเลือกพิเศษมีใบประกาศเข้าร่วม แต่ไม่มีใบที่ตรงกับประเภททรัพย์และเงื่อนไขอื่นที่เลือก ให้ ไม่แสดงผลลัพธ์การค้นหา โดยไม่ล้างตัวกรองให้อัตโนมัติ
+* เมื่อผู้ใช้เลือกตัวเลือกพิเศษใหม่ ให้แสดงเฉพาะใบประกาศของสถาบันที่เข้าร่วมตัวเลือกนั้นและผ่านเงื่อนไขอื่นที่เลือก ภายในขอบเขตปัจจุบัน
+
+### **logic นี้ในเฟดนี้ยังไม่ทำ 28/10/2569 สำหรับตาราง 1,2**
+
+**ตาราง 1**
+
+| การเปลี่ยนหน้าเสิร์ชเช่า | การจัดการตัวกรอง |
+|--------------------------|------------------|
+| Center → จังหวัด A       | คงค่าที่จังหวัด A รองรับ; ล้างเฉพาะค่าที่ไม่รองรับ |
+| จังหวัด A → จังหวัด B    | คงค่าที่จังหวัด B รองรับ; ล้างเฉพาะค่าที่ไม่รองรับ |
+| จังหวัด A → Center       | คงค่าที่ Center รองรับ; ล้างเฉพาะค่าที่ไม่รองรับ |
+| อยู่หน้าเดิม             | คงค่าที่เลือกตามปกติ |
+
+**ตาราง 2**
+
+| เหตุการณ์ | ข้อมูลในขอบเขตปลายทาง | ผลที่ต้องแสดง |
+|-----------|-----------------------|---------------|
+| Center → จังหวัด A เลือก **บ้าน + Walk-in** | มีแบบบ้านประเภทบ้านเข้าร่วม Walk-in | คงทั้งสองค่า แสดงแบบบ้านที่เข้าร่วม |
+| Center → จังหวัด A เลือก **บ้าน + Walk-in** | มี Walk-in เฉพาะคอนโด | คงทั้งสองค่า **ไม่แสดงผลลัพธ์การค้นหา** |
+| Center → จังหวัด A เลือก **บ้าน + Walk-in** | ไม่มี Walk-in เลย     | ล้าง Walk-in คงบ้าน แล้วแสดงแบบบ้านประเภทบ้านที่พบ |
+| จังหวัด A → จังหวัด B เลือก **บ้าน + Walk-in** | จังหวัด B มี Walk-in เฉพาะคอนโด | คงทั้งสองค่า **ไม่แสดงผลลัพธ์การค้นหา** |
+| จังหวัด A → จังหวัด B เลือก **บ้าน + Walk-in** | จังหวัด B ไม่มี Walk-in | ล้าง Walk-in คงบ้าน แล้วแสดงแบบบ้านประเภทบ้านที่พบ |
+| จังหวัด A → Center เลือก **บ้าน + Walk-in** | มี Walk-in ในอย่างน้อยหนึ่งจังหวัด | คงทั้งสองค่า ค้นหาแบบบ้านจากทุกจังหวัดตามเงื่อนไขที่เลือก |
+| จังหวัด A → Center เลือก **บ้าน + Walk-in** | ไม่มี Walk-in ในทุกจังหวัด | ล้าง Walk-in คงบ้าน แล้วแสดงแบบบ้านประเภทบ้านที่พบ |
+| Walk-in ถูกล้างเมื่อไปจังหวัด B → กลับจังหวัด A | จังหวัด A มี Walk-in  | คงเฉพาะค่าที่ยังเลือกอยู่ ไม่เลือก Walk-in กลับให้อัตโนมัติ |
+| เลือก **บ้าน + คอนโด + Walk-in** | มีเฉพาะแบบบ้านประเภทคอนโดเข้าร่วม | คงค่าที่เลือก แสดงเฉพาะแบบบ้านคอนโดที่ผ่านเงื่อนไข |
+| เลือกตัวเลือกพิเศษหลายค่า → เปลี่ยนจังหวัด | จังหวัดใหม่รองรับเพียงบางค่า | คงค่าที่รองรับ ล้างเฉพาะค่าที่ไม่มีในจังหวัดใหม่ |
+| เลือก **สไตล์แบบบ้าน** และช่วงราคา → เปลี่ยนจังหวัด | จังหวัดใหม่ยังรองรับค่าที่เลือก แต่ไม่มีแบบบ้านผ่านเงื่อนไขร่วมกัน | คงค่าไว้ **ไม่แสดงผลลัพธ์การค้นหา** |
+| อยู่หน้า Center แล้วเลือกจังหวัด | —                     | ไปหน้าเสิร์ชจังหวัดนั้น; การเปลี่ยนจังหวัดจากหน้าจังหวัดใช้ Navbar ตาม Wiki |
+| กรอกราคาต่ำสุดมากกว่าราคาสูงสุดใน Full Filter แล้วกด **ค้นหา** | ช่วงราคาไม่ถูกต้อง    | แสดงข้อความตรวจสอบค่าตาม UI |
+
+### **การนับตัวเลขหน้าเสิร์ชแบบบ้าน Center**
+
+| ตัวกรอง | วิธีนับเลข | ตัวอย่าง / เงื่อนไข |
+|---------|------------|---------------------|
+| จัดเรียงตาม | **1 เสมอ** | ค่าเริ่มต้น “แนะนำ” นับ 1 |
+| จังหวัด | 1 เมื่อเลือกจาก “ทั้งหมด” | ในหน้า Center เลือกขอนแก่นนับ 1; หน้าจังหวัดไม่มีตัวเลือกจังหวัดในฟิลเตอร์ |
+| ประเภททรัพย์ | **ค่าละ 1** | บ้าน + ทาวน์โฮม = 2 |
+| ตัวเลือกพิเศษ | **ค่าละ 1** | นับเฉพาะไอคอนที่แสดงและเลือกได้ตามข้อมูลที่เข้าเงื่อนไข |
+| ช่วงราคาแบบบ้าน | 1          | กรอกต่ำสุดและสูงสุดนับรวม 1 |
+| ห้องนอน / ห้องน้ำ / จำนวนชั้น | ค่าที่ระบุจริงอย่างละ 1 | ระบุห้องนอนและห้องน้ำนับ 2 |
+| ขนาดพื้นที่ใช้สอย | **1**      | กรอกต่ำสุดและสูงสุดนับรวม 1 |
+| พื้นที่แนะนำสำหรับการก่อสร้าง | 1 เมื่อเลือกค่า | เอกสารระบุว่าเลือกได้ 1 ตัวเลือก |
+| สไตล์แบบบ้าน | **ค่าละ 1** | เลือก 2 สไตล์นับ 2  |
+| “ไม่ระบุ” / “ทั้งหมด” | 0          | ยกเว้นการจัดเรียงตามค่าเริ่มต้น |
+
+**การแสดงผล PC Mobile**
+
+ ![](/api/attachments.redirect?id=d4ce4809-f3e8-4aba-bec7-aac42db5bd60) **กดที่ทุกจังหวัดแล้วแสดงดังต่อไปนี้**
+
+**การแสดงผล PC ฟีลเตอร์ด้านนอก  (ไม่มี tag มาใหม่)**
+
+ ![](/api/attachments.redirect?id=d0044930-5a3a-4aee-9f46-5e8d54e7a34b " =484x143")
+
+**การแสดงผล Mobile ฟีลเตอร์ด้านนอก  (ไม่มี tag มาใหม่)**
+
+ ![](/api/attachments.redirect?id=15aa813a-f46e-49bb-a185-35156a43add2 " =320x558")
+
+**กดตัวกรองการแสดงผล PC  กดตัวกรองการแสดงผล mobile**
+
+**จังหวัดเรียงตามดังต่อไปนี้**
+
+**(ทั้งหมด—>เชียงราย—>พิษณุโลก—>บุรีรัมย์→สุรินทร์→ชลบุรี—>ระยอง→อุดรธานี→อุบลราชธานี—>ขอนแก่น—>ประจวบคีรีขันธ์ (หัวหิน))**
+
+ ![](/api/attachments.redirect?id=edbfdc20-c493-4658-9b05-19b5bb1831d4 " =576x869")
+
+กดขนาดพื้นที่ให้บริการแสดงดังต่อไปนี้ **จังหวัดเรียงตามดังต่อไปนี้**
+
+**การแสดงผล PC**
+
+**(ทั้งหมด—>เชียงราย—>พิษณุโลก—>บุรีรัมย์→สุรินทร์→ชลบุรี—>ระยอง→อุดรธานี→อุบลราชธานี—>ขอนแก่น—>ประจวบคีรีขันธ์ (หัวหิน))**
+
+ ![](/api/attachments.redirect?id=460b360c-69bc-4ef4-8c3c-11df1a0886f4 " =435x179")
+
+**การแสดงผล mobile**
+
+ ![](/api/attachments.redirect?id=ddae2c72-6113-4c76-856a-fb3380d7d498 " =244x248")
+
+**EP-01 ฟีลเตอร์รับสร้างบ้าน-หน้าเสิร์ชรับสร้างบ้าน ค่าdefault เป็นการค้นหาแบบบ้านหากเลือกหมวดรับสร้างบ้านที่ฟีลเตอร์ (จังหวัด)**
+
+* **ถ้**าหากเลือกจากใบประกาศแบบบ้านค่าdefault เป็นการค้นหาแบบบ้าน
+* ถ้าหากเลือกจากบริษัทรับสร้างบ้านค่าdefault เป็น Profile company
+
+**การแสดงผล PC การแสดงผล Mobile**
+
+ ![](/api/attachments.redirect?id=8eb3f900-6a4e-44d6-9dbf-35cbae4bb3f1)
+
+**ตัวเลือกพิเศษประกอบด้วย แคมเปญ  , brand day, รีวิวจากน่าอยุ่, โปรโมชั่น walk in , VDO 360  Icon**
+
+พิเศษจะแสดงเมื่อ มีใบประกาศหรือบริษัท(profile)นั้นซื้อ product นั้นในจังหวัดนั้น dev ต้องเช็คได้ ถ้าไม่มีแสดง
+
+* **ตัวเลือกพิเศษใน full filter**  จะมีจุดสีแดงเสมอ และไดนามิกตามประเภททรัพย์
+  * ตัวเลือกพิเศษจะถูก check โดย dev ก่อนว่าใบประกาศนั้น เข้าร่วมตัวเลือกพิเศษไหม ในแต่ละประเภททรัพย์ ถ้าไม่มีเลยจะไม่แสดงเลย
+    * แต่ถ้าเข้าร่วมประเภททรัพย์ใดทรัพย์หนึ่งจะแสดงทั้งหมด ไอคอนนั้นและไม่หายไป
+    * ถ้าเลือกแล้วไม่มีผลลัพธ์จะไม่แสดงผลลัพธ์การค้นหา
+    * เช่น คอนโด มีเลี้ยงสัตว์ และ EV เลือกบ้านและติ๊กคอนโดออก และค้น หาจะไม่เจอผลลัพธ์เพราะบ้านไม่มีผลลัพธ์ของเลี้ยงสัตว์และ EV
+* **ตัวเลือกธรรมดา**
+  * ถ้าเลือกคำตอบไว้แล้ว แล้วไปเลือกคำตอบอื่น เช่น เลือกบ้าน 1 ห้องนอนแล้วไปเลือกคอนโด 1 ห้องนอน จะยังจดจำคำตอบที่ตรงกันในตัวเลือกที่เหมือนกันของแต่ละประเภททรัพย์
+
+ ![](/api/attachments.redirect?id=c822e888-e09c-4d78-8a10-4e4b39f33285)
+
+* **ราคา** (ตัวเลือกข้างในเหมือนฟีลเตอร์ตัวกรอง) ใช้ logic แบบ EP02
+* **ประเภททรัพย์ ค่า default คือไม่ติ๊ก (ทั้งหมด) สามารถเลือกได้มากกว่า 1 คำตอบ**
+
+**การแสดงผล PC**
+
+ ![](/api/attachments.redirect?id=c8ab256b-5212-4160-9678-520a70c6e7ab)
+
+* **ตัวกรอง** (ตัวเลขสีแดงจะแสดง เมื่อกดตัวกรองแล้วเลือกนับทุกตัวกรองที่มีทั้งในหน้าเสิร์ชและหน้าโปรไฟล์ และ full fitter)
+* **ห้องน้ำ**ค่า default คือ ไม่ระบุ (ไม่ไดนามิกตามประเภททรัพย์) เลือกได้ 1 คำตอบ
+
+การแสดงผล Pc,Mobile
+
+ ![](/api/attachments.redirect?id=3163a529-7109-4545-953e-7fda96e34da4)
+
+* **ห้องนอน** ค่า default คือ ไม่ระบุ (ไม่ไดนามิกตามประเภททรัพย์)เลือกได้ 1 คำตอบ
+
+การแสดงผล Pc,Mobile
+
+ ![](/api/attachments.redirect?id=8e47014d-39e0-4513-b642-020783b0d829)
+
+* **สไตล์ default คือ ไม่ติ๊ก ถ้าเลือกแล้วจะเป็นตาม UI สามารถเลือกได้มากกว่า 1 คำตอบ ไม่จำกัดการเล่ือก**
+
+**การแสดงผล PC**
+
+ ![](/api/attachments.redirect?id=90a9f0d7-1457-412b-b62b-51857c01f20c " =544x609")
+
+**การแสดงผล Mobile**
+
+ ![](/api/attachments.redirect?id=8032eb78-0dcf-4a78-8730-8ecd208f93ab " =229x496")
+
+**EP-02 ฟีลเตอร์ราคากดแล้วแสดงต่อไปนี้**
+
+**การแสดงผล PC**
+
+ ![](/api/attachments.redirect?id=42d39e45-8e21-4a79-9bba-ac80d9214b10 " =453x589")
+
+**การแสดงผล Mobile**
+
+ ![](/api/attachments.redirect?id=2912d94b-9c16-4ae7-bf94-2f20ba003ee6 " =235x509")
+
+ ![](/api/attachments.redirect?id=aedc138a-d842-4f0e-9574-6a3dffb2d2e0)
+
+**ตัวเลือกราคา**
+
+ ![](/api/attachments.redirect?id=8cece759-7d50-4e1e-8e55-59a2acd53a94)
+
+เมื่อเลือกราคาแล้ว ราคาจะต้องมี , เสมอ
+
+กรณีตัวที่ 1 เฉพาะราคาที่เป็นตัวเลข สามารถกดลบได้ ถ้ากรอกตัวเลขที่มีในคำตอบจะเป็น select ตัวเลขในคำตอบนั้นที่เป็น radio   ผลลัพทธ์จะไม่ค้นหาให้ จนกว่าจะกดเลือกที่ ค้นหา
+
+กรณีตัวที่ 2 ถ้ากดเลือกไม่ระบุ จะไม่แสดงในค่าคำตอบ   ผลลัพทธ์จะไม่ค้นหาให้ จนกว่าจะกดเลือกที่ ค้นหา
+
+**(ไม่สามารถกรอกตัวเลขติดลบได้ ไม่สามารถพิมพ์ตัวอักษรหรืออักขระพิเศษได้ ไม่สามารถใส่จุดทศนิยมได้ สามารถกรอกตัวเลข แล้วใส่, ให้อัตโนมัติ)**
+
+* กรณีกดฟีลเตอร์ราคาเกี่ยวกับ ราคาต่ำสุด สูงสุด
+  * เลือกราคาต่ำสุด 1,000,000 เลือกราคาสูงสุด 1,000,0000 แสดงเฉพาะผลลัพธ์ราคา 1,000.000 เท่านั้น
+  * เลือกราคาต่ำสุดไม่ระบุ เลือกราคาสูงสุด 1,000,000 จะแสดงเฉพาะลัพธ์ที่ไม่เกินราคาสูงสุดที่เลือก
+  * เลือกราคาต่ำสุด 1,000,000 เลือกราคาสุงสุดไม่ระบุ จะแสดงเฉพาะผลลัพธ์ที่เกิน 1,000,000 ขึ้นไป
+* **ปุ่มขวาที่เป็นตักกรองข้อมูลแสดงดังต่อไปนี้**
+
+ ![](/api/attachments.redirect?id=072948b8-e1a9-485b-a5c3-9e2c9fffc97b) ![](/api/attachments.redirect?id=70ff4b02-d1ea-4d27-b8d0-4ace7394a98a)
+
+จัดเรียงตาม (เลือกได้ 1 ตัวเลือก)
+
+* ล่าสุดเรียงตามวันที่สร้างใบประกาศจากมากไปน้อย (วันที่ล่าสุดไปวันที่เก่าสุด)
+* แนะนำ = ไม่ระบุ (ถ้าในหน้า profile ของบริษัทจะไม่มีตัวเลือกแนะนำ)
+* ตัวเลือกแนะนำ เรียงตาม product (เรียงตาม logic การดันใบประกาศหน้าเสิร์ช) เป็นค่า default ในหน้าเสิร์ช
+* ราคาเรียงตามน้อยไปมาก
+* ราคาเรียวตามมากไปน้อย
+
+**EP-02 กดตัวกรอง full filter  แสดงข้อมูลดัังต่อไปนี้**
+
+**ค่า default  การแสดงผล PC**
+
+ ![](/api/attachments.redirect?id=d1bc88e7-3f6f-4bbf-9d45-bb810b53765c)
+
+* **ตัวเลือกพิเศษใน full filterและด้านนอก**  จะมีจุดสีแดงเสมอ และไดนามิกตามประเภททรัพย์
+  * ตัวเลือกพิเศษจะถูก check โดย dev ก่อนว่าใบประกาศนั้น เข้าร่วมตัวเลือกพิเศษไหม ในแต่ละประเภททรัพย์ ถ้าไม่มีเลยจะไม่แสดงเลย
+    * แต่ถ้าเข้าร่วมประเภททรัพย์ใดทรัพย์หนึ่งจะแสดงทั้งหมด และไม่หายไปจนกว่าจะไม่มีประเภททรัพย์ใดเข้าร่วม
+* **ตัวเลือกธรรมดา**
+  * ถ้าเลือกคำตอบไว้แล้ว แล้วไปเลือกคำตอบอื่น เช่น เลือกบ้าน 1 ห้องนอนแล้วไปเลือกคอนโด 1 ห้องนอน จะยังจดจำคำตอบที่ตรงกันในตัวเลือกที่เหมือนกันของแต่ละประเภททรัพย์
+
+**การแสดงผล Mobile**
+
+ ![](/api/attachments.redirect?id=8a468092-7b1f-42c5-9741-d1352fefdbd7)
+
+* ประเภททรัพย์ default คือทั้งหมด แบบยังไม่ติ๊ก
+* กรณีกดฟีลเตอร์ราคาเกี่ยวกับ ราคาต่ำสุด สูงสุด
+  * เลือกราคาต่ำสุด 1,000,000 เลือกราคาสูงสุด 1,000,0000 แสดงเฉพาะผลลัพธ์ราคา 1,000.000 เท่านั้น
+  * เลือกราคาต่ำสุดไม่ระบุ เลือกราคาสูงสุด 1,000,000 จะแสดงเฉพาะลัพธ์ที่ไม่เกินราคาสูงสุดที่เลือก
+  * เลือกราคาต่ำสุด 1,000,000 เลือกราคาสุงสุดไม่ระบุ จะแสดงเฉพาะผลลัพธ์ที่เกิน 1,000,000 ขึ้นไป
+* จำนวนชั้น จำนวนห้องนอน จำนวนห้องน้ำ default เป็น ค่า “ไม่ระบุ”
+* **ขนาดพื้นที่ใช้สอย** (ดักเลขติดลบ ใส่ทศนิยมได้ 2 ตำแหน่ง ไม่ดักเลขสูงสุดต่ำสุด )
+
+**(ไม่สามารถกรอกตัวเลขติดลบได้ ไม่สามารถพิมพ์ตัวอักษรหรืออักขระพิเศษได้ สามารถกรอกตัวเลขปรกติได้ ต้องใส่ ,ให้อัตโนมัติ**
+
+```
+	แสดง UI ดังต่อไปนี้ 
+```
+
+* ขนาดต่ำสุด
+* ขนาดสูงสุด
+
+  ![](/api/attachments.redirect?id=8c85bfa1-a039-4db0-b53a-754dfd379f23)
+
+<u>ตัวเลือกของขนาดสูงสุด-ต่ำสุด</u>
+
+```
+	ตัวกรองไส้ในเป็น animation 
+```
+
+* พื้นที่แนะนำสำหนับการก่อสร้างเลือกแบบ  1 ตัวเลือก
+
+  \
+  **กรอกพื้นที่ขั้นต่ำ แล้วแสดงแบบบ้านที่มีพื้นที่แนะนำสำหรับการก่อสร้างตั้งแต่ค่าที่กรอกขึ้นไป** โดยเทียบตัวเลขโดยตรง ไม่ใช้สูตรแปลงหน่วยครับ
+  
+  | หัวข้อ | เงื่อนไข / การกระทำ | Logic การทำงาน |
+  |--------|---------------------|----------------|
+  | ค่าเริ่มต้น | ผู้ใช้ยังไม่กรอกพื้นที่ขั้นต่ำ | แสดงแบบบ้านตามเงื่อนไขและฟิลเตอร์อื่น โดยยังไม่กรองพื้นที่ |
+  | กรอกพื้นที่ขั้นต่ำ | ผู้ใช้กรอกตัวเลขในช่องพื้นที่แนะนำสำหรับการก่อสร้าง | แสดงแบบบ้านที่มี **พื้นที่แนะนำสำหรับการก่อสร้างมากกว่าหรือเท่ากับตัวเลขที่กรอก** |
+  | วิธีเปรียบเทียบ | ระบบตรวจพื้นที่ของแบบบ้าน | เทียบตัวเลขกับพื้นที่ที่กรอกโดยตรง โดยใช้หน่วย **ตร.ว.** ไม่ใช้สูตรคำนวณเพิ่มเติม |
+  | แบบบ้านไม่มีข้อมูลพื้นที่ | ใบประกาศไม่ได้ระบุพื้นที่แนะนำสำหรับการก่อสร้าง | **ไม่แสดงผล** เมื่อผู้ใช้กรอกฟิลเตอร์พื้นที่ |
+  | ล้างค่าพื้นที่ | ผู้ใช้ลบตัวเลขหรือล้างฟิลเตอร์ | กลับไปแสดงผลโดยไม่กรองพื้นที่ |
+  | จำนวนผลลัพธ์ | ผู้ใช้กรอกหรือเปลี่ยนตัวเลข | อัปเดตจำนวนผลลัพธ์ตามแบบบ้านที่ผ่านเงื่อนไข |
+
+  **ตัวอย่าง:** ผู้ใช้กรอกพื้นที่ขั้นต่ำ **50 ตร.ว.**
+  
+  | แบบบ้าน | พื้นที่แนะนำสำหรับการก่อสร้าง | ผลลัพธ์ |
+  |---------|-------------------------------|---------|
+  | บ้าน A  | 30 ตร.ว.                      | ไม่แสดง |
+  | บ้าน B  | 50 ตร.ว.                      | แสดง    |
+  | บ้าน C  | 80 ตร.ว.                      | แสดง    |
+  | บ้าน D  | ไม่มีข้อมูล                   | ไม่แสดง |
+* **(ไม่สามารถกรอกตัวเลขติดลบได้ ไม่สามารถพิมพ์ตัวอักษรหรืออักขระพิเศษได้ สามารถกรอกตัวเลขปรกติได้ ต้องใส่ ,ให้อัตโนมัติ)**
+
+ ![](/api/attachments.redirect?id=884ea482-8c9e-4688-be9f-62f943f328d3)
+
+* **สไตล์ สามารถเลือกได้มากกว่า 1 แบบบ้านบ้าน ค่า default คือทั้งหมด**
+
+จัดเรียงตาม (เลือกได้ 1 ตัวเลือก)
+
+* ล่าสุดเรียงตามวันที่สร้างใบประกาศจากมากไปน้อย (วันที่ล่าสุดไปวันที่เก่าสุด)
+* แนะนำ = ไม่ระบุ (ถ้าในหน้า profile ของบริษัทจะไม่มีตัวเลือกแนะนำ)
+* ตัวเลือกแนะนำ เรียงตาม product (เรียงตาม logic การดันใบประกาศหน้าเสิร์ช) เป็นค่า default ในหน้าเสิร์ช
+* ราคาเรียงตามน้อยไปมาก
+* ราคาเรียวตามมากไปน้อย
+
+**Error case กรณีราคา รอ UI**
+
+ ![](/api/attachments.redirect?id=7db4c632-fbfc-4495-a22e-f56125b22a12 " =441x615")
+
+Validate เมื่อ ต่ำสุด > สูงสุด เช่น มี validate เฉพาะข้อมูล ราคา,พื้นที่ใช้สอย
+
+```
+ราคาต่ำสุด 3,000,000 \> ราคาสูงสุด 100,000 กดค้นหาแล้วแจ้งเตือนตาม UI ที่แนบมา
+```
+
+**EP-03 การแสดงผล Mobile**
+
+ ![](/api/attachments.redirect?id=4623feca-2703-4884-a609-0bf6a77232f9)
+
+**การแสดงผล mobile จะประกอบด้วยอนิเมชั่นดังต่อไปนี้**
+
+1\.หลังจากกด (ซื้อโครงการใหม่ หรือ หมวดอื่นๆ) โดยที่ยังไม่ได้เลือนใดๆ
+
+2\.เลื่อนลงมาข้างล้าง แมเเพียงเล็กน้อย ตัวเลือกสี่หมวดหมู่จะหายไป
+
+3\.ขณะที่ยังเห็น filter ส่วนนี้อยู่ (ตัวเลือก 4 หมวด ที่ติดด้านบนจะไม่แสดง)
+
+แม้ว่าจะเลื่อนขึ้น หรือ ลงก็ตาม
+
+4\.หลังจากเลือนลงมาจน เลย filter แล้ว Filter มาติดด้านบน ประเภททรัพย์ เช่น, บ้าน,ดอนโด,ทาวน์โฮม จะถูกยุบเป็นปุ่ม ทรัพย์
+
+**การเซ็นยินยอมความรับผิดชอบและหน้าที่ในฟีเจอร์ฟีลเตอร์หน้าเสิร์ช center และหน้าจังหวัด**
+
+| **ชื่อ-สกุล** | **ตำ**<br>**แหน่ง** | **วันที่ เซ็น** | **วันที่กำหนดส่ง** | **บทบาท** | **ความรับผิดชอบในการยืนยัน** | **ลายเซ็น** |
+|-----------|----------|-------------|----------------|-------|--------------------------|---------|
+| ภัคณัฏฐ์ บุญเชิดชัยยันต์ | CEO      |             | 28/2/2569      | CF UI<br>/logic | ยืนยันว่าสามารถใช้งานได้ตามหลักการของ /เข้าใจหลักการทำงาน ฟีเจอร์ฟีลเตอร์ตอบโจทย์การทำงานของ business logic |  ![](/api/attachments.redirect?id=73b8cba4-7e13-4290-a857-c92b96f50718) |
+| นายวุฒิชัย ประเสริฐสังข์ | Head of technology |             | 28/2/2569      | Review<br>UI<br>/logic | รีวิวว่าสามารถ dev ได้ตามความต้องการของ business requirement / ตรวจสอบความถูกต้องของการทำงานฟีเจอร์ฟีเจอร์ฟีลเตอร์ |         |
+| กิตติธร เพ็งศรี | Lead dev |             | 28/2/2569      | Review<br>UI/<br>logic | รีวิวว่าสามารถ dev ได้ตามความต้องการของ business requirement / ตรวจสอบความถูกต้องของการทำงานฟีเจอร์ฟีเจอร์ฟีลเตอร์ |         |
+
+
+## Acceptance Criteria (AC) — ฟิลเตอร์แบบบ้าน
+
+ขอบเขตเฟสนี้: เมื่อเปลี่ยนระหว่าง Center กับจังหวัด หรือข้ามจังหวัด ให้ล้างตัวกรองทั้งหมดและกลับค่าเริ่มต้นของหน้าปลายทาง
+
+| AC ID | หัวข้อ | เงื่อนไข | ผลที่ต้องผ่าน |
+|-------|--------|----------|---------------|
+| PLAN-01 | จังหวัดบน Center | เปิดหน้าเสิร์ชแบบบ้าน Center | แสดงตัวเลือกจังหวัดโดยเริ่มต้นเป็นทุกจังหวัด |
+| PLAN-02 | จังหวัดบนหน้าจังหวัด | เปิดหน้าเสิร์ชแบบบ้านจังหวัด | เปลี่ยนจังหวัดผ่าน Navbar ตาม Wiki |
+| PLAN-03 | Center → จังหวัด | เลือกตัวกรองแล้วไปจังหวัด A | ล้างทั้งหมดและแสดงแบบบ้านจังหวัด A ตามค่าเริ่มต้น |
+| PLAN-04 | จังหวัด → จังหวัด | เลือกตัวกรองใน A แล้วไป B | ล้างทั้งหมดและแสดงแบบบ้านจังหวัด B ตามค่าเริ่มต้น |
+| PLAN-05 | จังหวัด → Center | เลือกตัวกรองใน A แล้วกลับ Center | ล้างทั้งหมดและแสดงแบบบ้านทุกจังหวัดตามค่าเริ่มต้น |
+| PLAN-06 | ประเภททรัพย์เริ่มต้น | ยังไม่เลือกประเภท | แสดงทั้งหมดโดยไม่มีตัวเลือกถูกติ๊ก |
+| PLAN-07 | ประเภททรัพย์หลายค่า | เลือกบ้านและทาวน์โฮม | เลือกทั้งสองค่าพร้อมกันได้ |
+| PLAN-08 | ห้องนอน | เปิดตัวกรองห้องนอน | เริ่มต้นไม่ระบุและเลือกได้ครั้งละ 1 ค่า |
+| PLAN-09 | ห้องน้ำ | เปิดตัวกรองห้องน้ำ | เริ่มต้นไม่ระบุและเลือกได้ครั้งละ 1 ค่า |
+| PLAN-10 | สไตล์เริ่มต้น | ยังไม่เลือกสไตล์ | แสดงทั้งหมดโดยยังไม่ติ๊ก |
+| PLAN-11 | หลายสไตล์ | เลือกสไตล์มากกว่า 1 ค่า | แสดงสไตล์ที่เลือกทั้งหมด |
+| PLAN-12 | ราคา   | เปิดตัวกรองราคา | แสดงช่องราคาต่ำสุดและสูงสุดตาม UI |
+| PLAN-13 | รูปแบบราคา | กรอกตัวเลขราคา | แสดงเครื่องหมายคั่นหลักพันอัตโนมัติ |
+| PLAN-14 | ค่าที่ราคาไม่รับ | กรอกค่าติดลบ ตัวอักษร อักขระพิเศษ หรือทศนิยม | ระบบไม่รับค่าเหล่านั้น |
+| PLAN-15 | ราคาตรงตัวเลือก | กรอกราคาที่ตรงกับตัวเลือกในรายการ | แสดง Radio ของราคานั้นเป็นค่าที่เลือก |
+| PLAN-16 | ราคาไม่ระบุ | เลือกไม่ระบุในช่องราคา | ไม่แสดงค่าราคาที่ระบุในช่องนั้น |
+| PLAN-17 | ค้นหาราคา | กรอกหรือเลือกช่วงราคาแล้วกดค้นหา | ใช้ช่วงราคาที่เลือกในการค้นหา |
+| PLAN-18 | ตรวจสอบราคา | ราคาต่ำสุดมากกว่าสูงสุดแล้วกดค้นหา | แสดงข้อความตรวจสอบตาม UI |
+| PLAN-19 | พื้นที่ใช้สอย | ระบุขนาดพื้นที่ใช้สอย | รองรับทศนิยม 2 ตำแหน่งและไม่รับค่าติดลบตาม Wiki |
+| PLAN-20 | พื้นที่แนะนำก่อสร้าง | เปิดตัวเลือกพื้นที่แนะนำ | เลือกได้ครั้งละ 1 ตัวเลือก |
+| PLAN-21 | ตัวเลือกพิเศษมีข้อมูล | มีแบบบ้านหรือข้อมูลเข้าเงื่อนไขในขอบเขตนั้น | แสดงตัวเลือกตามเงื่อนไขของหน้า |
+| PLAN-22 | ตัวเลือกพิเศษไม่มีข้อมูล | ไม่มีรายการเข้าเงื่อนไขในขอบเขตปลายทาง | ไม่แสดงตัวเลือกนั้น |
+| PLAN-23 | ไม่พบผลร่วม | อยู่จังหวัดเดิมและเลือกประเภททรัพย์ร่วมกับ Walk-in แต่ไม่มีแบบบ้านผ่านทั้งสอง | คงค่าที่เลือกและไม่แสดงผลลัพธ์การค้นหา |
+| PLAN-24 | จัดเรียง | เปิดหน้าเสิร์ชแบบบ้าน | ใช้แนะนำเป็นค่าเริ่มต้นและเลือกได้ครั้งละ 1 ค่า |
+| PLAN-25 | นับประเภททรัพย์ | เลือกบ้าน + ทาวน์โฮม | นับ 2         |
+| PLAN-26 | นับสไตล์ | เลือก 2 สไตล์ | นับ 2         |
+| PLAN-27 | นับราคาและพื้นที่ | กรอกต่ำสุดและสูงสุดทั้งราคาและพื้นที่ใช้สอย | นับราคา 1 และพื้นที่ใช้สอย 1 รวม 2 |
+| PLAN-28 | นับพื้นที่แนะนำ | เลือกพื้นที่แนะนำก่อสร้าง 1 ค่า | นับ 1         |
+| PLAN-29 | นับค่าเริ่มต้น | ยังไม่มีตัวกรองที่เลือกเพิ่มเติม | จัดเรียงตามนับ 1; ทั้งหมดและไม่ระบุไม่นับ |
+| PLAN-30 | Mobile | เลื่อนผ่านส่วนฟิลเตอร์ | ฟิลเตอร์ติดด้านบนและยุบประเภททรัพย์เป็นปุ่มตาม UI และ Logic ใน Wiki |
+
+**รอยืนยัน:** Wiki มีทั้งข้อความไม่ดักพื้นที่ใช้สอยสูงสุด–ต่ำสุด และข้อความให้ Validate เมื่อค่าต่ำสุดมากกว่าสูงสุด จึงยังไม่กำหนด AC กรณีพื้นที่กลับด้าน
