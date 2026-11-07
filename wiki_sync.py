@@ -147,9 +147,28 @@ def inventory(api):
 
 def fingerprint(inv): return digest(encoded(inv))
 
+def packed_layout(root):
+    return {p.name for p in Path(root).iterdir()}=={'manifest.json','knowledge.zip'}
+
+def packed_cache_read(root):
+    # Some published feeds retain the complete archive, not duplicate loose pages.
+    # Validate the archive and its detached manifest before reusing any body.
+    from update_knowledge import validate_snapshot_archive, UpdateError
+    try:
+        for name in ('manifest.json','knowledge.zip'):
+            if (root/name).is_symlink(): raise SyncError('Linked packed cache file')
+        if (root/'knowledge.zip').stat().st_size>MAX_ARCHIVE:
+            raise SyncError('Packed cache exceeds archive limit')
+        raw=(root/'manifest.json').read_bytes(); m=json.loads(raw)
+        files=validate_snapshot_archive((root/'knowledge.zip').read_bytes(),raw,m['snapshotId'])
+        return m,{d['id']:files[d['bodyPath']] for d in m['documents']}
+    except (UpdateError,KeyError,ValueError,OSError,TypeError,zipfile.BadZipFile):
+        raise SyncError('Packed cached snapshot is incomplete or corrupt') from None
+
 def cache_read(root):
     root=Path(root)
     try:
+        if packed_layout(root): return packed_cache_read(root)
         m=json.loads((root/'manifest.json').read_bytes())
         if m.get('schemaVersion')!='nitii-wiki-snapshot.v1': raise SyncError('Unknown cached schema')
         docs=m['documents']; bodies={}
@@ -211,6 +230,7 @@ def validate_artifacts(root,sid):
     try:
         m,_=cache_read(root)
         if m.get('snapshotId')!=sid or (root/'knowledge.zip').is_symlink(): raise SyncError('Snapshot identity mismatch')
+        if packed_layout(root): return  # cache_read validated every archived file.
         archive=root/'knowledge.zip'
         if archive.stat().st_size>MAX_ARCHIVE: raise SyncError('Archive exceeds size limit')
         files={f['path']:f for f in m['files']}

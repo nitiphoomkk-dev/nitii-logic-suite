@@ -138,4 +138,34 @@ class SyncTests(unittest.TestCase):
                 with self.assertRaises(w.SyncError): w.publish(Path(t),m,b)
             self.assertEqual((Path(t)/'latest.json').read_bytes(),prior)
 
+class PackedFeedTests(unittest.TestCase):
+    def packed(self, directory):
+        m,b=w.capture(API([doc()]))
+        expanded=w.publish(Path(directory)/'expanded',m,b)
+        root=Path(directory)/'packed'/'snapshots'/m['snapshotId']; root.mkdir(parents=True)
+        for name in ('manifest.json','knowledge.zip'):
+            (root/name).write_bytes((expanded/name).read_bytes())
+        return m,b,root
+
+    def test_archive_only_previous_feed_reuses_exact_unchanged_body(self):
+        with tempfile.TemporaryDirectory() as t:
+            m,b,root=self.packed(t)
+            api=API([doc(),doc(B,'new')]); newer,bodies=w.capture(api,root)
+            self.assertEqual(bodies[A],b[A])
+            self.assertEqual([p['id'] for n,p in api.calls if n=='documents.info'],[B])
+            self.assertEqual(newer['documentCount'],2)
+
+    def test_archive_only_snapshot_can_be_validated_and_republished_unchanged(self):
+        with tempfile.TemporaryDirectory() as t:
+            m,b,root=self.packed(t)
+            w.validate_artifacts(root,m['snapshotId'])
+            w.publish(root.parent.parent,m,b)
+            self.assertEqual(json.loads((root.parent.parent/'latest.json').read_bytes())['snapshotId'],m['snapshotId'])
+
+    def test_corrupt_archive_only_cache_is_rejected(self):
+        with tempfile.TemporaryDirectory() as t:
+            m,b,root=self.packed(t)
+            (root/'knowledge.zip').write_bytes(b'broken')
+            with self.assertRaises(w.SyncError): w.cache_read(root)
+
 if __name__=='__main__': unittest.main()
