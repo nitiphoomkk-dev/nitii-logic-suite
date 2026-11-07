@@ -50,7 +50,7 @@ jobs:
       - name: Read and validate current Wiki
         if: ${{ !inputs.bootstrap_only }}
         env:
-          WIKI_API_KEY: ${{ secrets.WIKI_API_KEY }}
+          WIKI_API_KEY: ${{ secrets.WIKI_API_KEY || secrets.WIKI }}
         run: python3 -B wiki_sync.py --feed publication
       - name: Publish complete snapshot and pointer together
         shell: bash
