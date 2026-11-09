@@ -326,8 +326,30 @@ def resolve_cached(cache: Path) -> Path | None:
 
 
 def resolve(root: Path) -> Path:
-    """Readers pass their original bundled knowledge root as the fallback."""
-    return resolve_cached(default_cache()) or Path(root)
+    """Refresh data before each search/read, then resolve a verified snapshot.
+
+    Existing 1.2 readers already call this function. Keep stdout untouched:
+    evidence tools produce JSON there; freshness/provenance goes to stderr.
+    A failed refresh never hides that fallback/cache may be stale.
+    """
+    import sys
+    cache = default_cache()
+    result = update(cache)
+    selected = resolve_cached(cache)
+    result['source'] = 'cache' if selected is not None else 'bundle'
+    if selected is None:
+        result['stale'] = True
+    result.setdefault('checkedAtUtc', None)
+    result.setdefault('syncedAtUtc', None)
+    try:
+        manifest = _json(_read((selected or Path(root)) / 'manifest.json', MAX_METADATA))
+        captured = manifest.get('capturedAtUtc')
+        result['snapshotCapturedAtUtc'] = captured if _utc(captured) else None
+    except (OSError, ValueError, TypeError):
+        result['snapshotCapturedAtUtc'] = None
+    print(json.dumps({'knowledge_update': result}, ensure_ascii=True,
+                     sort_keys=True), file=sys.stderr)
+    return selected or Path(root)
 
 
 def _publish(cache: Path, sid: str, files: dict[str, bytes]) -> Path:

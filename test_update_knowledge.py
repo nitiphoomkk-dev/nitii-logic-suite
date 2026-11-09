@@ -289,7 +289,8 @@ class UpdateTests(unittest.TestCase):
     def test_resolve_falls_back_to_original_bundle_when_cache_is_invalid(self):
         bundled = Path(self.temp.name) / 'bundled'
         bundled.mkdir()
-        with patch.dict(os.environ, {'NITII_CACHE': str(self.cache)}):
+        with patch.dict(os.environ, {'NITII_CACHE': str(self.cache)}), \
+                patch.object(u, '_download', side_effect=OSError('offline')):
             self.assertEqual(u.resolve(bundled), bundled)
             pointer = self.install()
             self.assertEqual(u.resolve(bundled), self.cache / pointer['snapshotId'])
@@ -298,7 +299,8 @@ class UpdateTests(unittest.TestCase):
         bundled = Path(self.temp.name) / 'bundled'
         pointer = self.install()
         with patch.dict(os.environ, {'NITII_KNOWLEDGE_CACHE': str(self.cache),
-                                     'NITII_CACHE': str(self.cache / 'unrelated')}):
+                                     'NITII_CACHE': str(self.cache / 'unrelated')}), \
+                patch.object(u, '_download', side_effect=OSError('offline')):
             self.assertEqual(u.resolve(bundled), self.cache / pointer['snapshotId'])
 
     def test_empty_page_is_valid_and_snapshot_metadata_must_agree(self):

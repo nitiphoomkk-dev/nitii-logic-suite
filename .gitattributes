@@ -1,0 +1,4 @@
+# Payload hash is pinned by the one-time installer; preserve exact bytes on all hosts.
+/update_knowledge.py text eol=lf
+/enable_auto_update.py text eol=lf
+/build_auto_update_patch.py text eol=lf
