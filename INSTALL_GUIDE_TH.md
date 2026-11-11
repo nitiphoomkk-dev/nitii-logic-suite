@@ -1,5 +1,15 @@
 # ติดตั้งนิติ๊ — เลือก AI ที่คุณใช้
 
+[ดาวน์โหลดชุดเต็ม 3.0.0](https://github.com/nitiphoomkk-dev/nitii-logic-suite/releases/download/v3.0.0/Nitii_Logic_Suite_3.0.0.zip) · [GitHub Release](https://github.com/nitiphoomkk-dev/nitii-logic-suite/releases/tag/v3.0.0)
+
+ชุดเดียวรวมทั้ง 11 สกิลและตัวอัปเดต Wiki อัตโนมัติ ใช้ลงในโปรเจกต์ใหม่หรืออัปเกรด การติดตั้งสกิลในโปรเจกต์ Codex รุ่น 1.2 และ 1.2.1 ได้
+
+แตก ZIP แล้วเปิด Terminal ในโฟลเดอร์ที่มี `install_nitii.py` รัน `python install_nitii.py --project "C:/path/to/project"` โดยใส่พาธโปรเจกต์ที่ใช้จริง จากนั้นเปิดแชทใหม่ในโปรเจกต์นั้น การค้นและอ่าน Wiki ตรวจชุดข้อมูลที่ GitHub เผยแพร่ล่าสุดก่อนตอบ ต้องมี Python 3.9 ขึ้นไป สิทธิ์เชื่อมต่อ GitHub และเขียนแคชได้
+
+สำหรับ Plugin หรือ Standalone ให้ใช้ ZIP ย่อยใน `packages/` ตาม `INSTALL_TH.md` ของชุดเต็ม ส่วน Project/Gem ที่อัปโหลดเฉพาะไฟล์ยังใช้สำเนาตามวันที่อัปโหลด
+
+## คู่มือรุ่นก่อนหน้า
+
 คู่มือสำหรับ **Nitii Logic Suite v1.2.0** ตรวจขั้นตอนกับเอกสารทางการวันที่ **19 ตุลาคม 2026**
 
 ## เริ่มตรงนี้
