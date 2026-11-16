@@ -1,11 +1,11 @@
 {
-  "archivePath": "snapshots/747d2ecea94972be6783bfb95dcbb948ecade11cbba652a35c7bde8497400f29/knowledge.zip",
-  "archiveSha256": "9098a5930f426383a302ee16a425e2e88ed43ddc03a5c06a92d38b50f84ee3a4",
-  "checkedAtUtc": "2026-11-15T19:17:15.535592+00:00",
+  "archivePath": "snapshots/d3fb102311d01f5f44a45378a9ecdb3ea6edce2ddb0f445e8cdc059746a803ac/knowledge.zip",
+  "archiveSha256": "2c79853f04cc24fd064c923b439e33d51df8ad2e0b2e6f09d13fcfebd84a41c2",
+  "checkedAtUtc": "2026-11-16T22:47:57.020143+00:00",
   "documentCount": 530,
-  "manifestPath": "snapshots/747d2ecea94972be6783bfb95dcbb948ecade11cbba652a35c7bde8497400f29/manifest.json",
-  "manifestSha256": "2c4dbd566870db5b7de22bfa005ba288fe2d3db000209ed73f99e75d9c8a24f6",
+  "manifestPath": "snapshots/d3fb102311d01f5f44a45378a9ecdb3ea6edce2ddb0f445e8cdc059746a803ac/manifest.json",
+  "manifestSha256": "203adcad9b35d805bff8d26213385b6d2eb0c8509b034bcb90a8be56e9a52d5e",
   "schemaVersion": "nitii-feed.v1",
-  "snapshotId": "747d2ecea94972be6783bfb95dcbb948ecade11cbba652a35c7bde8497400f29",
-  "syncedAtUtc": "2026-11-15T19:17:13.769257+00:00"
+  "snapshotId": "d3fb102311d01f5f44a45378a9ecdb3ea6edce2ddb0f445e8cdc059746a803ac",
+  "syncedAtUtc": "2026-11-16T22:47:55.724838+00:00"
 }
