@@ -1,0 +1,21 @@
+{
+  "bodyBytes": 19227762,
+  "capturedAtUtc": "2026-11-27T21:51:21.755433+00:00",
+  "collections": {
+    "develop": 92,
+    "solution": 475
+  },
+  "contentPolicy": "Exact Wiki Markdown; classify approval/proposal/conflict per passage.",
+  "documentCount": 567,
+  "inventorySha256": "85421d230186047bc07418ac8f97e1f169d8fde1f6a2f19b42f21a6e2177ede9",
+  "mediaPolicy": "References preserved; attachment binaries and visual semantics not verified.",
+  "readWindowUtc": {
+    "first": "2026-11-27T21:50:18.522491+00:00",
+    "last": "2026-11-27T21:51:21.755453+00:00"
+  },
+  "removals": [],
+  "schemaVersion": "nitii-wiki-snapshot.v1",
+  "scope": "Published accessible Solution and Develop only; external links not followed.",
+  "snapshotId": "62eff60eab4f37dd33d88de35f8fa4548cf083330ad664f3d1589fd71910a523",
+  "sourceCorpusSha256": "b8dc003cee629f9ced19997b9e0bacdf0dfb85aaa24b8de46d7e2fdf2c57d890"
+}
